@@ -59,16 +59,35 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzo-sq-esa">
+                                        <rect key="frame" x="535" y="43" width="57" height="30"/>
+                                        <state key="normal" title="Clear All">
+                                            <color key="titleColor" red="0.92549026010000002" green="0.20392158630000001" blue="0.2196078598" alpha="1" colorSpace="deviceRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ShowClearAllAlert:" destination="AQi-iN-ALK" eventType="touchUpInside" id="8Z0-bp-74A"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.70522120616019546" green="1" blue="0.68510001442523427" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="hzo-sq-esa" firstAttribute="top" secondItem="OXg-ss-mQN" secondAttribute="top" constant="43" id="1G5-jD-Ao9"/>
+                                    <constraint firstItem="hzo-sq-esa" firstAttribute="leading" secondItem="WkJ-Tm-UMp" secondAttribute="trailing" constant="80" id="3ds-di-0Sn"/>
                                     <constraint firstItem="WkJ-Tm-UMp" firstAttribute="bottom" secondItem="OXg-ss-mQN" secondAttribute="bottomMargin" id="3z7-mE-8fY"/>
                                     <constraint firstItem="WkJ-Tm-UMp" firstAttribute="top" secondItem="59m-Bo-Tdz" secondAttribute="bottom" id="62e-r6-cCI"/>
                                     <constraint firstItem="WkJ-Tm-UMp" firstAttribute="centerX" secondItem="OXg-ss-mQN" secondAttribute="centerX" id="B7A-wW-0Sa"/>
                                     <constraint firstAttribute="height" constant="80" id="LCM-ZX-BPc"/>
+                                    <constraint firstAttribute="trailing" secondItem="hzo-sq-esa" secondAttribute="trailing" constant="8" id="dRe-Qo-UMk"/>
                                     <constraint firstItem="59m-Bo-Tdz" firstAttribute="top" secondItem="OXg-ss-mQN" secondAttribute="top" constant="22" id="kl4-9g-tvA"/>
                                     <constraint firstItem="WkJ-Tm-UMp" firstAttribute="centerX" secondItem="59m-Bo-Tdz" secondAttribute="centerX" id="ljw-x7-kbW"/>
+                                    <constraint firstAttribute="trailing" secondItem="hzo-sq-esa" secondAttribute="trailing" constant="8" id="okp-RL-DTJ"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3ds-di-0Sn"/>
+                                        <exclude reference="dRe-Qo-UMk"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EcI-zl-4DL">
                                 <rect key="frame" x="0.0" y="88" width="600" height="463"/>
@@ -101,7 +120,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="74"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uDd-Zi-d2B" id="Gm7-f6-5qw">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="73.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Brand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L50-eX-hPs">
@@ -215,6 +234,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="9V6-Nj-yNd"/>
                     <connections>
                         <outlet property="addItemButton" destination="TxX-55-Snq" id="8ta-cH-NvR"/>
+                        <outlet property="clearAllButton" destination="hzo-sq-esa" id="4ZR-jX-e1t"/>
                         <outlet property="headBar" destination="OXg-ss-mQN" id="9cf-be-yFE"/>
                         <outlet property="tableView" destination="87f-Tj-HfC" id="hWL-1Z-OdP"/>
                         <outlet property="totalPiceDisplay" destination="WkJ-Tm-UMp" id="K9G-VH-2JE"/>
@@ -589,6 +609,7 @@
                     </view>
                     <connections>
                         <outlet property="cancel" destination="hps-SN-B1W" id="mS3-iz-2Lu"/>
+                        <outlet property="deleteButton" destination="OOE-HT-ETg" id="HKt-Os-EIx"/>
                         <outlet property="editItem" destination="4n7-If-TQl" id="xVg-ui-kS3"/>
                         <outlet property="editItemDisplay" destination="xnN-6r-9nL" id="G11-mw-MpK"/>
                         <outlet property="itemBrandDisplay" destination="UNZ-5d-gae" id="Azv-j9-eyb"/>

@@ -23,6 +23,8 @@ class EditItemViewController: UIViewController {
     @IBOutlet weak var cancel: UIButton!
     @IBOutlet weak var itemStepper: UIStepper!
     @IBOutlet weak var itemStepperValueDisplay: UILabel!
+    @IBOutlet weak var deleteButton: UIButton!
+    
     var defaults = NSUserDefaults.standardUserDefaults()
     
     // Boolean checknig variables
@@ -43,6 +45,15 @@ class EditItemViewController: UIViewController {
         if !hasName {
             editItem.enabled = false
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        editItem.hidden = true
+        cancel.hidden = true
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        beginSlideAnimations()
     }
     
     // Tap gesture handeler
@@ -70,6 +81,7 @@ class EditItemViewController: UIViewController {
     
     @IBAction func incrementStepper(sender: UIStepper) {
         itemStepperValueDisplay.text = "\(itemStepper.value)"
+        didTapView()
     }
     
     // MARK: - Unwind Segue
@@ -144,5 +156,15 @@ class EditItemViewController: UIViewController {
             editedItem.price = Double(itemPriceDiplay.text!)!
         }
         editedItem.quantity = itemStepper.value
+    }
+    
+    // Signals the animations to begin
+    func beginSlideAnimations(){
+        editItem.center.x -= view.bounds.width
+        cancel.center.x += view.bounds.width
+        editItem.hidden = false
+        cancel.hidden = false
+        UIView.animateWithDuration(0.3, animations: { self.editItem.center.x += self.view.bounds.width })
+        UIView.animateWithDuration(0.3, animations: { self.cancel.center.x -= self.view.bounds.width })
     }
 }

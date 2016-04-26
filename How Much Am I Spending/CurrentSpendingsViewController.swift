@@ -18,7 +18,7 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var headBar: UIView!
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var addItemButton: UIButton!
-
+    @IBOutlet weak var clearAllButton: UIButton!
 
     
     override func viewDidLoad() {
@@ -29,13 +29,10 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
             self.items = encodedCurrentItemsData!
             print("current Items list found")
         } else {
-            //if not, set a temp cell into the item array
-//            i1 = Item(n: "You haven't add any items", b: "No Brand", p: 0.0)
-//            items.append(i1)
             print("no current items list")
         }
         
-        // If there is a currentllist, but it is empty, set a temp cell
+        // If there is a current list, but it is empty, set the default view
         checkCurrentList()
         
         super.viewDidLoad()
@@ -65,8 +62,10 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
     func checkCurrentList(){
         if items.isEmpty {
             tableView.hidden = true
+            clearAllButton.hidden = true
         } else {
             tableView.hidden = false
+            clearAllButton.hidden = false
         }
     }
     
@@ -81,7 +80,7 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
         }
         
         // slide in animaition
-        UIView.animateWithDuration(0.55, animations: {
+        UIView.animateWithDuration(0.3, animations: {
             self.totalPiceDisplay.center.x += self.view.bounds.width
             })
     }
@@ -138,6 +137,29 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
         print(self.items[indexPath.row].price)
         print(self.items[indexPath.row].quantity)
     }
+    
+    // MARK: - Alerts
+    @IBAction func ShowClearAllAlert(sender: UIButton) {
+        let clearAllAlert = UIAlertController(title: "Clear All", message: "Are you sure you want to clear all items on the current list?", preferredStyle: UIAlertControllerStyle.Alert)
+        let confirmAction = UIAlertAction(
+            title: "Yes", style: UIAlertActionStyle.Destructive) { (action) in
+                self.clearAll()
+        }
+        let dissmissAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Default) { (action) in}
+        clearAllAlert.addAction(confirmAction)
+        clearAllAlert.addAction(dissmissAction)
+        self.presentViewController(clearAllAlert, animated: true, completion: nil)
+    }
+    
+    func clearAll(){
+        items.removeAll()
+        let currentListData = NSKeyedArchiver.archivedDataWithRootObject(items)
+        defaults.setObject(currentListData, forKey: "currentTripItems")
+        checkCurrentList()
+    }
+    
+    
+    
     
     // MARK: - Unwind Segues
     @IBAction func saveCurrentItem(segue:UIStoryboardSegue){}
