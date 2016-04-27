@@ -35,6 +35,14 @@ class ItemTableViewCell: UITableViewCell {
             itemBrandDisplay.text = item.brand
             itemPriceDisplay.text = "\(formatter.stringFromNumber(item.price)!)"
             itemQuantityDislay.text = "x\(item.quantity)"
+            setPriceLabelApperance()
+            
         }
+    }
+    
+    func setPriceLabelApperance(){
+        itemPriceDisplay.backgroundColor = UIColor(netHex: 0x18E42E)
+        itemPriceDisplay.layer.masksToBounds = true
+        itemPriceDisplay.layer.cornerRadius = 6
     }
 }

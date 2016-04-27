@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B80355EE1CCEDE710098FD45 /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80355ED1CCEDE710098FD45 /* EditItemViewController.swift */; };
+		B81273F91CD1292F00BF2211 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81273F81CD1292F00BF2211 /* SettingsViewController.swift */; };
 		B84F4E221CCCB1CF00A4CDC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */; };
 		B84F4E291CCCB1CF00A4CDC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E271CCCB1CF00A4CDC1 /* Main.storyboard */; };
 		B84F4E2B1CCCB1CF00A4CDC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		B80355ED1CCEDE710098FD45 /* EditItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditItemViewController.swift; path = ../EditItemViewController.swift; sourceTree = "<group>"; };
+		B81273F81CD1292F00BF2211 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B84F4E1E1CCCB1CF00A4CDC1 /* How Much Am I Spending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "How Much Am I Spending.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B84F4E281CCCB1CF00A4CDC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,12 +107,13 @@
 		B84F4E201CCCB1CF00A4CDC1 /* How Much Am I Spending */ = {
 			isa = PBXGroup;
 			children = (
-				B80355ED1CCEDE710098FD45 /* EditItemViewController.swift */,
+				B84F4E271CCCB1CF00A4CDC1 /* Main.storyboard */,
 				B84F4E541CCCB2F000A4CDC1 /* Item.swift */,
 				B84F4E5A1CCDC99100A4CDC1 /* CurrentSpendingsViewController.swift */,
 				B84F4E561CCCB63100A4CDC1 /* ItemTableViewCell.swift */,
 				B85D423A1CCE8BDD0079CFA8 /* NewItemEntryViewController.swift */,
-				B84F4E271CCCB1CF00A4CDC1 /* Main.storyboard */,
+				B80355ED1CCEDE710098FD45 /* EditItemViewController.swift */,
+				B81273F81CD1292F00BF2211 /* SettingsViewController.swift */,
 				B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */,
 				B84F4E511CCCB1DA00A4CDC1 /* SF */,
 			);
@@ -281,6 +284,7 @@
 			files = (
 				B84F4E571CCCB63100A4CDC1 /* ItemTableViewCell.swift in Sources */,
 				B80355EE1CCEDE710098FD45 /* EditItemViewController.swift in Sources */,
+				B81273F91CD1292F00BF2211 /* SettingsViewController.swift in Sources */,
 				B84F4E221CCCB1CF00A4CDC1 /* AppDelegate.swift in Sources */,
 				B84F4E5B1CCDC99100A4CDC1 /* CurrentSpendingsViewController.swift in Sources */,
 				B84F4E551CCCB2F000A4CDC1 /* Item.swift in Sources */,

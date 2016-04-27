@@ -24,6 +24,11 @@ class EditItemViewController: UIViewController {
     @IBOutlet weak var itemStepper: UIStepper!
     @IBOutlet weak var itemStepperValueDisplay: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
+    var priceIsViable = false
+    var alreadyFormatted = false
+    var itemWasDeleted = false
+    var itemPrice = Double()
+    let formatter = NSNumberFormatter()
     
     var defaults = NSUserDefaults.standardUserDefaults()
     
@@ -33,10 +38,12 @@ class EditItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        itemPrice = item.price
+        formatter.numberStyle = .CurrencyStyle
         editItemDisplay.text = "Edit \(item.name)"
         itemNameDisplay.text = "\(item.name)"
         itemBrandDisplay.text = "\(item.brand)"
-        itemPriceDiplay.text = "\(item.price)"
+        itemPriceDiplay.text = "\(formatter.stringFromNumber(item.price)!)"
         itemStepper.value = item.quantity
         itemStepperValueDisplay.text = "\(itemStepper.value)"
         let tapRecognizer = UITapGestureRecognizer()
@@ -45,6 +52,7 @@ class EditItemViewController: UIViewController {
         if !hasName {
             editItem.enabled = false
         }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -59,14 +67,29 @@ class EditItemViewController: UIViewController {
     // Tap gesture handeler
     func didTapView(){
         self.view.endEditing(true)
+        
+        
+        
+        
         if itemNameDisplay.text != "" {
             hasName = true
         } else {
             hasName = false
         }
-        
+        checkForValidPriceEntry()
         if itemPriceDiplay.text != "" {
             hasPrice = true
+            let tempStr = itemPriceDiplay.text
+            for c in (tempStr?.characters)! {
+                if c == "$" {
+                    alreadyFormatted = true
+                }
+            }
+            if alreadyFormatted {
+            } else {
+                itemPrice = Double(itemPriceDiplay.text!)!
+                itemPriceDiplay.text = "\(formatter.stringFromNumber(itemPrice)!)"
+            }
         } else {
             hasPrice = false
         }
@@ -77,6 +100,50 @@ class EditItemViewController: UIViewController {
             editItem.enabled = false
         }
     }
+    
+    @IBAction func editingDidBegin(sender: UITextField) {
+            itemPriceDiplay.text = "\(itemPrice)"
+    }
+    
+    
+    @IBAction func editingDidEnd(sender: UITextField) {
+        
+        if itemNameDisplay.text != "" {
+            hasName = true
+        } else {
+            hasName = false
+            itemPriceDiplay.text = formatter.stringFromNumber(itemPrice)!
+        }
+        checkForValidPriceEntry()
+        if itemPriceDiplay.text != "" {
+            hasPrice = true
+            let tempStr = itemPriceDiplay.text
+            for c in (tempStr?.characters)! {
+                if c == "$" {
+                    alreadyFormatted = true
+                } else {
+                    alreadyFormatted = false
+                }
+            }
+            if alreadyFormatted {
+                print("this was already formatted")
+            } else {
+                print("formatted now")
+                itemPrice = Double(itemPriceDiplay.text!)!
+                itemPriceDiplay.text = "\(formatter.stringFromNumber(itemPrice)!)"
+            }
+        } else {
+            hasPrice = false
+        }
+        
+        if hasPrice && hasName {
+            editItem.enabled = true
+        } else {
+            editItem.enabled = false
+        }
+    }
+    
+    
     
     
     @IBAction func incrementStepper(sender: UIStepper) {
@@ -129,11 +196,18 @@ class EditItemViewController: UIViewController {
                 index = items.indexOf(i)!
             }
         }
+        let tempItem = items[index]
+        let tempItemData = NSKeyedArchiver.archivedDataWithRootObject(tempItem)
         items.removeAtIndex(index)
         let currentListData = NSKeyedArchiver.archivedDataWithRootObject(items)
         defaults.setObject(currentListData, forKey: "currentTripItems")
         NSNotificationCenter.defaultCenter().postNotificationName("reload", object: nil)
         performSegueWithIdentifier("backToCurrentList", sender: self)
+        itemWasDeleted = true
+        let deleteDefaults = NSUserDefaults.standardUserDefaults()
+        deleteDefaults.setObject(tempItemData, forKey: "deletedItem")
+        deleteDefaults.setBool(itemWasDeleted, forKey: "itemWasDeleted")
+        
     }
     
     // Set the edited items values
@@ -153,9 +227,43 @@ class EditItemViewController: UIViewController {
         if itemPriceDiplay.text == "" {
             itemPriceDiplay.text = "0"
         } else {
-            editedItem.price = Double(itemPriceDiplay.text!)!
+            checkForValidPriceEntry()
+            if priceIsViable {
+                editedItem.price = itemPrice
+            }
         }
         editedItem.quantity = itemStepper.value
+    }
+    
+    // MARK: -Error Checking
+    func checkForValidPriceEntry(){
+        var decimalCount = 0
+        var postDecimaletterCount = 0
+        var decimalUsed = false
+        let characters = itemPriceDiplay.text
+        for c in (characters?.characters)! {
+            if c == "." {
+                decimalCount += 1
+                decimalUsed = true
+            }
+            if decimalUsed {
+                postDecimaletterCount += 1
+            }
+            
+        }
+        if decimalCount > 1 || postDecimaletterCount > 3 {
+            ShowIncorrectFormatAlert()
+            itemPriceDiplay.text = ""
+        } else {
+            priceIsViable = true
+        }
+    }
+    
+    func ShowIncorrectFormatAlert(){
+        let incorrectFormatAlert = UIAlertController(title: "Incorrect Format", message: "The price you entered in is not a viable option", preferredStyle: UIAlertControllerStyle.Alert)
+        let dismissAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default) {(action) in}
+        incorrectFormatAlert.addAction(dismissAction)
+        self.presentViewController(incorrectFormatAlert, animated: true, completion: nil)
     }
     
     // Signals the animations to begin
