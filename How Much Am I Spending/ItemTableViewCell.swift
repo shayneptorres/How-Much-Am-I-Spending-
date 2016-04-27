@@ -15,6 +15,7 @@ class ItemTableViewCell: UITableViewCell {
         }
     }
     let formatter = NSNumberFormatter()
+    let CA_SALES_TAX = 0.0725
     
     @IBOutlet weak var itemNameDisplay: UILabel!
     
@@ -22,21 +23,27 @@ class ItemTableViewCell: UITableViewCell {
     
     @IBOutlet weak var itemPriceDisplay: UILabel!
     
-    @IBOutlet weak var itemQuantityDislay: UILabel!
+    @IBOutlet weak var itemQuantityDisplay: UILabel!
+    
+    @IBOutlet weak var itemTaxDisplay: UILabel!
+    
     
     func updateUI(){
         formatter.numberStyle = .CurrencyStyle
         itemNameDisplay?.text = nil
         itemBrandDisplay?.text = nil
         itemPriceDisplay?.text = nil
-        itemQuantityDislay?.text = nil
+        itemQuantityDisplay?.text = nil
         if let item = self.item{
+            let itemTax = (item.price * CA_SALES_TAX)
+            itemTaxDisplay.text = "tax: \(formatter.stringFromNumber(itemTax)!)"
             itemNameDisplay.text = item.name
             itemBrandDisplay.text = item.brand
             itemPriceDisplay.text = "\(formatter.stringFromNumber(item.price)!)"
-            itemQuantityDislay.text = "x\(item.quantity)"
+            itemQuantityDisplay.text = "x\(item.quantity)"
             setPriceLabelApperance()
-            
+            setTaxLabelApperance()
+            setQuantityLabelAppearance()
         }
     }
     
@@ -44,5 +51,16 @@ class ItemTableViewCell: UITableViewCell {
         itemPriceDisplay.backgroundColor = UIColor(netHex: 0x18E42E)
         itemPriceDisplay.layer.masksToBounds = true
         itemPriceDisplay.layer.cornerRadius = 6
+    }
+    
+    func setTaxLabelApperance(){
+        itemTaxDisplay.layer.masksToBounds = true
+        itemTaxDisplay.layer.cornerRadius = 6
+    }
+    
+    func setQuantityLabelAppearance(){
+//        itemQuantityDisplay.backgroundColor = UIColor(netHex: 0xA83EFC)
+        itemQuantityDisplay.layer.masksToBounds = true
+        itemQuantityDisplay.layer.cornerRadius = 6
     }
 }

@@ -5,13 +5,6 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
     
     // MARK: - Item instances
     var items = [Item]()
-    var i1 = Item(n: "thing", b: "brand", p: 10.00)
-    var i2 = Item(n: "thing", b: "brand", p: 10.00)
-    var i3 = Item(n: "thing", b: "brand", p: 10.00)
-    var i4 = Item(n: "thing", b: "brand", p: 10.00)
-    var i5 = Item(n: "thing", b: "brand", p: 10.00)
-    var i6 = Item(n: "thing", b: "brand", p: 10.00)
-    
     
     // MARK: - Variables
     var totalPrice = 0.00
@@ -27,6 +20,7 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
     var overspending = false
     var moneyLeft = Double()
     var shouldShakeAlert = false
+    var firstTime = false
     
     // MARK: - Outlet Variables
     @IBOutlet weak var totalPiceDisplay: UILabel!
@@ -69,6 +63,10 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     override func viewDidAppear(animated: Bool) {
+        if defaults.valueForKey("firstTime") == nil {
+            showFirstTimeUserAlert(self)
+        }
+        defaults.setValue(firstTime, forKey: "firstTime")
         showItemWasDeleted = defaults.boolForKey("itemWasDeleted")
         if showItemWasDeleted {
             setShowItemWasDeletedAppearance()
@@ -183,18 +181,22 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func checkForOverspending(){
-        shouldShakeAlert = false
-        if moneyLeft <= 5 {
-            totalPiceDisplay.textColor = UIColor(netHex: 0xC88009)
-            shouldShakeAlert = true
-        }
-        if moneyLeft <= 0 {
-            totalPiceDisplay.textColor = UIColor(netHex: 0xFB3125)
-            overspending = true
-            shouldShakeAlert = true
-        }
-        if shouldShakeAlert {
-            shakeTotalPriceLabel()
+        if mode == "budgetMode" {
+            shouldShakeAlert = false
+            if moneyLeft <= 5 {
+                totalPiceDisplay.textColor = UIColor(netHex: 0xC88009)
+                shouldShakeAlert = true
+            }
+            if moneyLeft <= 0 {
+                totalPiceDisplay.textColor = UIColor(netHex: 0xFB3125)
+                overspending = true
+                shouldShakeAlert = true
+            }
+            if shouldShakeAlert {
+                shakeTotalPriceLabel()
+            }
+        } else {
+            
         }
     }
     
@@ -262,6 +264,13 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
         clearAllAlert.addAction(confirmAction)
         clearAllAlert.addAction(dissmissAction)
         self.presentViewController(clearAllAlert, animated: true, completion: nil)
+    }
+    
+    @IBAction func showFirstTimeUserAlert(sender: CurrentSpendingsViewController){
+        let firstTimeAlert = UIAlertController(title: "Welcome!", message: "You are currently in FreeSpend Mode. If you would like to change to BudgetMode or if you have no idea what either is, go to the settings tab and learn about both.", preferredStyle: UIAlertControllerStyle.Alert)
+        let dissmissAction = UIAlertAction(title: "Cool!", style: UIAlertActionStyle.Default) { (action) in}
+        firstTimeAlert.addAction(dissmissAction)
+        self.presentViewController(firstTimeAlert, animated: true, completion: nil)
     }
     
     func clearAll(){

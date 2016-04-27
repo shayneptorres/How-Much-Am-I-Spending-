@@ -121,7 +121,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="74"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uDd-Zi-d2B" id="Gm7-f6-5qw">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="73.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Brand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L50-eX-hPs">
@@ -148,12 +148,6 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Quanity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCx-MF-ihi">
-                                                    <rect key="frame" x="466" y="37" width="98" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U73-nD-mLx">
                                                     <rect key="frame" x="466" y="8" width="126" height="21"/>
                                                     <constraints>
@@ -163,19 +157,47 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tax" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wo-fB-wha">
+                                                    <rect key="frame" x="523" y="38" width="69" height="21"/>
+                                                    <color key="backgroundColor" red="1" green="0.88743177413078889" blue="0.57962213872387958" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="69" id="gv5-DX-uIB"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Quanity" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCx-MF-ihi">
+                                                    <rect key="frame" x="446" y="39" width="69" height="21"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="98" id="bWm-yh-zrq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="bWm-yh-zrq"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Ra2-o3-gly" firstAttribute="leading" secondItem="L50-eX-hPs" secondAttribute="leading" id="2Ok-4N-VUj"/>
-                                                <constraint firstItem="rCx-MF-ihi" firstAttribute="top" secondItem="U73-nD-mLx" secondAttribute="bottom" constant="8" symbolic="YES" id="2nZ-t9-t6c"/>
                                                 <constraint firstItem="U73-nD-mLx" firstAttribute="top" secondItem="Gm7-f6-5qw" secondAttribute="topMargin" id="7zf-Ag-zQV"/>
-                                                <constraint firstItem="rCx-MF-ihi" firstAttribute="leading" secondItem="U73-nD-mLx" secondAttribute="leading" id="9cb-DV-gmJ"/>
-                                                <constraint firstItem="rCx-MF-ihi" firstAttribute="baseline" secondItem="L50-eX-hPs" secondAttribute="baseline" id="C2n-Tz-LwU"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="rCx-MF-ihi" secondAttribute="trailing" constant="28" id="Fod-FT-g9e"/>
+                                                <constraint firstItem="rCx-MF-ihi" firstAttribute="top" secondItem="U73-nD-mLx" secondAttribute="bottom" constant="10" id="8v9-So-jv7"/>
+                                                <constraint firstItem="7wo-fB-wha" firstAttribute="leading" secondItem="rCx-MF-ihi" secondAttribute="trailing" constant="8" symbolic="YES" id="Feh-Lw-lwb"/>
                                                 <constraint firstItem="U73-nD-mLx" firstAttribute="trailing" secondItem="Gm7-f6-5qw" secondAttribute="trailingMargin" id="How-wb-siK"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="L50-eX-hPs" secondAttribute="bottom" constant="8.5" id="Kgc-rI-hsh"/>
                                                 <constraint firstItem="Ra2-o3-gly" firstAttribute="baseline" secondItem="U73-nD-mLx" secondAttribute="baseline" id="XP3-WS-48X"/>
+                                                <constraint firstItem="rCx-MF-ihi" firstAttribute="width" secondItem="7wo-fB-wha" secondAttribute="width" id="Yag-W9-aMn"/>
                                                 <constraint firstItem="L50-eX-hPs" firstAttribute="top" secondItem="Ra2-o3-gly" secondAttribute="bottom" constant="12" id="bxk-nH-DkR"/>
+                                                <constraint firstItem="7wo-fB-wha" firstAttribute="centerY" secondItem="L50-eX-hPs" secondAttribute="centerY" id="hgA-BN-XV2"/>
                                                 <constraint firstItem="Ra2-o3-gly" firstAttribute="firstBaseline" secondItem="U73-nD-mLx" secondAttribute="firstBaseline" id="ijX-B4-1tY"/>
+                                                <constraint firstItem="rCx-MF-ihi" firstAttribute="centerY" secondItem="L50-eX-hPs" secondAttribute="centerY" id="oBb-HM-xHG"/>
+                                                <constraint firstItem="7wo-fB-wha" firstAttribute="trailing" secondItem="U73-nD-mLx" secondAttribute="trailing" id="oOR-O7-woh"/>
+                                                <constraint firstItem="rCx-MF-ihi" firstAttribute="baseline" secondItem="7wo-fB-wha" secondAttribute="baseline" id="s5P-AI-yO5"/>
                                                 <constraint firstItem="Ra2-o3-gly" firstAttribute="leading" secondItem="Gm7-f6-5qw" secondAttribute="leadingMargin" id="wvi-m0-0SK"/>
                                                 <constraint firstItem="Ra2-o3-gly" firstAttribute="trailing" secondItem="L50-eX-hPs" secondAttribute="trailing" id="yD6-kb-Mp6"/>
                                             </constraints>
@@ -184,7 +206,8 @@
                                             <outlet property="itemBrandDisplay" destination="L50-eX-hPs" id="Yr8-cc-MEI"/>
                                             <outlet property="itemNameDisplay" destination="Ra2-o3-gly" id="en1-7i-Eyd"/>
                                             <outlet property="itemPriceDisplay" destination="U73-nD-mLx" id="1QF-8m-gaS"/>
-                                            <outlet property="itemQuantityDislay" destination="rCx-MF-ihi" id="GQq-jG-4oI"/>
+                                            <outlet property="itemQuantityDisplay" destination="rCx-MF-ihi" id="eZ0-3t-Ukf"/>
+                                            <outlet property="itemTaxDisplay" destination="7wo-fB-wha" id="z0V-FY-CTP"/>
                                             <segue destination="3CS-MV-dQt" kind="showDetail" identifier="EditItem" id="Sri-xg-2dP"/>
                                         </connections>
                                     </tableViewCell>
@@ -245,7 +268,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="9V6-Nj-yNd"/>
+                    <tabBarItem key="tabBarItem" title="Current Spendings" image="first" id="9V6-Nj-yNd"/>
                     <connections>
                         <outlet property="addItemButton" destination="TxX-55-Snq" id="8ta-cH-NvR"/>
                         <outlet property="amountTitle" destination="59m-Bo-Tdz" id="ux4-Xh-5hq"/>
@@ -736,7 +759,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="1Gi-0N-U3W" secondAttribute="trailing" constant="20" id="z99-OO-4Hk"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="zHP-sN-gVO"/>
+                    <tabBarItem key="tabBarItem" title="Settinngs" image="second" id="zHP-sN-gVO"/>
                     <connections>
                         <outlet property="budgetModeButton" destination="dC1-Ji-mq9" id="hRu-NM-25Y"/>
                         <outlet property="enterBudgetLabel" destination="nCh-UB-nQO" id="HGg-6B-4bB"/>
@@ -755,8 +778,10 @@
     <resources>
         <image name="addItemButton" width="722" height="612"/>
         <image name="deleteItemButton" width="722" height="614"/>
+        <image name="first" width="30" height="30"/>
         <image name="greenBackground" width="908" height="2224"/>
         <image name="greenbtn" width="237" height="67"/>
         <image name="orangebtn" width="237" height="67"/>
+        <image name="second" width="30" height="30"/>
     </resources>
 </document>
