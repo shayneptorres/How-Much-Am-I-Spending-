@@ -29,6 +29,7 @@ class EditItemViewController: UIViewController {
     var itemWasDeleted = false
     var itemPrice = Double()
     let formatter = NSNumberFormatter()
+    var itemThatWasChanged = Item()
     
     var defaults = NSUserDefaults.standardUserDefaults()
     
@@ -47,7 +48,7 @@ class EditItemViewController: UIViewController {
         itemStepper.value = item.quantity
         itemStepperValueDisplay.text = "\(itemStepper.value)"
         let tapRecognizer = UITapGestureRecognizer()
-        tapRecognizer.addTarget(self, action: "didTapView")
+        tapRecognizer.addTarget(self, action: #selector(EditItemViewController.didTapView))
         self.view.addGestureRecognizer(tapRecognizer)
         if !hasName {
             editItem.enabled = false
@@ -58,6 +59,7 @@ class EditItemViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         editItem.hidden = true
         cancel.hidden = true
+        deleteButton.hidden = true
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -67,9 +69,6 @@ class EditItemViewController: UIViewController {
     // Tap gesture handeler
     func didTapView(){
         self.view.endEditing(true)
-        
-        
-        
         
         if itemNameDisplay.text != "" {
             hasName = true
@@ -153,6 +152,7 @@ class EditItemViewController: UIViewController {
     
     // MARK: - Unwind Segue
     @IBAction func cancel(sender: UIButton) {
+        defaults.setValue("", forKey: "itemWasChanged")
         performSegueWithIdentifier("cancel", sender: self)
     }
     
@@ -176,10 +176,15 @@ class EditItemViewController: UIViewController {
             }
         }
         updateItem()
+        itemThatWasChanged = items[index]
+        let tempItemData = NSKeyedArchiver.archivedDataWithRootObject(itemThatWasChanged)
+        defaults.setValue(tempItemData, forKey: "itemThatWasChanged")
         items.removeAtIndex(index)
         items.insert(self.item, atIndex: index)
         items[index] = editedItem
         self.item.generateNewItemNo()
+        let itemWasChanged = "edited"
+        defaults.setValue(itemWasChanged, forKey: "itemWasChanged")
         let currentListData = NSKeyedArchiver.archivedDataWithRootObject(items)
         defaults.setObject(currentListData, forKey: "currentTripItems")
         NSNotificationCenter.defaultCenter().postNotificationName("reload", object: nil)
@@ -196,8 +201,13 @@ class EditItemViewController: UIViewController {
                 index = items.indexOf(i)!
             }
         }
-        let tempItem = items[index]
-        let tempItemData = NSKeyedArchiver.archivedDataWithRootObject(tempItem)
+//        let tempItem = items[index]
+//        let tempItemData = NSKeyedArchiver.archivedDataWithRootObject(tempItem)
+        
+        itemThatWasChanged = items[index]
+        let tempItemData = NSKeyedArchiver.archivedDataWithRootObject(itemThatWasChanged)
+        defaults.setValue(tempItemData, forKey: "itemThatWasChanged")
+        
         items.removeAtIndex(index)
         let currentListData = NSKeyedArchiver.archivedDataWithRootObject(items)
         defaults.setObject(currentListData, forKey: "currentTripItems")
@@ -205,7 +215,11 @@ class EditItemViewController: UIViewController {
         performSegueWithIdentifier("backToCurrentList", sender: self)
         itemWasDeleted = true
         let deleteDefaults = NSUserDefaults.standardUserDefaults()
-        deleteDefaults.setObject(tempItemData, forKey: "deletedItem")
+        let itemWasChanged = "deleted"
+        defaults.setValue(itemWasChanged, forKey: "itemWasChanged")
+        
+//        deleteDefaults.setObject(tempItemData, forKey: "deletedItem")
+        
         deleteDefaults.setBool(itemWasDeleted, forKey: "itemWasDeleted")
         
     }
@@ -270,9 +284,12 @@ class EditItemViewController: UIViewController {
     func beginSlideAnimations(){
         editItem.center.x -= view.bounds.width
         cancel.center.x += view.bounds.width
+        deleteButton.center.y += 300
         editItem.hidden = false
         cancel.hidden = false
+        deleteButton.hidden = false
         UIView.animateWithDuration(0.3, animations: { self.editItem.center.x += self.view.bounds.width })
         UIView.animateWithDuration(0.3, animations: { self.cancel.center.x -= self.view.bounds.width })
+        UIView.animateWithDuration(0.3, animations: {self.deleteButton.center.y -= 300})
     }
 }

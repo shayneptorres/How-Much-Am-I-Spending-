@@ -18,6 +18,7 @@ class NewItemEntryViewController: UIViewController {
     @IBOutlet weak var itemQuanityStepper: UIStepper!
     @IBOutlet weak var itemQuanityDisplay: UILabel!
     @IBOutlet weak var addItemButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     var hasName = false
     var hasPrice = false
@@ -31,9 +32,11 @@ class NewItemEntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addItemButton.hidden = true
+        cancelButton.hidden = true
         itemQuanityStepper.value = 1
         let tapRecognizer = UITapGestureRecognizer()
-        tapRecognizer.addTarget(self, action: "didTapView")
+        tapRecognizer.addTarget(self, action: #selector(NewItemEntryViewController.didTapView))
         self.view.addGestureRecognizer(tapRecognizer)
         if !hasName {
             addItemButton.enabled = false
@@ -41,7 +44,9 @@ class NewItemEntryViewController: UIViewController {
         formatter.numberStyle = .CurrencyStyle
     }
     
-    
+    override func viewDidAppear(animated: Bool) {
+        beginSlideAnimations()
+    }
     
     @IBAction func editingDidBegin(sender: UITextField) {
         if hasPrice {
@@ -123,9 +128,14 @@ class NewItemEntryViewController: UIViewController {
                     print("current Items list found")
                 }
                 items.insert(newItem, atIndex: 0)
+                let tempItemData = NSKeyedArchiver.archivedDataWithRootObject(newItem)
+                defaults.setValue(tempItemData, forKey: "itemThatWasChanged")
                 let currentListData = NSKeyedArchiver.archivedDataWithRootObject(items)
                 defaults.setObject(currentListData, forKey: "currentTripItems")
                 NSNotificationCenter.defaultCenter().postNotificationName("reload", object: nil)
+                //
+                let itemWasChanged = "added"
+                defaults.setValue(itemWasChanged, forKey: "itemWasChanged")
                 performSegueWithIdentifier("backToCurrentList", sender: self)
             }
         }
@@ -162,6 +172,16 @@ class NewItemEntryViewController: UIViewController {
     }
     
     @IBAction func cancel(sender: UIButton) {
+        defaults.setValue("", forKey: "itemWasChanged")
         performSegueWithIdentifier("cancel", sender: self)
+    }
+    
+    func beginSlideAnimations(){
+        addItemButton.center.x -= view.bounds.width
+        cancelButton.center.x += view.bounds.width
+        addItemButton.hidden = false
+        cancelButton.hidden = false
+        UIView.animateWithDuration(0.3, animations: {self.addItemButton.center.x += self.view.bounds.width})
+        UIView.animateWithDuration(0.3, animations: {self.cancelButton.center.x -= self.view.bounds.width})
     }
 }

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		B80355EE1CCEDE710098FD45 /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80355ED1CCEDE710098FD45 /* EditItemViewController.swift */; };
 		B81273F91CD1292F00BF2211 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81273F81CD1292F00BF2211 /* SettingsViewController.swift */; };
+		B81ADCA11CD7BC0A00741B0A /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ADCA01CD7BC0A00741B0A /* BarcodeScannerViewController.swift */; };
+		B81ADCA31CD7C14100741B0A /* DiscoveredBarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ADCA21CD7C14100741B0A /* DiscoveredBarCodeView.swift */; };
+		B81ADCA51CD7CCF600741B0A /* ScannedItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ADCA41CD7CCF600741B0A /* ScannedItemDetails.swift */; };
+		B81ADCA71CD7D2BF00741B0A /* ScannedItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ADCA61CD7D2BF00741B0A /* ScannedItemModel.swift */; };
 		B84F4E221CCCB1CF00A4CDC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */; };
 		B84F4E291CCCB1CF00A4CDC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E271CCCB1CF00A4CDC1 /* Main.storyboard */; };
 		B84F4E2B1CCCB1CF00A4CDC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */; };
@@ -41,6 +45,10 @@
 /* Begin PBXFileReference section */
 		B80355ED1CCEDE710098FD45 /* EditItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditItemViewController.swift; path = ../EditItemViewController.swift; sourceTree = "<group>"; };
 		B81273F81CD1292F00BF2211 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B81ADCA01CD7BC0A00741B0A /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarcodeScannerViewController.swift; path = ../BarcodeScannerViewController.swift; sourceTree = "<group>"; };
+		B81ADCA21CD7C14100741B0A /* DiscoveredBarCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoveredBarCodeView.swift; path = ../DiscoveredBarCodeView.swift; sourceTree = "<group>"; };
+		B81ADCA41CD7CCF600741B0A /* ScannedItemDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedItemDetails.swift; sourceTree = "<group>"; };
+		B81ADCA61CD7D2BF00741B0A /* ScannedItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedItemModel.swift; sourceTree = "<group>"; };
 		B84F4E1E1CCCB1CF00A4CDC1 /* How Much Am I Spending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "How Much Am I Spending.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B84F4E281CCCB1CF00A4CDC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +115,10 @@
 		B84F4E201CCCB1CF00A4CDC1 /* How Much Am I Spending */ = {
 			isa = PBXGroup;
 			children = (
+				B81ADCA21CD7C14100741B0A /* DiscoveredBarCodeView.swift */,
+				B81ADCA01CD7BC0A00741B0A /* BarcodeScannerViewController.swift */,
+				B81ADCA41CD7CCF600741B0A /* ScannedItemDetails.swift */,
+				B81ADCA61CD7D2BF00741B0A /* ScannedItemModel.swift */,
 				B84F4E271CCCB1CF00A4CDC1 /* Main.storyboard */,
 				B84F4E541CCCB2F000A4CDC1 /* Item.swift */,
 				B84F4E5A1CCDC99100A4CDC1 /* CurrentSpendingsViewController.swift */,
@@ -286,8 +298,12 @@
 				B80355EE1CCEDE710098FD45 /* EditItemViewController.swift in Sources */,
 				B81273F91CD1292F00BF2211 /* SettingsViewController.swift in Sources */,
 				B84F4E221CCCB1CF00A4CDC1 /* AppDelegate.swift in Sources */,
+				B81ADCA51CD7CCF600741B0A /* ScannedItemDetails.swift in Sources */,
 				B84F4E5B1CCDC99100A4CDC1 /* CurrentSpendingsViewController.swift in Sources */,
+				B81ADCA31CD7C14100741B0A /* DiscoveredBarCodeView.swift in Sources */,
 				B84F4E551CCCB2F000A4CDC1 /* Item.swift in Sources */,
+				B81ADCA71CD7D2BF00741B0A /* ScannedItemModel.swift in Sources */,
+				B81ADCA11CD7BC0A00741B0A /* BarcodeScannerViewController.swift in Sources */,
 				B85D423B1CCE8BDD0079CFA8 /* NewItemEntryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

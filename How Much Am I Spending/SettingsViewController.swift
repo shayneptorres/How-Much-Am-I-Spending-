@@ -36,7 +36,7 @@ class SettingsViewController: UIViewController {
         freeMode = false
         budgetMode = false
         let tapRecognizer = UITapGestureRecognizer()
-        tapRecognizer.addTarget(self, action: "didTapView")
+        tapRecognizer.addTarget(self, action: #selector(SettingsViewController.didTapView))
         self.view.addGestureRecognizer(tapRecognizer)
         formatter.numberStyle = .CurrencyStyle
     }

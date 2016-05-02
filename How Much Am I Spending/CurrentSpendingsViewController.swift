@@ -10,10 +10,12 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
     var totalPrice = 0.00
     var defaults = NSUserDefaults.standardUserDefaults()
     let formatter = NSNumberFormatter()
-    let CA_SALES_TAX = 0.0725
+    let CA_SALES_TAX = 0.08
     let cellReuseIdentifier = "cell"
     var color = UIColor(netHex:0x25FB79)
-    var showItemWasDeleted = false
+    var itemThatWasChanged = Item()
+    var itemWasChanged = String()
+    var showItemWasChanged = false
     var pause = NSTimer()
     var mode = String()
     var budget = Double()
@@ -28,20 +30,21 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var addItemButton: UIButton!
     @IBOutlet weak var clearAllButton: UIButton!
-    @IBOutlet weak var itemWasDeletedView: UILabel!
+    @IBOutlet weak var itemWasChangedView: UILabel!
     @IBOutlet weak var amountTitle: UILabel!
     
     
     override func viewDidLoad() {
         // If there is a current list, set it as the Item array
-        if defaults.objectForKey("currentTripItems") != nil {
-            let itemsList = defaults.objectForKey("currentTripItems") as! NSData
-            let encodedCurrentItemsData = NSKeyedUnarchiver.unarchiveObjectWithData(itemsList) as? [Item]
-            self.items = encodedCurrentItemsData!
-            print("current Items list found")
-        } else {
-            print("no current items list")
+        if defaults.valueForKey("firstTime") != nil {
+            if defaults.objectForKey("currentTripItems") != nil {
+                let itemsList = defaults.objectForKey("currentTripItems") as! NSData
+                let encodedCurrentItemsData = NSKeyedUnarchiver.unarchiveObjectWithData(itemsList) as? [Item]
+                self.items = encodedCurrentItemsData!
+            } else {
+            }
         }
+        
         
         // If there is a current list, but it is empty, set the default view
         checkCurrentList()
@@ -54,7 +57,7 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
         tableView.dataSource = self
         calculateTotalPrice()
         totalPiceDisplay.text = "\(formatter.stringFromNumber(totalPrice)!)"
-         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadTableData:", name: "reload", object: nil)
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CurrentSpendingsViewController.reloadTableData(_:)), name: "reload", object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -67,16 +70,12 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
             showFirstTimeUserAlert(self)
         }
         defaults.setValue(firstTime, forKey: "firstTime")
-        showItemWasDeleted = defaults.boolForKey("itemWasDeleted")
-        if showItemWasDeleted {
-            setShowItemWasDeletedAppearance()
-            let tempDeletedItemData = defaults.objectForKey("deletedItem") as! NSData
-            let tempDeletedItem = NSKeyedUnarchiver.unarchiveObjectWithData(tempDeletedItemData)
-            itemWasDeletedView.text = "'\(tempDeletedItem!.name)' was deleted"
-            itemWasDeletedView.center.x -= view.bounds.width
-            slideInItemWasDeletedView()
-            showItemWasDeleted = false
-            defaults.setBool(showItemWasDeleted, forKey: "itemWasDeleted")
+        checkItemWasChangedValue()
+        if showItemWasChanged {
+            setShowItemWasChangedAppearance()
+            itemWasChangedView.center.x -= view.bounds.width
+            slideInItemWasChangedView()
+            showItemWasChanged = false
         }
         totalPrice = 0
         calculateTotalPrice()
@@ -88,11 +87,53 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
         totalPiceDisplay.center.x -= view.bounds.width
     }
     
-    func setShowItemWasDeletedAppearance(){
-        itemWasDeletedView.backgroundColor = UIColor(netHex: 0xFB3125)
-        itemWasDeletedView.alpha = 0.85
-        itemWasDeletedView.layer.masksToBounds = true
-        itemWasDeletedView.layer.cornerRadius = 5
+    func checkItemWasChangedValue(){
+        if defaults.valueForKey("itemWasChanged") != nil {
+        var tempStr = defaults.valueForKey("itemWasChanged")! as! String
+        if tempStr == "added"
+            || tempStr == "edited"
+            || tempStr == "deleted"
+        {
+            itemWasChanged = defaults.valueForKey("itemWasChanged") as! String
+            let tempData = defaults.valueForKey("itemThatWasChanged") as! NSData
+            itemThatWasChanged = NSKeyedUnarchiver.unarchiveObjectWithData(tempData) as! Item
+            showItemWasChanged = true
+        } else {
+            itemWasChanged = "noChange"
+        }
+        tempStr = ""
+        defaults.setValue(tempStr, forKey: "itemWasChanged")
+        }
+    }
+    
+    // Settings for the itemWasChangedAlert
+    func setShowItemWasChangedAppearance(){
+        if itemWasChanged == "deleted" {
+            itemWasChangedView.backgroundColor = UIColor(netHex: 0xFB3125)
+            itemWasChangedView.alpha = 0.85
+            itemWasChangedView.layer.masksToBounds = true
+            itemWasChangedView.layer.cornerRadius = 5
+            itemWasChangedView.text = "'\(itemThatWasChanged.name)' was deleted"
+        } else if itemWasChanged == "added" {
+            itemWasChangedView.backgroundColor = UIColor(netHex: 0x25FB79)
+            itemWasChangedView.alpha = 0.85
+            itemWasChangedView.layer.masksToBounds = true
+            itemWasChangedView.layer.cornerRadius = 5
+            itemWasChangedView.text = "'\(itemThatWasChanged.name)' was added"
+        } else if itemWasChanged == "edited" {
+            itemWasChangedView.backgroundColor = UIColor(netHex: 0xF59D0C)
+            itemWasChangedView.alpha = 0.85
+            itemWasChangedView.layer.masksToBounds = true
+            itemWasChangedView.layer.cornerRadius = 5
+            itemWasChangedView.text = "'\(itemThatWasChanged.name)' was edited"
+        }
+        
+    }
+    
+    func setAmountTitleAppearance(){
+        amountTitle.backgroundColor = UIColor(netHex: 0xFFFFFF)
+        amountTitle.layer.masksToBounds = true
+        amountTitle.layer.cornerRadius = 5
     }
     
     func checkCurrentList(){
@@ -126,18 +167,13 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
         } else {
             amountTitle.text = "Money Remaining:"
             budget = defaults.doubleForKey("budget")
-            print("budget is set: \(budget)")
             moneyLeft = budget
             if items.isEmpty{
                 totalPiceDisplay.text = (formatter.stringFromNumber(budget)!)
-                print("Check 1: being set")
-                print("budget is set: \(budget)")
             } else {
                 for i in items {
                     moneyLeft -= ((i.price + (i.price * CA_SALES_TAX)) * i.quantity)
                 }
-                print("money left: \(moneyLeft)")
-                print("budget: \(budget)")
                 totalPrice = moneyLeft
             }
         }
@@ -146,28 +182,32 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
             self.totalPiceDisplay.center.x += self.view.bounds.width
             }, completion: {finished in self.checkForOverspending()})
     }
+
     
     // Animation Functions
-    func slideInItemWasDeletedView(){
-        itemWasDeletedView.hidden = false
+    func slideInItemWasChangedView(){
+        
+        itemWasChangedView.hidden = false
         UIView.animateWithDuration(0.3, animations: {
-            self.itemWasDeletedView.center.x += self.view.bounds.width
+            self.itemWasChangedView.center.x += self.view.bounds.width
             })
-            pause = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "slideOutItemWasDeletedView", userInfo: nil, repeats: false)
+            pause = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: #selector(CurrentSpendingsViewController.slideOutItemWasChangedView), userInfo: nil, repeats: false)
     }
     
-    func slideOutItemWasDeletedView(){
+    func slideOutItemWasChangedView(){
+        
         UIView.animateWithDuration(0.2, animations: {
-            self.itemWasDeletedView.center.x += self.view.bounds.width
-            }, completion: {finished in self.resetItemWasDeletedView();
-                self.itemWasDeletedView.hidden = true})
-        pause = NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: "resetItemWasDeletedView", userInfo: nil, repeats: false)
+            self.itemWasChangedView.center.x += self.view.bounds.width
+            }, completion: {finished in self.resetItemWasChangedView();
+                self.itemWasChangedView.hidden = true})
+        pause = NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: #selector(CurrentSpendingsViewController.resetItemWasChangedView), userInfo: nil, repeats: false)
     }
     
-    func resetItemWasDeletedView(){
+    func resetItemWasChangedView(){
         UIView.animateWithDuration(0.1, animations: {
-            self.itemWasDeletedView.center.x -= self.view.bounds.width
+            self.itemWasChangedView.center.x -= self.view.bounds.width
             }, completion: {finished in })
+        showItemWasChanged = false
     }
     
     func shakeTotalPriceLabel(){
@@ -216,7 +256,7 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
         }
     }
     
-    // MARK: - Reload Table View
+    // Reload Table View
     func reload() {
         let itemsList = defaults.objectForKey("currentTripItems") as! NSData
         let encodedCurrentItemsData = NSKeyedUnarchiver.unarchiveObjectWithData(itemsList) as? [Item]
@@ -247,10 +287,6 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
     
     // method to run when table view cell is tapped
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("You tapped cell number \(indexPath.row).")
-        print(self.items[indexPath.row].name)
-        print(self.items[indexPath.row].price)
-        print(self.items[indexPath.row].quantity)
     }
     
     // MARK: - Alerts
@@ -266,6 +302,7 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
         self.presentViewController(clearAllAlert, animated: true, completion: nil)
     }
     
+    // Welcome alert for first time users
     @IBAction func showFirstTimeUserAlert(sender: CurrentSpendingsViewController){
         let firstTimeAlert = UIAlertController(title: "Welcome!", message: "You are currently in FreeSpend Mode. If you would like to change to BudgetMode or if you have no idea what either is, go to the settings tab and learn about both.", preferredStyle: UIAlertControllerStyle.Alert)
         let dissmissAction = UIAlertAction(title: "Cool!", style: UIAlertActionStyle.Default) { (action) in}
@@ -282,8 +319,6 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
             totalPiceDisplay.text = "$0.00"
         } else {
             moneyLeft = budget
-            print(budget)
-            print("money Left: \(moneyLeft)")
             totalPiceDisplay.text = (formatter.stringFromNumber(budget)!)
             totalPiceDisplay.textColor = UIColor(netHex: 0xFFFFFF)
         }

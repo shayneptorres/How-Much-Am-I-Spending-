@@ -15,17 +15,12 @@ class ItemTableViewCell: UITableViewCell {
         }
     }
     let formatter = NSNumberFormatter()
-    let CA_SALES_TAX = 0.0725
-    
+    let CA_SALES_TAX = 0.075
     @IBOutlet weak var itemNameDisplay: UILabel!
-    
     @IBOutlet weak var itemBrandDisplay: UILabel!
-    
     @IBOutlet weak var itemPriceDisplay: UILabel!
-    
     @IBOutlet weak var itemQuantityDisplay: UILabel!
-    
-    @IBOutlet weak var itemTaxDisplay: UILabel!
+    @IBOutlet weak var indiviudalItemPriceDisplay: UILabel!
     
     
     func updateUI(){
@@ -36,15 +31,20 @@ class ItemTableViewCell: UITableViewCell {
         itemQuantityDisplay?.text = nil
         if let item = self.item{
             let itemTax = (item.price * CA_SALES_TAX)
-            itemTaxDisplay.text = "tax: \(formatter.stringFromNumber(itemTax)!)"
+            indiviudalItemPriceDisplay.text = "\(formatter.stringFromNumber(item.price)!) + tax: \(formatter.stringFromNumber(itemTax)!)"
             itemNameDisplay.text = item.name
             itemBrandDisplay.text = item.brand
-            itemPriceDisplay.text = "\(formatter.stringFromNumber(item.price)!)"
+            itemPriceDisplay.text = "\(formatter.stringFromNumber(calculateTotalItemPrice())!)"
             itemQuantityDisplay.text = "x\(item.quantity)"
             setPriceLabelApperance()
             setTaxLabelApperance()
             setQuantityLabelAppearance()
         }
+    }
+    
+    func calculateTotalItemPrice()->Double{
+        let totItemPrice = (item!.price + (item!.price * CA_SALES_TAX)) * item!.quantity
+        return totItemPrice
     }
     
     func setPriceLabelApperance(){
@@ -53,13 +53,13 @@ class ItemTableViewCell: UITableViewCell {
         itemPriceDisplay.layer.cornerRadius = 6
     }
     
+    
     func setTaxLabelApperance(){
-        itemTaxDisplay.layer.masksToBounds = true
-        itemTaxDisplay.layer.cornerRadius = 6
+       indiviudalItemPriceDisplay.layer.masksToBounds = true
+        indiviudalItemPriceDisplay.layer.cornerRadius = 6
     }
     
     func setQuantityLabelAppearance(){
-//        itemQuantityDisplay.backgroundColor = UIColor(netHex: 0xA83EFC)
         itemQuantityDisplay.layer.masksToBounds = true
         itemQuantityDisplay.layer.cornerRadius = 6
     }
