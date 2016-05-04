@@ -62,27 +62,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scanned Item Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utS-hE-re0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Scanned Item Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utS-hE-re0">
                                 <rect key="frame" x="0.0" y="20" width="600" height="105"/>
                                 <color key="backgroundColor" red="0.44029365854301639" green="1" blue="0.24214168697602145" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSA-nn-MXL">
+                                <rect key="frame" x="215" y="440" width="170" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="FIu-1q-XkB"/>
+                                    <constraint firstAttribute="height" constant="103" id="deA-jx-vNA"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="cancel:" destination="8Ez-OB-gce" eventType="touchUpInside" id="2Bb-M3-LUU"/>
+                                    <segue destination="Chd-N0-UpQ" kind="show" identifier="canc" id="heg-Mt-Pys"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="utS-hE-re0" secondAttribute="trailing" id="GE1-cz-Xug"/>
                             <constraint firstItem="utS-hE-re0" firstAttribute="top" secondItem="XvE-tl-1bJ" secondAttribute="bottom" id="NNa-yJ-I7p"/>
+                            <constraint firstItem="iSA-nn-MXL" firstAttribute="centerX" secondItem="utS-hE-re0" secondAttribute="centerX" id="YoS-RP-wl0"/>
                             <constraint firstItem="utS-hE-re0" firstAttribute="leading" secondItem="LMg-7I-Twj" secondAttribute="leading" id="agH-Xi-MKN"/>
                             <constraint firstItem="xSX-r3-8NB" firstAttribute="top" secondItem="utS-hE-re0" secondAttribute="bottom" constant="426" id="m7U-23-Y3b"/>
+                            <constraint firstItem="xSX-r3-8NB" firstAttribute="top" secondItem="iSA-nn-MXL" secondAttribute="bottom" constant="8" symbolic="YES" id="tpr-jN-bOj"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="scannedItemDetailsDisplay" destination="utS-hE-re0" id="aLZ-4M-PhK"/>
+                        <segue destination="eUw-wc-3d1" kind="unwind" unwindAction="cancel:" id="Qxj-XF-egm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Bu-X7-ArH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="eUw-wc-3d1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3014" y="-1220"/>
         </scene>
@@ -905,4 +921,7 @@
         <image name="orangebtn" width="237" height="67"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="heg-Mt-Pys"/>
+    </inferredMetricsTieBreakers>
 </document>

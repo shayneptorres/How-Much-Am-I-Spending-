@@ -15,10 +15,15 @@ class ScannedItemDetails: UIViewController {
     
     
     var itemData = String()
+    var itemModel = ScannedItemModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         scannedItemDetailsDisplay.text = itemData
+        itemModel.getItemData(itemData)
     }
-    
+
+    @IBAction func cancel(sender: UIButton) {
+        performSegueWithIdentifier("canc", sender: self)
+    }
     
 }
