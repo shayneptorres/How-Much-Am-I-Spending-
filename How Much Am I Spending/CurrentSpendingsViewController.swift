@@ -18,11 +18,14 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
     var showItemWasChanged = false
     var pause = NSTimer()
     var mode = String()
-    var budget = Double()
+    var budget = 0.0
     var overspending = false
-    var moneyLeft = Double()
     var shouldShakeAlert = false
     var firstTime = false
+    var spendModel = SpendingListModel()
+    var hasCurrentTaxObj = false
+    var currentTaxObj = TaxObj()
+    var currentTaxAmount: Double = 0.0
     
     // MARK: - Outlet Variables
     @IBOutlet weak var totalPiceDisplay: UILabel!
@@ -44,19 +47,16 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
             } else {
             }
         }
-        
-        
         // If there is a current list, but it is empty, set the default view
         checkCurrentList()
         super.viewDidLoad()
-        totalPiceDisplay.hidden = true
-        headBar.backgroundColor = color
-        formatter.numberStyle = .CurrencyStyle
+        setAppearances()
         self.tableView.registerClass(ItemTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
+        currentTaxAmount = spendModel.setCurrentTaxObject()
+//        setCurrentTaxObject()
         calculateTotalPrice()
-        totalPiceDisplay.text = "\(formatter.stringFromNumber(totalPrice)!)"
          NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CurrentSpendingsViewController.reloadTableData(_:)), name: "reload", object: nil)
     }
     
@@ -70,8 +70,11 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
             showFirstTimeUserAlert(self)
         }
         defaults.setValue(firstTime, forKey: "firstTime")
+
         checkItemWasChangedValue()
+        print(showItemWasChanged)
         if showItemWasChanged {
+            print("this stuff is happening")
             setShowItemWasChangedAppearance()
             itemWasChangedView.center.x -= view.bounds.width
             slideInItemWasChangedView()
@@ -79,12 +82,26 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
         }
         totalPrice = 0
         calculateTotalPrice()
-        if mode == "freeMode" {
-            totalPiceDisplay.text = "\(formatter.stringFromNumber(totalPrice)!)"
-        } else {
-            totalPiceDisplay.text = "\(formatter.stringFromNumber(moneyLeft)!)"
-        }
         totalPiceDisplay.center.x -= view.bounds.width
+    }
+    
+    func setAppearances(){
+        totalPiceDisplay.hidden = true
+        headBar.backgroundColor = color
+        formatter.numberStyle = .CurrencyStyle
+    }
+    
+    func setCurrentTaxObject(){
+        if defaults.objectForKey("currentTaxObj") != nil{
+            hasCurrentTaxObj = true
+            
+            let tempData = defaults.objectForKey("currentTaxObj") as! NSData
+            let encodedData = NSKeyedUnarchiver.unarchiveObjectWithData(tempData)
+            currentTaxObj = encodedData as! TaxObj
+            currentTaxAmount = currentTaxObj.taxRate
+        } else {
+            defaults.setDouble(CA_SALES_TAX, forKey: "currentTaxAmount")
+        }
     }
     
     func checkItemWasChangedValue(){
@@ -108,26 +125,12 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
     
     // Settings for the itemWasChangedAlert
     func setShowItemWasChangedAppearance(){
-        if itemWasChanged == "deleted" {
-            itemWasChangedView.backgroundColor = UIColor(netHex: 0xFB3125)
-            itemWasChangedView.alpha = 0.85
-            itemWasChangedView.layer.masksToBounds = true
-            itemWasChangedView.layer.cornerRadius = 5
-            itemWasChangedView.text = "'\(itemThatWasChanged.name)' was deleted"
-        } else if itemWasChanged == "added" {
-            itemWasChangedView.backgroundColor = UIColor(netHex: 0x25FB79)
-            itemWasChangedView.alpha = 0.85
-            itemWasChangedView.layer.masksToBounds = true
-            itemWasChangedView.layer.cornerRadius = 5
-            itemWasChangedView.text = "'\(itemThatWasChanged.name)' was added"
-        } else if itemWasChanged == "edited" {
-            itemWasChangedView.backgroundColor = UIColor(netHex: 0xF59D0C)
-            itemWasChangedView.alpha = 0.85
-            itemWasChangedView.layer.masksToBounds = true
-            itemWasChangedView.layer.cornerRadius = 5
-            itemWasChangedView.text = "'\(itemThatWasChanged.name)' was edited"
-        }
-        
+        let appearanceObj = spendModel.setChangedItemAppearance(itemWasChanged, itemThatChanged: itemThatWasChanged.name)
+        itemWasChangedView.backgroundColor = UIColor(netHex: appearanceObj.hex)
+        itemWasChangedView.alpha = CGFloat(appearanceObj.alpha)
+        itemWasChangedView.layer.masksToBounds = appearanceObj.bounds
+        itemWasChangedView.layer.cornerRadius = CGFloat(appearanceObj.cornRad)
+        itemWasChangedView.text = appearanceObj.text
     }
     
     func setAmountTitleAppearance(){
@@ -156,27 +159,11 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
             mode = "freeMode"
         }
         
-        if mode == "freeMode" {
-            amountTitle.text = "Total Spendings:"
-            if items.isEmpty{
-            } else {
-                for i in items{
-                    totalPrice += (i.price + (i.price * CA_SALES_TAX)) * i.quantity
-                }
-            }
-        } else {
-            amountTitle.text = "Money Remaining:"
-            budget = defaults.doubleForKey("budget")
-            moneyLeft = budget
-            if items.isEmpty{
-                totalPiceDisplay.text = (formatter.stringFromNumber(budget)!)
-            } else {
-                for i in items {
-                    moneyLeft -= ((i.price + (i.price * CA_SALES_TAX)) * i.quantity)
-                }
-                totalPrice = moneyLeft
-            }
-        }
+        budget = defaults.doubleForKey("budget")
+        amountTitle.text = spendModel.setTotalPrice(items, mode: mode).title
+        totalPrice = spendModel.setTotalPrice(items, mode: mode).price
+        totalPiceDisplay.text = (formatter.stringFromNumber(totalPrice)!)
+        
         // slide in animaition
         UIView.animateWithDuration(0.3, animations: {
             self.totalPiceDisplay.center.x += self.view.bounds.width
@@ -185,17 +172,23 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
 
     
     // Animation Functions
+    
+    func slideOutTotalPriceDisplay(){
+        UIView.animateWithDuration(0.3, animations: {
+            self.totalPiceDisplay.center.x -= self.view.bounds.width
+            }, completion: {finished in})
+    }
+    
     func slideInItemWasChangedView(){
         
         itemWasChangedView.hidden = false
         UIView.animateWithDuration(0.3, animations: {
             self.itemWasChangedView.center.x += self.view.bounds.width
             })
-            pause = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: #selector(CurrentSpendingsViewController.slideOutItemWasChangedView), userInfo: nil, repeats: false)
+        pause = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: #selector(CurrentSpendingsViewController.slideOutItemWasChangedView), userInfo: nil, repeats: false)
     }
     
     func slideOutItemWasChangedView(){
-        
         UIView.animateWithDuration(0.2, animations: {
             self.itemWasChangedView.center.x += self.view.bounds.width
             }, completion: {finished in self.resetItemWasChangedView();
@@ -223,11 +216,11 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
     func checkForOverspending(){
         if mode == "budgetMode" {
             shouldShakeAlert = false
-            if moneyLeft <= 5 {
+            if totalPrice <= 5 {
                 totalPiceDisplay.textColor = UIColor(netHex: 0xC88009)
                 shouldShakeAlert = true
             }
-            if moneyLeft <= 0 {
+            if totalPrice <= 0 {
                 totalPiceDisplay.textColor = UIColor(netHex: 0xFB3125)
                 overspending = true
                 shouldShakeAlert = true
@@ -253,6 +246,22 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
                 }
             default: break
             }
+        }
+    }
+    
+    // Swipe to delete table view cell
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            items.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            let currentListData = NSKeyedArchiver.archivedDataWithRootObject(items)
+            defaults.setObject(currentListData, forKey: "currentTripItems")
+            UIView.animateWithDuration(0.3, animations: {
+                self.totalPiceDisplay.center.x -= self.view.bounds.width
+                }, completion: {finished in self.viewDidLoad()})
+//            pause = NSTimer.scheduledTimerWithTimeInterval(0.75, target: self, selector: #selector(CurrentSpendingsViewController.calculateTotalPrice), userInfo: nil, repeats: false)
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
     
@@ -315,13 +324,8 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
         let currentListData = NSKeyedArchiver.archivedDataWithRootObject(items)
         defaults.setObject(currentListData, forKey: "currentTripItems")
         checkCurrentList()
-        if mode == "freeMode" {
-            totalPiceDisplay.text = "$0.00"
-        } else {
-            moneyLeft = budget
-            totalPiceDisplay.text = (formatter.stringFromNumber(budget)!)
-            totalPiceDisplay.textColor = UIColor(netHex: 0xFFFFFF)
-        }
+        slideOutTotalPriceDisplay()
+        calculateTotalPrice()
     }
     // MARK: - Unwind Segues
     @IBAction func saveCurrentItem(segue:UIStoryboardSegue){}

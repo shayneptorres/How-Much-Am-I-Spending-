@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController{
     
     // MARK: - Outlet Variables
     @IBOutlet weak var freeSpendButton: UIButton!
@@ -16,6 +16,13 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var setBudgetButton: UIButton!
     @IBOutlet weak var enterBudgetLabel: UILabel!
     @IBOutlet weak var enterBudgetTextField: UITextField!
+    @IBOutlet weak var selectStateButton: UIButton!
+    
+    
+    // MARK: - Special Variables
+    var defaults = NSUserDefaults.standardUserDefaults()
+    let formatter = NSNumberFormatter()
+    let tax = StateTax()
     
     // Variables
     var freeMode = false
@@ -26,13 +33,21 @@ class SettingsViewController: UIViewController {
     var alreadyFormatted = false
     var labelsHaveAnimated = false
     var mode = String()
-    
-    // MARK: - Special Variables
-    var defaults = NSUserDefaults.standardUserDefaults()
-    let formatter = NSNumberFormatter()
+    var state = String()
+    var pickerDataSource = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.stateScroller.dataSource = self;
+//        self.stateScroller.delegate = self;
+        
+        
+//        var itemAtDefaultPosition: String?  //Set through another ViewController
+//        var defaultRowIndex = find(items,itemAtDefaultPosition!)
+//        if(defaultRowIndex == nil) { defaultRowIndex = 0 }
+//        stateScroller.selectRow(defaultRowIndex!, inComponent: 0, animated: false)
+        
         freeMode = false
         budgetMode = false
         let tapRecognizer = UITapGestureRecognizer()
@@ -48,6 +63,11 @@ class SettingsViewController: UIViewController {
         enterBudgetLabel.center.x -= view.bounds.width
         enterBudgetTextField.center.x += view.bounds.width
         setBudgetButton.center.y += 200
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        defaults.setValue(state, forKey: "state")
     }
     
     // MARK: - Button Handelers
@@ -184,4 +204,6 @@ class SettingsViewController: UIViewController {
     func didTapView(){
         self.view.endEditing(true)
     }
+    
+    @IBAction func cancelToSettings(segue:UIStoryboardSegue){}
 }

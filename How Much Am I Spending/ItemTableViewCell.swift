@@ -16,6 +16,9 @@ class ItemTableViewCell: UITableViewCell {
     }
     let formatter = NSNumberFormatter()
     let CA_SALES_TAX = 0.075
+    var currentTaxObj = TaxObj()
+    var currentTaxAmount = Double()
+    var spendMod = SpendingListModel()
     @IBOutlet weak var itemNameDisplay: UILabel!
     @IBOutlet weak var itemBrandDisplay: UILabel!
     @IBOutlet weak var itemPriceDisplay: UILabel!
@@ -25,12 +28,13 @@ class ItemTableViewCell: UITableViewCell {
     
     func updateUI(){
         formatter.numberStyle = .CurrencyStyle
+        currentTaxAmount = spendMod.setCurrentTaxObject()
         itemNameDisplay?.text = nil
         itemBrandDisplay?.text = nil
         itemPriceDisplay?.text = nil
         itemQuantityDisplay?.text = nil
         if let item = self.item{
-            let itemTax = (item.price * CA_SALES_TAX)
+            let itemTax = (item.price * currentTaxAmount)
             indiviudalItemPriceDisplay.text = "\(formatter.stringFromNumber(item.price)!) + tax: \(formatter.stringFromNumber(itemTax)!)"
             itemNameDisplay.text = item.name
             itemBrandDisplay.text = item.brand
@@ -40,10 +44,11 @@ class ItemTableViewCell: UITableViewCell {
             setTaxLabelApperance()
             setQuantityLabelAppearance()
         }
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ItemTableViewCell.updateUI), name: "updateUI", object: nil)
     }
     
     func calculateTotalItemPrice()->Double{
-        let totItemPrice = (item!.price + (item!.price * CA_SALES_TAX)) * item!.quantity
+        let totItemPrice = (item!.price + (item!.price * currentTaxAmount)) * item!.quantity
         return totItemPrice
     }
     
