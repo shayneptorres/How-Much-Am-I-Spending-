@@ -778,8 +778,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Selected State" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAk-PG-oms">
-                                <rect key="frame" x="114" y="180" width="372" height="114"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your state has been set" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAk-PG-oms">
+                                <rect key="frame" x="114" y="194" width="372" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="372" id="CLn-jB-oKV"/>
+                                    <constraint firstAttribute="height" constant="114" id="Iwv-Cg-LjT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -789,6 +793,7 @@
                         <constraints>
                             <constraint firstItem="gry-lg-k9q" firstAttribute="top" secondItem="EAk-PG-oms" secondAttribute="bottom" constant="44" id="2E5-hw-tJU"/>
                             <constraint firstItem="kIB-Mr-zBf" firstAttribute="centerX" secondItem="gry-lg-k9q" secondAttribute="centerX" id="4P6-bw-Y18"/>
+                            <constraint firstItem="gry-lg-k9q" firstAttribute="top" secondItem="EAk-PG-oms" secondAttribute="bottom" constant="30" id="6st-ze-PxI"/>
                             <constraint firstItem="gry-lg-k9q" firstAttribute="leading" secondItem="uES-NO-Lsy" secondAttribute="leadingMargin" constant="20" id="AIx-n6-z8S"/>
                             <constraint firstAttribute="trailing" secondItem="DJ2-x5-NvP" secondAttribute="trailing" id="AlP-y0-R7S"/>
                             <constraint firstItem="gry-lg-k9q" firstAttribute="leading" secondItem="6kf-3q-Etg" secondAttribute="leading" id="Aya-gZ-l9n"/>
@@ -800,6 +805,7 @@
                             <constraint firstItem="3dV-hP-ovc" firstAttribute="top" secondItem="DJ2-x5-NvP" secondAttribute="bottom" constant="49" id="KFY-pi-FfZ"/>
                             <constraint firstItem="gqS-La-ssH" firstAttribute="top" secondItem="O7d-K3-XbJ" secondAttribute="bottom" constant="8" symbolic="YES" id="MFM-6G-0ff"/>
                             <constraint firstItem="3dV-hP-ovc" firstAttribute="top" secondItem="6kf-3q-Etg" secondAttribute="bottom" constant="71" id="Mzl-Cl-xsf"/>
+                            <constraint firstItem="EAk-PG-oms" firstAttribute="centerX" secondItem="gry-lg-k9q" secondAttribute="centerX" id="PPx-0s-BrD"/>
                             <constraint firstItem="EAk-PG-oms" firstAttribute="leading" secondItem="uES-NO-Lsy" secondAttribute="leadingMargin" constant="94" id="RVH-v8-CtD"/>
                             <constraint firstItem="gry-lg-k9q" firstAttribute="trailing" secondItem="6kf-3q-Etg" secondAttribute="trailing" id="SFy-Ze-cPi"/>
                             <constraint firstItem="6kf-3q-Etg" firstAttribute="top" secondItem="gry-lg-k9q" secondAttribute="bottom" constant="8" symbolic="YES" id="XNx-UH-J5V"/>
@@ -813,7 +819,10 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="B2A-eX-uxG"/>
                                 <exclude reference="DU8-T7-lq2"/>
+                                <exclude reference="RVH-v8-CtD"/>
+                                <exclude reference="2E5-hw-tJU"/>
                             </mask>
                         </variation>
                     </view>

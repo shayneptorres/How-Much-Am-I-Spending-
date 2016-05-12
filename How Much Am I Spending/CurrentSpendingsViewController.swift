@@ -57,7 +57,7 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
         currentTaxAmount = spendModel.setCurrentTaxObject()
 //        setCurrentTaxObject()
         calculateTotalPrice()
-         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CurrentSpendingsViewController.reloadTableData(_:)), name: "reload", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CurrentSpendingsViewController.reloadTableData(_:)), name: "reload", object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -72,7 +72,6 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
         defaults.setValue(firstTime, forKey: "firstTime")
 
         checkItemWasChangedValue()
-        print(showItemWasChanged)
         if showItemWasChanged {
             print("this stuff is happening")
             setShowItemWasChangedAppearance()

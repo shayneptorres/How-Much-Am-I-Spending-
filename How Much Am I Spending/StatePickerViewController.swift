@@ -31,7 +31,6 @@ class StatePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
         super.viewDidLoad()
         self.statePicker.dataSource = self;
         self.statePicker.delegate = self
-
         if def.objectForKey("currentTaxObj") != nil{
             let tempData = def.objectForKey("currentTaxObj") as! NSData
             let encodedData = NSKeyedUnarchiver.unarchiveObjectWithData(tempData) as? TaxObj
@@ -41,9 +40,17 @@ class StatePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
             statePicker.selectRow(defaultRowIndex!, inComponent: 0, animated: false)
         }
         }
-
+    
     func setViewOffSets(){
         didSelectStateView.center.x += self.view.bounds.width
+    }
+    
+    func hideDidSelectSateLabel(){
+        didSelectStateView.hidden = true
+    }
+    
+    func unhideDidSelectSateLabel(){
+        didSelectStateView.hidden = false
     }
     
     func slidePickerLeft(){
@@ -52,8 +59,7 @@ class StatePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     func slidePickerRight(){
-        UIView.animateWithDuration(0.2, animations: {self.statePicker.center.x += self.view.bounds.width})
-        didSetStateIsAnimating = false
+        UIView.animateWithDuration(0.2, animations: {self.statePicker.center.x += self.view.bounds.width}, completion: { finished in self.didSetStateIsAnimating = false})
     }
     
     func slideDidSelectStateViewLeft(){
@@ -64,7 +70,9 @@ class StatePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     func slideDidSelectStateViewRight(){
-         UIView.animateWithDuration(0.3, animations: { self.didSelectStateView.center.x += self.view.bounds.width})
+        UIView.animateWithDuration(0.3, animations: { self.didSelectStateView.center.x += self.view.bounds.width}, completion: {finished in self.hideDidSelectSateLabel()})
+        self.didSelectStateView.center.x -= self.view.bounds.width
+        hideDidSelectSateLabel()
     }
     
     func setDidSelectStateAppearance(){
@@ -77,6 +85,8 @@ class StatePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     
     @IBAction func selectState(sender: UIButton) {
+        self.didSelectStateView.center.x += self.view.bounds.width
+        
         print(stateTaxDict[state]!)
         let taxOb = TaxObj(st: state, tr: stateTaxDict[state]!)
         let tempData = NSKeyedArchiver.archivedDataWithRootObject(taxOb)
@@ -84,9 +94,7 @@ class StatePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
         NSNotificationCenter.defaultCenter().postNotificationName("updateUI", object: nil)
         if didSetStateIsAnimating == false {
             slidePickerLeft()
-            print(didSelectStateView.hidden)
             slideDidSelectStateViewLeft()
-            
         }
     }
     
