@@ -85,14 +85,13 @@ class StatePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     
     @IBAction func selectState(sender: UIButton) {
-        self.didSelectStateView.center.x += self.view.bounds.width
-        
         print(stateTaxDict[state]!)
         let taxOb = TaxObj(st: state, tr: stateTaxDict[state]!)
         let tempData = NSKeyedArchiver.archivedDataWithRootObject(taxOb)
         def.setValue(tempData, forKey: "currentTaxObj")
         NSNotificationCenter.defaultCenter().postNotificationName("updateUI", object: nil)
         if didSetStateIsAnimating == false {
+            self.didSelectStateView.center.x += self.view.bounds.width
             slidePickerLeft()
             slideDidSelectStateViewLeft()
         }

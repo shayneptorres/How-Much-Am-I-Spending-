@@ -19,6 +19,7 @@ class SettingsViewController: UIViewController{
     @IBOutlet weak var selectStateButton: UIButton!
     
     
+    
     // MARK: - Special Variables
     var defaults = NSUserDefaults.standardUserDefaults()
     let formatter = NSNumberFormatter()
@@ -39,15 +40,6 @@ class SettingsViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.stateScroller.dataSource = self;
-//        self.stateScroller.delegate = self;
-        
-        
-//        var itemAtDefaultPosition: String?  //Set through another ViewController
-//        var defaultRowIndex = find(items,itemAtDefaultPosition!)
-//        if(defaultRowIndex == nil) { defaultRowIndex = 0 }
-//        stateScroller.selectRow(defaultRowIndex!, inComponent: 0, animated: false)
-        
         freeMode = false
         budgetMode = false
         let tapRecognizer = UITapGestureRecognizer()
@@ -55,6 +47,7 @@ class SettingsViewController: UIViewController{
         self.view.addGestureRecognizer(tapRecognizer)
         formatter.numberStyle = .CurrencyStyle
     }
+    
     
     override func viewDidAppear(animated: Bool) {
         freeSpendButton.hidden = false
@@ -206,4 +199,6 @@ class SettingsViewController: UIViewController{
     }
     
     @IBAction func cancelToSettings(segue:UIStoryboardSegue){}
+    
+    @IBAction func cancelToSettingsFromTaxInfo(segue:UIStoryboardSegue){}
 }

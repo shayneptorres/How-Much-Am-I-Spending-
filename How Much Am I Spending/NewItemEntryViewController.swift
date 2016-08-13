@@ -19,6 +19,8 @@ class NewItemEntryViewController: UIViewController {
     @IBOutlet weak var itemQuanityDisplay: UILabel!
     @IBOutlet weak var addItemButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var taxedOrNotControl: UISegmentedControl!
+    
     
     var hasName = false
     var hasPrice = false
@@ -26,9 +28,11 @@ class NewItemEntryViewController: UIViewController {
     var priceIsViable = false
     let formatter = NSNumberFormatter()
     var itemPrice = Double()
+    var itemMod = ItemModel()
     
     var defaults = NSUserDefaults.standardUserDefaults()
     var items = [Item]()
+    let newItem = Item()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +102,7 @@ class NewItemEntryViewController: UIViewController {
     
     // Adds the new item to the current list
     @IBAction func addItem(sender: UIButton) {
-        let newItem = Item()
+
         if itemNameEntry.text == "" {
             newItem.name = "Unnamed Item"
         } else {
@@ -117,9 +121,10 @@ class NewItemEntryViewController: UIViewController {
             itemBrandEntry.text = "0"
         } else {
             if priceIsViable {
+                
                 newItem.price = itemPrice
                 newItem.quantity = itemQuanityStepper.value
-                
+                // Try to insert Item Model Here
                 if defaults.objectForKey("currentTripItems") != nil {
                         // If there is a current trip list, add this item to it
                     let itemsList = defaults.objectForKey("currentTripItems") as! NSData
@@ -127,6 +132,7 @@ class NewItemEntryViewController: UIViewController {
                     self.items = encodedCurrentItemsData!
                     print("current Items list found")
                 }
+                
                 items.insert(newItem, atIndex: 0)
                 let tempItemData = NSKeyedArchiver.archivedDataWithRootObject(newItem)
                 defaults.setValue(tempItemData, forKey: "itemThatWasChanged")
@@ -140,6 +146,23 @@ class NewItemEntryViewController: UIViewController {
             }
         }
     }
+    
+    
+    @IBAction func setTaxedValue(sender: UISegmentedControl) {
+        if taxedOrNotControl.selectedSegmentIndex == 0 {
+            newItem.taxed = true
+        } else if taxedOrNotControl.selectedSegmentIndex == 1 {
+            newItem.taxed = false
+        } else if taxedOrNotControl.selectedSegmentIndex == 2 {
+//        defaults.setValue("adding", forKey: 
+//        let notSureAlert = UIAlertController(title: "Not Sure?", message: "Not sure what is taxed or what isn't?", preferredStyle: UIAlertControllerStyle.Alert)
+//        let dissmissAction = UIAlertAction(title: "Got it!", style: UIAlertActionStyle.Default) { (action) in}
+//            notSureAlert.addAction(dissmissAction)
+//            // Add the alert functions here
+//        self.presentViewController(notSureAlert, animated: true, completion: nil)
+        }
+    }
+    
     
     func checkForValidPriceEntry(){
         var decimalCount = 0

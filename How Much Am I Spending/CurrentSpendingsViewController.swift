@@ -12,7 +12,7 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
     let formatter = NSNumberFormatter()
     let CA_SALES_TAX = 0.08
     let cellReuseIdentifier = "cell"
-    var color = UIColor(netHex:0x25FB79)
+    var color = UIColor( netHex:0x25FB79)
     var itemThatWasChanged = Item()
     var itemWasChanged = String()
     var showItemWasChanged = false
@@ -37,6 +37,8 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var amountTitle: UILabel!
     
     
+    
+    
     override func viewDidLoad() {
         // If there is a current list, set it as the Item array
         if defaults.valueForKey("firstTime") != nil {
@@ -47,6 +49,7 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
             } else {
             }
         }
+        
         // If there is a current list, but it is empty, set the default view
         checkCurrentList()
         super.viewDidLoad()
@@ -73,7 +76,6 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
 
         checkItemWasChangedValue()
         if showItemWasChanged {
-            print("this stuff is happening")
             setShowItemWasChangedAppearance()
             itemWasChangedView.center.x -= view.bounds.width
             slideInItemWasChangedView()
@@ -86,7 +88,7 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
     
     func setAppearances(){
         totalPiceDisplay.hidden = true
-        headBar.backgroundColor = color
+//        headBar.backgroundColor = color
         formatter.numberStyle = .CurrencyStyle
     }
     
@@ -273,7 +275,7 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
         
     }
     
-    func reloadTableData(notification: NSNotification) {
+    func reloadTableData(s: NSNotification) {
         reload()
     }
     
@@ -294,8 +296,7 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     // method to run when table view cell is tapped
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    }
+ 
     
     // MARK: - Alerts
     @IBAction func ShowClearAllAlert(sender: UIButton) {

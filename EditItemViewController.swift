@@ -24,6 +24,9 @@ class EditItemViewController: UIViewController {
     @IBOutlet weak var itemStepper: UIStepper!
     @IBOutlet weak var itemStepperValueDisplay: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var taxOrNotTaxedControl: UISegmentedControl!
+    
+    var taxed = true
     var priceIsViable = false
     var alreadyFormatted = false
     var itemWasDeleted = false
@@ -201,8 +204,6 @@ class EditItemViewController: UIViewController {
                 index = items.indexOf(i)!
             }
         }
-//        let tempItem = items[index]
-//        let tempItemData = NSKeyedArchiver.archivedDataWithRootObject(tempItem)
         
         itemThatWasChanged = items[index]
         let tempItemData = NSKeyedArchiver.archivedDataWithRootObject(itemThatWasChanged)
@@ -222,6 +223,20 @@ class EditItemViewController: UIViewController {
         
         deleteDefaults.setBool(itemWasDeleted, forKey: "itemWasDeleted")
         
+    }
+    
+    
+    @IBAction func setTaxorNoTax(sender: UISegmentedControl) {
+        if taxOrNotTaxedControl.selectedSegmentIndex == 0 {
+            taxed = true
+        } else if taxOrNotTaxedControl.selectedSegmentIndex == 1 {
+            taxed = false
+        } else if taxOrNotTaxedControl.selectedSegmentIndex == 2 {
+            let notSureAlert = UIAlertController(title: "Not Sure?", message: "Not sure what is taxed or what isn't? Only certain items are taxed.", preferredStyle: UIAlertControllerStyle.Alert)
+            let dissmissAction = UIAlertAction(title: "Got it!", style: UIAlertActionStyle.Default) { (action) in}
+            notSureAlert.addAction(dissmissAction)
+            self.presentViewController(notSureAlert, animated: true, completion: nil)
+        }
     }
     
     // Set the edited items values
@@ -247,6 +262,7 @@ class EditItemViewController: UIViewController {
             }
         }
         editedItem.quantity = itemStepper.value
+        editedItem.taxed = taxed
     }
     
     // MARK: -Error Checking

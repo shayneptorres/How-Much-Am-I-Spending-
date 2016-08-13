@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		00CF6AF44644D9B3A2CE53AF /* Pods_How_Much_Am_I_Spending.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1D02FA0F47D8FA1717175F /* Pods_How_Much_Am_I_Spending.framework */; };
+		B80002651D1902430095354D /* ShoppingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80002641D1902430095354D /* ShoppingListCell.swift */; };
+		B80002671D19090F0095354D /* NewShoppingListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80002661D19090F0095354D /* NewShoppingListItem.swift */; };
+		B80002691D19914D0095354D /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80002681D19914D0095354D /* ItemModel.swift */; };
 		B80355EE1CCEDE710098FD45 /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80355ED1CCEDE710098FD45 /* EditItemViewController.swift */; };
 		B81273F91CD1292F00BF2211 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81273F81CD1292F00BF2211 /* SettingsViewController.swift */; };
 		B81ADCA11CD7BC0A00741B0A /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ADCA01CD7BC0A00741B0A /* BarcodeScannerViewController.swift */; };
@@ -15,6 +18,8 @@
 		B81ADCA51CD7CCF600741B0A /* ScannedItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ADCA41CD7CCF600741B0A /* ScannedItemDetails.swift */; };
 		B81ADCA71CD7D2BF00741B0A /* ScannedItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ADCA61CD7D2BF00741B0A /* ScannedItemModel.swift */; };
 		B82577471CDD6CA40091A3EB /* SpendingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82577461CDD6CA40091A3EB /* SpendingListModel.swift */; };
+		B827D6541D18F73500E03E3D /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827D6531D18F73500E03E3D /* ShoppingListViewController.swift */; };
+		B827D6571D18FAA900E03E3D /* Geomanist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B827D6561D18FAA900E03E3D /* Geomanist-Regular.otf */; };
 		B84F4E221CCCB1CF00A4CDC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */; };
 		B84F4E291CCCB1CF00A4CDC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E271CCCB1CF00A4CDC1 /* Main.storyboard */; };
 		B84F4E2B1CCCB1CF00A4CDC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */; };
@@ -26,8 +31,14 @@
 		B84F4E5B1CCDC99100A4CDC1 /* CurrentSpendingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E5A1CCDC99100A4CDC1 /* CurrentSpendingsViewController.swift */; };
 		B85D423B1CCE8BDD0079CFA8 /* NewItemEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D423A1CCE8BDD0079CFA8 /* NewItemEntryViewController.swift */; };
 		B875ED581CDC269F00B2A51F /* StateTax.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875ED571CDC269F00B2A51F /* StateTax.swift */; };
+		B886533C1CE51A9F0010B31C /* TaxInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B886533B1CE51A9F0010B31C /* TaxInfoViewController.swift */; };
 		B8C21C911CDEDF6E00FC16E5 /* StatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C21C901CDEDF6E00FC16E5 /* StatePickerViewController.swift */; };
 		B8C21C931CE04A5200FC16E5 /* TaxObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C21C921CE04A5200FC16E5 /* TaxObj.swift */; };
+		B8E504FB1D4D9A5A00D39060 /* HMAISKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E504FA1D4D9A5A00D39060 /* HMAISKit.swift */; };
+		B8E505001D4DA0B900D39060 /* ShoppingListTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E504FF1D4DA0B900D39060 /* ShoppingListTabBarItem.swift */; };
+		B8E505021D4DA1D200D39060 /* CurrentSpendingsTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E505011D4DA1D200D39060 /* CurrentSpendingsTabBarItem.swift */; };
+		B8E505041D4DDEAD00D39060 /* SettingsTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E505031D4DDEAD00D39060 /* SettingsTabBarItem.swift */; };
+		B8E70D741D1A0705005F6E96 /* EditShoppingItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E70D731D1A0705005F6E96 /* EditShoppingItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +61,9 @@
 /* Begin PBXFileReference section */
 		3E8859837C8275144F32415A /* Pods-How Much Am I Spending.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I Spending.release.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I Spending/Pods-How Much Am I Spending.release.xcconfig"; sourceTree = "<group>"; };
 		4E1D02FA0F47D8FA1717175F /* Pods_How_Much_Am_I_Spending.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_How_Much_Am_I_Spending.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B80002641D1902430095354D /* ShoppingListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListCell.swift; sourceTree = "<group>"; };
+		B80002661D19090F0095354D /* NewShoppingListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewShoppingListItem.swift; sourceTree = "<group>"; };
+		B80002681D19914D0095354D /* ItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		B80355ED1CCEDE710098FD45 /* EditItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditItemViewController.swift; path = ../EditItemViewController.swift; sourceTree = "<group>"; };
 		B81273F81CD1292F00BF2211 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B81ADCA01CD7BC0A00741B0A /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarcodeScannerViewController.swift; path = ../BarcodeScannerViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +71,8 @@
 		B81ADCA41CD7CCF600741B0A /* ScannedItemDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedItemDetails.swift; sourceTree = "<group>"; };
 		B81ADCA61CD7D2BF00741B0A /* ScannedItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedItemModel.swift; sourceTree = "<group>"; };
 		B82577461CDD6CA40091A3EB /* SpendingListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpendingListModel.swift; sourceTree = "<group>"; };
+		B827D6531D18F73500E03E3D /* ShoppingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
+		B827D6561D18FAA900E03E3D /* Geomanist-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geomanist-Regular.otf"; sourceTree = "<group>"; };
 		B84F4E1E1CCCB1CF00A4CDC1 /* How Much Am I Spending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "How Much Am I Spending.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B84F4E281CCCB1CF00A4CDC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,8 +90,14 @@
 		B84F4E5A1CCDC99100A4CDC1 /* CurrentSpendingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentSpendingsViewController.swift; sourceTree = "<group>"; };
 		B85D423A1CCE8BDD0079CFA8 /* NewItemEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemEntryViewController.swift; sourceTree = "<group>"; };
 		B875ED571CDC269F00B2A51F /* StateTax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateTax.swift; sourceTree = "<group>"; };
+		B886533B1CE51A9F0010B31C /* TaxInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxInfoViewController.swift; sourceTree = "<group>"; };
 		B8C21C901CDEDF6E00FC16E5 /* StatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatePickerViewController.swift; sourceTree = "<group>"; };
 		B8C21C921CE04A5200FC16E5 /* TaxObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaxObj.swift; path = ../TaxObj.swift; sourceTree = "<group>"; };
+		B8E504FA1D4D9A5A00D39060 /* HMAISKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMAISKit.swift; sourceTree = "<group>"; };
+		B8E504FF1D4DA0B900D39060 /* ShoppingListTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListTabBarItem.swift; sourceTree = "<group>"; };
+		B8E505011D4DA1D200D39060 /* CurrentSpendingsTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentSpendingsTabBarItem.swift; sourceTree = "<group>"; };
+		B8E505031D4DDEAD00D39060 /* SettingsTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTabBarItem.swift; sourceTree = "<group>"; };
+		B8E70D731D1A0705005F6E96 /* EditShoppingItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditShoppingItemViewController.swift; sourceTree = "<group>"; };
 		C99B3B76F59FA5C958AFD079 /* Pods-How Much Am I Spending.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I Spending.debug.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I Spending/Pods-How Much Am I Spending.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +127,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B827D6551D18FA5D00E03E3D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B827D6561D18FAA900E03E3D /* Geomanist-Regular.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		B84F4E151CCCB1CF00A4CDC1 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +160,9 @@
 		B84F4E201CCCB1CF00A4CDC1 /* How Much Am I Spending */ = {
 			isa = PBXGroup;
 			children = (
+				B8E504FC1D4D9A5E00D39060 /* StyleKits */,
+				B8DDED9F1D4D644700FCFAAA /* Views */,
+				B827D6551D18FA5D00E03E3D /* Fonts */,
 				B8C21C961CE04CFA00FC16E5 /* View Controllers */,
 				B8C21C951CE04CEB00FC16E5 /* Models */,
 				B8C21C941CE04CBC00FC16E5 /* Custom Classes */,
@@ -186,6 +219,7 @@
 			children = (
 				B82577461CDD6CA40091A3EB /* SpendingListModel.swift */,
 				B81ADCA61CD7D2BF00741B0A /* ScannedItemModel.swift */,
+				B80002681D19914D0095354D /* ItemModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -193,14 +227,37 @@
 		B8C21C961CE04CFA00FC16E5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B886533B1CE51A9F0010B31C /* TaxInfoViewController.swift */,
 				B81ADCA01CD7BC0A00741B0A /* BarcodeScannerViewController.swift */,
 				B8C21C901CDEDF6E00FC16E5 /* StatePickerViewController.swift */,
 				B84F4E5A1CCDC99100A4CDC1 /* CurrentSpendingsViewController.swift */,
 				B85D423A1CCE8BDD0079CFA8 /* NewItemEntryViewController.swift */,
 				B80355ED1CCEDE710098FD45 /* EditItemViewController.swift */,
 				B81273F81CD1292F00BF2211 /* SettingsViewController.swift */,
+				B827D6531D18F73500E03E3D /* ShoppingListViewController.swift */,
+				B80002641D1902430095354D /* ShoppingListCell.swift */,
+				B80002661D19090F0095354D /* NewShoppingListItem.swift */,
+				B8E70D731D1A0705005F6E96 /* EditShoppingItemViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B8DDED9F1D4D644700FCFAAA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B8E504FF1D4DA0B900D39060 /* ShoppingListTabBarItem.swift */,
+				B8E505011D4DA1D200D39060 /* CurrentSpendingsTabBarItem.swift */,
+				B8E505031D4DDEAD00D39060 /* SettingsTabBarItem.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B8E504FC1D4D9A5E00D39060 /* StyleKits */ = {
+			isa = PBXGroup;
+			children = (
+				B8E504FA1D4D9A5A00D39060 /* HMAISKit.swift */,
+			);
+			name = StyleKits;
 			sourceTree = "<group>";
 		};
 		BC26CCDDFB47659D47B21368 /* Frameworks */ = {
@@ -291,7 +348,7 @@
 				TargetAttributes = {
 					B84F4E1D1CCCB1CF00A4CDC1 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 22K6B48Y8T;
+						DevelopmentTeam = ZC55HLSXNP;
 					};
 					B84F4E331CCCB1CF00A4CDC1 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -332,6 +389,7 @@
 			files = (
 				B84F4E2E1CCCB1CF00A4CDC1 /* LaunchScreen.storyboard in Resources */,
 				B84F4E2B1CCCB1CF00A4CDC1 /* Assets.xcassets in Resources */,
+				B827D6571D18FAA900E03E3D /* Geomanist-Regular.otf in Resources */,
 				B84F4E291CCCB1CF00A4CDC1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,20 +463,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8E505021D4DA1D200D39060 /* CurrentSpendingsTabBarItem.swift in Sources */,
+				B8E70D741D1A0705005F6E96 /* EditShoppingItemViewController.swift in Sources */,
 				B84F4E571CCCB63100A4CDC1 /* ItemTableViewCell.swift in Sources */,
+				B827D6541D18F73500E03E3D /* ShoppingListViewController.swift in Sources */,
 				B80355EE1CCEDE710098FD45 /* EditItemViewController.swift in Sources */,
 				B81273F91CD1292F00BF2211 /* SettingsViewController.swift in Sources */,
 				B8C21C931CE04A5200FC16E5 /* TaxObj.swift in Sources */,
+				B8E505001D4DA0B900D39060 /* ShoppingListTabBarItem.swift in Sources */,
 				B84F4E221CCCB1CF00A4CDC1 /* AppDelegate.swift in Sources */,
 				B8C21C911CDEDF6E00FC16E5 /* StatePickerViewController.swift in Sources */,
+				B8E505041D4DDEAD00D39060 /* SettingsTabBarItem.swift in Sources */,
 				B82577471CDD6CA40091A3EB /* SpendingListModel.swift in Sources */,
 				B81ADCA51CD7CCF600741B0A /* ScannedItemDetails.swift in Sources */,
+				B80002651D1902430095354D /* ShoppingListCell.swift in Sources */,
+				B80002691D19914D0095354D /* ItemModel.swift in Sources */,
+				B80002671D19090F0095354D /* NewShoppingListItem.swift in Sources */,
 				B84F4E5B1CCDC99100A4CDC1 /* CurrentSpendingsViewController.swift in Sources */,
 				B81ADCA31CD7C14100741B0A /* DiscoveredBarCodeView.swift in Sources */,
 				B84F4E551CCCB2F000A4CDC1 /* Item.swift in Sources */,
 				B81ADCA71CD7D2BF00741B0A /* ScannedItemModel.swift in Sources */,
 				B81ADCA11CD7BC0A00741B0A /* BarcodeScannerViewController.swift in Sources */,
 				B85D423B1CCE8BDD0079CFA8 /* NewItemEntryViewController.swift in Sources */,
+				B8E504FB1D4D9A5A00D39060 /* HMAISKit.swift in Sources */,
+				B886533C1CE51A9F0010B31C /* TaxInfoViewController.swift in Sources */,
 				B875ED581CDC269F00B2A51F /* StateTax.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +559,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -513,6 +582,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -536,6 +606,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -551,6 +623,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -562,10 +635,13 @@
 			baseConfigurationReference = C99B3B76F59FA5C958AFD079 /* Pods-How Much Am I Spending.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "How Much Am I Spending/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Shayne-Torres.How-Much-Am-I-Spending";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Shayne-Torres.How-Much-Am-I-Spending";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -574,10 +650,13 @@
 			baseConfigurationReference = 3E8859837C8275144F32415A /* Pods-How Much Am I Spending.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "How Much Am I Spending/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Shayne-Torres.How-Much-Am-I-Spending";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Shayne-Torres.How-Much-Am-I-Spending";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

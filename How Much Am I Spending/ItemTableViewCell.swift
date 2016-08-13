@@ -33,12 +33,16 @@ class ItemTableViewCell: UITableViewCell {
         itemBrandDisplay?.text = nil
         itemPriceDisplay?.text = nil
         itemQuantityDisplay?.text = nil
-        if let item = self.item{
-            let itemTax = (item.price * currentTaxAmount)
-            indiviudalItemPriceDisplay.text = "\(formatter.stringFromNumber(item.price)!) + tax: \(formatter.stringFromNumber(itemTax)!)"
+        if let item = self.item {
+            if item.taxed == true {
+                let itemTax = (item.price * currentTaxAmount)
+                indiviudalItemPriceDisplay.text = " \(formatter.stringFromNumber(item.price)!) + tax: \(formatter.stringFromNumber(itemTax)!)  "
+            } else {
+                indiviudalItemPriceDisplay.text = "\(formatter.stringFromNumber(item.price)!)"
+            }
             itemNameDisplay.text = item.name
             itemBrandDisplay.text = item.brand
-            itemPriceDisplay.text = "\(formatter.stringFromNumber(calculateTotalItemPrice())!)"
+            itemPriceDisplay.text = " \(formatter.stringFromNumber(calculateTotalItemPrice())!)  "
             itemQuantityDisplay.text = "x\(item.quantity)"
             setPriceLabelApperance()
             setTaxLabelApperance()
@@ -48,7 +52,12 @@ class ItemTableViewCell: UITableViewCell {
     }
     
     func calculateTotalItemPrice()->Double{
-        let totItemPrice = (item!.price + (item!.price * currentTaxAmount)) * item!.quantity
+        var totItemPrice = 0.0
+        if item?.taxed == true {
+            totItemPrice = (item!.price + (item!.price * currentTaxAmount)) * item!.quantity
+        } else {
+            totItemPrice = (item!.price * item!.quantity)
+        }
         return totItemPrice
     }
     

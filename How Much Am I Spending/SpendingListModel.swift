@@ -53,7 +53,11 @@ class SpendingListModel{
                 return returnObj
             } else {
                 for i in items{
-                    totPrice += (i.price + (i.price * currentTaxAmount)) * i.quantity
+                    if i.taxed == true {
+                        totPrice += ((i.price + (i.price * currentTaxAmount)) * i.quantity)
+                    } else {
+                        totPrice += ((i.price * i.quantity))
+                    }
                 }// if is not empty
                 let returnObj = TotalPriceReturn(p: totPrice, t: "Total Spendings:")
                 return returnObj
@@ -69,7 +73,12 @@ class SpendingListModel{
             else {
                 var monLeft = budget
                 for i in items{
-                    monLeft -= ((i.price + (i.price * currentTaxAmount)) * i.quantity)
+                    if i.taxed == true {
+                        monLeft -= ((i.price + (i.price * currentTaxAmount)) * i.quantity)
+                    } else {
+                        monLeft -= ((i.price * i.quantity))
+                    }
+//                 monLeft -= ((i.price + (i.price * currentTaxAmount)) * i.quantity)
                 }
                 let returnObj = TotalPriceReturn(p: monLeft, t: "Money Remaining:")
                 return returnObj

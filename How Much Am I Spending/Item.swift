@@ -14,6 +14,8 @@ class Item: NSObject, NSCoding{
     var price: Double
     var quantity: Double
     var itemNo: String
+    var taxed: Bool
+    var checked: Bool
     
     // Item Constructors
     override init(){
@@ -22,6 +24,8 @@ class Item: NSObject, NSCoding{
         self.price = 0.0
         self.quantity = 1
         self.itemNo = "\(arc4random_uniform(9999)):\(name)"
+        self.taxed = true
+        self.checked = false
     }
     
     init(n: String){
@@ -30,6 +34,18 @@ class Item: NSObject, NSCoding{
         self.price = 0.0
         self.quantity = 1
         self.itemNo = "\(arc4random_uniform(9999)):\(name)"
+        self.taxed = true
+        self.checked = false
+    }
+    
+    init(n: String, q: Double){
+        self.name = n
+        self.quantity = q
+        self.price = 0.0
+        self.brand = ""
+        self.itemNo = "\(arc4random_uniform(9999)):\(name)"
+        self.taxed = false
+        self.checked = false
     }
     
     init(n: String, p: Double){
@@ -38,6 +54,8 @@ class Item: NSObject, NSCoding{
         self.brand = ""
         self.quantity = 1
         self.itemNo = "\(arc4random_uniform(9999)):\(name)"
+        self.taxed = true
+        self.checked = false
     }
     
     init (n: String, b: String, p: Double){
@@ -46,14 +64,18 @@ class Item: NSObject, NSCoding{
         self.price = p
         self.quantity = 1
         self.itemNo = "\(arc4random_uniform(9999)):\(name)"
+        self.taxed = true
+        self.checked = false
     }
     
-    init (n: String, b: String, p: Double, q: Double){
+    init (n: String, b: String, p: Double, q: Double, t: Bool){
         self.name = n
         self.brand = b
         self.price = p
         self.quantity = q
         self.itemNo = "\(arc4random_uniform(9999)):\(name)"
+        self.taxed = t
+        self.checked = false
     }
     
     // Item functions
@@ -79,6 +101,8 @@ class Item: NSObject, NSCoding{
         self.price = aDecoder.decodeDoubleForKey("itemPrice")
         self.quantity = aDecoder.decodeDoubleForKey("itemQuantity")
         self.itemNo = aDecoder.decodeObjectForKey("itemNo") as! String
+        self.taxed = aDecoder.decodeObjectForKey("taxed") as! Bool
+        self.checked = aDecoder.decodeObjectForKey("checked") as! Bool
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
@@ -87,5 +111,7 @@ class Item: NSObject, NSCoding{
         aCoder.encodeDouble(price, forKey: "itemPrice")
         aCoder.encodeDouble(quantity, forKey: "itemQuantity")
         aCoder.encodeObject(itemNo, forKey: "itemNo")
+        aCoder.encodeObject(taxed, forKey: "taxed")
+        aCoder.encodeObject(checked, forKey: "checked")
     }
 }
