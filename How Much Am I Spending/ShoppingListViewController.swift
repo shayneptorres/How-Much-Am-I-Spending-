@@ -32,6 +32,8 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
         } else {
             
         }
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
     }
     
     

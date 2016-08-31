@@ -67,7 +67,7 @@ class ItemModel{
         updateItem(i, n: n, b: b, p: p, q: q, t: t, c: c)
         fromListItems.removeAtIndex(index)
         fromListItems.insert(i, atIndex: index)
-        var currentListData = NSKeyedArchiver.archivedDataWithRootObject(fromListItems)
+        let currentListData = NSKeyedArchiver.archivedDataWithRootObject(fromListItems)
         def.setObject(currentListData, forKey: fl)
         
         var toListItems = [Item]()

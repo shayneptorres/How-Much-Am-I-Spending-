@@ -472,7 +472,7 @@ public class HMAISKit : NSObject {
         set {
             Cache.currentSpendingsTabBarIconTargets = newValue
             for target: AnyObject in newValue {
-                target.performSelector("setImage:", withObject: HMAISKit.imageOfCurrentSpendingsTabBarIcon)
+                target.performSelector(#selector(CIImageAccumulator.setImage(_:)), withObject: HMAISKit.imageOfCurrentSpendingsTabBarIcon)
             }
         }
     }
@@ -482,7 +482,7 @@ public class HMAISKit : NSObject {
         set {
             Cache.currentSpendingsSelectedIconTargets = newValue
             for target: AnyObject in newValue {
-                target.performSelector("setImage:", withObject: HMAISKit.imageOfCurrentSpendingsSelectedIcon)
+                target.performSelector(#selector(CIImageAccumulator.setImage(_:)), withObject: HMAISKit.imageOfCurrentSpendingsSelectedIcon)
             }
         }
     }
@@ -492,7 +492,7 @@ public class HMAISKit : NSObject {
         set {
             Cache.shoppingListIconTargets = newValue
             for target: AnyObject in newValue {
-                target.performSelector("setImage:", withObject: HMAISKit.imageOfShoppingListIcon)
+                target.performSelector(#selector(CIImageAccumulator.setImage(_:)), withObject: HMAISKit.imageOfShoppingListIcon)
             }
         }
     }
@@ -502,7 +502,7 @@ public class HMAISKit : NSObject {
         set {
             Cache.shoppingListSelectedIconTargets = newValue
             for target: AnyObject in newValue {
-                target.performSelector("setImage:", withObject: HMAISKit.imageOfShoppingListSelectedIcon)
+                target.performSelector(#selector(CIImageAccumulator.setImage(_:)), withObject: HMAISKit.imageOfShoppingListSelectedIcon)
             }
         }
     }
@@ -512,7 +512,7 @@ public class HMAISKit : NSObject {
         set {
             Cache.settingsIconTargets = newValue
             for target: AnyObject in newValue {
-                target.performSelector("setImage:", withObject: HMAISKit.imageOfSettingsIcon)
+                target.performSelector(#selector(CIImageAccumulator.setImage(_:)), withObject: HMAISKit.imageOfSettingsIcon)
             }
         }
     }
@@ -522,7 +522,7 @@ public class HMAISKit : NSObject {
         set {
             Cache.settingsSelectedIconTargets = newValue
             for target: AnyObject in newValue {
-                target.performSelector("setImage:", withObject: HMAISKit.imageOfSettingsSelectedIcon)
+                target.performSelector(#selector(CIImageAccumulator.setImage(_:)), withObject: HMAISKit.imageOfSettingsSelectedIcon)
             }
         }
     }

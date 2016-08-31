@@ -48,6 +48,8 @@ class CurrentSpendingsViewController: UIViewController, UITableViewDelegate, UIT
                 self.items = encodedCurrentItemsData!
             } else {
             }
+            tableView.rowHeight = UITableViewAutomaticDimension
+            tableView.estimatedRowHeight = 140
         }
         
         // If there is a current list, but it is empty, set the default view
