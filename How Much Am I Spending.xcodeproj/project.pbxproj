@@ -7,38 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00CF6AF44644D9B3A2CE53AF /* Pods_How_Much_Am_I_Spending.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1D02FA0F47D8FA1717175F /* Pods_How_Much_Am_I_Spending.framework */; };
-		B80002651D1902430095354D /* ShoppingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80002641D1902430095354D /* ShoppingListCell.swift */; };
-		B80002671D19090F0095354D /* NewShoppingListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80002661D19090F0095354D /* NewShoppingListItem.swift */; };
-		B80002691D19914D0095354D /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80002681D19914D0095354D /* ItemModel.swift */; };
-		B80355EE1CCEDE710098FD45 /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80355ED1CCEDE710098FD45 /* EditItemViewController.swift */; };
-		B81273F91CD1292F00BF2211 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81273F81CD1292F00BF2211 /* SettingsViewController.swift */; };
-		B81ADCA11CD7BC0A00741B0A /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ADCA01CD7BC0A00741B0A /* BarcodeScannerViewController.swift */; };
-		B81ADCA31CD7C14100741B0A /* DiscoveredBarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ADCA21CD7C14100741B0A /* DiscoveredBarCodeView.swift */; };
-		B81ADCA51CD7CCF600741B0A /* ScannedItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ADCA41CD7CCF600741B0A /* ScannedItemDetails.swift */; };
-		B81ADCA71CD7D2BF00741B0A /* ScannedItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ADCA61CD7D2BF00741B0A /* ScannedItemModel.swift */; };
-		B82577471CDD6CA40091A3EB /* SpendingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82577461CDD6CA40091A3EB /* SpendingListModel.swift */; };
-		B827D6541D18F73500E03E3D /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827D6531D18F73500E03E3D /* ShoppingListViewController.swift */; };
+		2499B2DF846C2807D9029F65 /* Pods_How_Much_Am_I_SpendingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C9316C1EDA3E986A6B96E5 /* Pods_How_Much_Am_I_SpendingUITests.framework */; };
 		B827D6571D18FAA900E03E3D /* Geomanist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B827D6561D18FAA900E03E3D /* Geomanist-Regular.otf */; };
+		B82B61D91D7FF2EF0012DC1D /* CurrentSpendingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B61D81D7FF2EF0012DC1D /* CurrentSpendingsItem.swift */; };
+		B82B61DB1D7FF4CE0012DC1D /* CurrentSpendingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B61DA1D7FF4CE0012DC1D /* CurrentSpendingsModel.swift */; };
+		B82B61E21D7FF9F30012DC1D /* CurrentSpendingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B61E11D7FF9F30012DC1D /* CurrentSpendingsViewController.swift */; };
+		B82B61E81D7FFFAB0012DC1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B82B61E71D7FFFAB0012DC1D /* Main.storyboard */; };
+		B82B61EA1D8005C90012DC1D /* AddSpendingsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B61E91D8005C90012DC1D /* AddSpendingsItemViewController.swift */; };
 		B84F4E221CCCB1CF00A4CDC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */; };
-		B84F4E291CCCB1CF00A4CDC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E271CCCB1CF00A4CDC1 /* Main.storyboard */; };
 		B84F4E2B1CCCB1CF00A4CDC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */; };
 		B84F4E2E1CCCB1CF00A4CDC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E2C1CCCB1CF00A4CDC1 /* LaunchScreen.storyboard */; };
 		B84F4E391CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E381CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingTests.swift */; };
 		B84F4E441CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E431CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingUITests.swift */; };
-		B84F4E551CCCB2F000A4CDC1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E541CCCB2F000A4CDC1 /* Item.swift */; };
-		B84F4E571CCCB63100A4CDC1 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E561CCCB63100A4CDC1 /* ItemTableViewCell.swift */; };
-		B84F4E5B1CCDC99100A4CDC1 /* CurrentSpendingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E5A1CCDC99100A4CDC1 /* CurrentSpendingsViewController.swift */; };
-		B85D423B1CCE8BDD0079CFA8 /* NewItemEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D423A1CCE8BDD0079CFA8 /* NewItemEntryViewController.swift */; };
-		B875ED581CDC269F00B2A51F /* StateTax.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875ED571CDC269F00B2A51F /* StateTax.swift */; };
-		B886533C1CE51A9F0010B31C /* TaxInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B886533B1CE51A9F0010B31C /* TaxInfoViewController.swift */; };
-		B8C21C911CDEDF6E00FC16E5 /* StatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C21C901CDEDF6E00FC16E5 /* StatePickerViewController.swift */; };
-		B8C21C931CE04A5200FC16E5 /* TaxObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C21C921CE04A5200FC16E5 /* TaxObj.swift */; };
 		B8E504FB1D4D9A5A00D39060 /* HMAISKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E504FA1D4D9A5A00D39060 /* HMAISKit.swift */; };
 		B8E505001D4DA0B900D39060 /* ShoppingListTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E504FF1D4DA0B900D39060 /* ShoppingListTabBarItem.swift */; };
 		B8E505021D4DA1D200D39060 /* CurrentSpendingsTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E505011D4DA1D200D39060 /* CurrentSpendingsTabBarItem.swift */; };
 		B8E505041D4DDEAD00D39060 /* SettingsTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E505031D4DDEAD00D39060 /* SettingsTabBarItem.swift */; };
-		B8E70D741D1A0705005F6E96 /* EditShoppingItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E70D731D1A0705005F6E96 /* EditShoppingItemViewController.swift */; };
+		BAAC8F2D2D609E751E3DF658 /* Pods_How_Much_Am_I_Spending.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC35CC39DAFA7F83AB81FD9 /* Pods_How_Much_Am_I_Spending.framework */; };
+		FCFF9B46B37A460A7708E8C3 /* Pods_How_Much_Am_I_SpendingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17DB0E06D5E78345936DB489 /* Pods_How_Much_Am_I_SpendingTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,23 +45,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3E8859837C8275144F32415A /* Pods-How Much Am I Spending.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I Spending.release.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I Spending/Pods-How Much Am I Spending.release.xcconfig"; sourceTree = "<group>"; };
-		4E1D02FA0F47D8FA1717175F /* Pods_How_Much_Am_I_Spending.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_How_Much_Am_I_Spending.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B80002641D1902430095354D /* ShoppingListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListCell.swift; sourceTree = "<group>"; };
-		B80002661D19090F0095354D /* NewShoppingListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewShoppingListItem.swift; sourceTree = "<group>"; };
-		B80002681D19914D0095354D /* ItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
-		B80355ED1CCEDE710098FD45 /* EditItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditItemViewController.swift; path = ../EditItemViewController.swift; sourceTree = "<group>"; };
-		B81273F81CD1292F00BF2211 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		B81ADCA01CD7BC0A00741B0A /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarcodeScannerViewController.swift; path = ../BarcodeScannerViewController.swift; sourceTree = "<group>"; };
-		B81ADCA21CD7C14100741B0A /* DiscoveredBarCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoveredBarCodeView.swift; path = ../DiscoveredBarCodeView.swift; sourceTree = "<group>"; };
-		B81ADCA41CD7CCF600741B0A /* ScannedItemDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedItemDetails.swift; sourceTree = "<group>"; };
-		B81ADCA61CD7D2BF00741B0A /* ScannedItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedItemModel.swift; sourceTree = "<group>"; };
-		B82577461CDD6CA40091A3EB /* SpendingListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpendingListModel.swift; sourceTree = "<group>"; };
-		B827D6531D18F73500E03E3D /* ShoppingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
+		0BC35CC39DAFA7F83AB81FD9 /* Pods_How_Much_Am_I_Spending.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_How_Much_Am_I_Spending.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F73B23DC7133D5463B2A2C5 /* Pods-How Much Am I SpendingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I SpendingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I SpendingUITests/Pods-How Much Am I SpendingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		17DB0E06D5E78345936DB489 /* Pods_How_Much_Am_I_SpendingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_How_Much_Am_I_SpendingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32C9316C1EDA3E986A6B96E5 /* Pods_How_Much_Am_I_SpendingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_How_Much_Am_I_SpendingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D3FAC9383D8B7417493739E /* Pods-How Much Am I SpendingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I SpendingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I SpendingTests/Pods-How Much Am I SpendingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		73B179A6DAC16E51E3EB19F5 /* Pods-How Much Am I Spending.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I Spending.release.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I Spending/Pods-How Much Am I Spending.release.xcconfig"; sourceTree = "<group>"; };
 		B827D6561D18FAA900E03E3D /* Geomanist-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geomanist-Regular.otf"; sourceTree = "<group>"; };
+		B82B61D81D7FF2EF0012DC1D /* CurrentSpendingsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentSpendingsItem.swift; sourceTree = "<group>"; };
+		B82B61DA1D7FF4CE0012DC1D /* CurrentSpendingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentSpendingsModel.swift; sourceTree = "<group>"; };
+		B82B61DE1D7FF8470012DC1D /* How Much Am I Spending-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "How Much Am I Spending-Bridging-Header.h"; sourceTree = "<group>"; };
+		B82B61E11D7FF9F30012DC1D /* CurrentSpendingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentSpendingsViewController.swift; sourceTree = "<group>"; };
+		B82B61E71D7FFFAB0012DC1D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B82B61E91D8005C90012DC1D /* AddSpendingsItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSpendingsItemViewController.swift; sourceTree = "<group>"; };
 		B84F4E1E1CCCB1CF00A4CDC1 /* How Much Am I Spending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "How Much Am I Spending.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B84F4E281CCCB1CF00A4CDC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B84F4E2D1CCCB1CF00A4CDC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B84F4E2F1CCCB1CF00A4CDC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,20 +69,13 @@
 		B84F4E3F1CCCB1CF00A4CDC1 /* How Much Am I SpendingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "How Much Am I SpendingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84F4E431CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = How_Much_Am_I_SpendingUITests.swift; sourceTree = "<group>"; };
 		B84F4E451CCCB1CF00A4CDC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B84F4E541CCCB2F000A4CDC1 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		B84F4E561CCCB63100A4CDC1 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
-		B84F4E5A1CCDC99100A4CDC1 /* CurrentSpendingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentSpendingsViewController.swift; sourceTree = "<group>"; };
-		B85D423A1CCE8BDD0079CFA8 /* NewItemEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemEntryViewController.swift; sourceTree = "<group>"; };
-		B875ED571CDC269F00B2A51F /* StateTax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateTax.swift; sourceTree = "<group>"; };
-		B886533B1CE51A9F0010B31C /* TaxInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxInfoViewController.swift; sourceTree = "<group>"; };
-		B8C21C901CDEDF6E00FC16E5 /* StatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatePickerViewController.swift; sourceTree = "<group>"; };
-		B8C21C921CE04A5200FC16E5 /* TaxObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaxObj.swift; path = ../TaxObj.swift; sourceTree = "<group>"; };
 		B8E504FA1D4D9A5A00D39060 /* HMAISKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMAISKit.swift; sourceTree = "<group>"; };
 		B8E504FF1D4DA0B900D39060 /* ShoppingListTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListTabBarItem.swift; sourceTree = "<group>"; };
 		B8E505011D4DA1D200D39060 /* CurrentSpendingsTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentSpendingsTabBarItem.swift; sourceTree = "<group>"; };
 		B8E505031D4DDEAD00D39060 /* SettingsTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTabBarItem.swift; sourceTree = "<group>"; };
-		B8E70D731D1A0705005F6E96 /* EditShoppingItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditShoppingItemViewController.swift; sourceTree = "<group>"; };
-		C99B3B76F59FA5C958AFD079 /* Pods-How Much Am I Spending.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I Spending.debug.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I Spending/Pods-How Much Am I Spending.debug.xcconfig"; sourceTree = "<group>"; };
+		B951D5FBDD34EF8D18D49F12 /* Pods-How Much Am I SpendingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I SpendingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I SpendingUITests/Pods-How Much Am I SpendingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BB399DA25E95D985E42EA24D /* Pods-How Much Am I Spending.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I Spending.debug.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I Spending/Pods-How Much Am I Spending.debug.xcconfig"; sourceTree = "<group>"; };
+		EFCA2452308E55B6B4EB33F5 /* Pods-How Much Am I SpendingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I SpendingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I SpendingTests/Pods-How Much Am I SpendingTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00CF6AF44644D9B3A2CE53AF /* Pods_How_Much_Am_I_Spending.framework in Frameworks */,
+				BAAC8F2D2D609E751E3DF658 /* Pods_How_Much_Am_I_Spending.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCFF9B46B37A460A7708E8C3 /* Pods_How_Much_Am_I_SpendingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,18 +99,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2499B2DF846C2807D9029F65 /* Pods_How_Much_Am_I_SpendingUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9EFE793380949AAA3127D223 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0BC35CC39DAFA7F83AB81FD9 /* Pods_How_Much_Am_I_Spending.framework */,
+				17DB0E06D5E78345936DB489 /* Pods_How_Much_Am_I_SpendingTests.framework */,
+				32C9316C1EDA3E986A6B96E5 /* Pods_How_Much_Am_I_SpendingUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B827D6551D18FA5D00E03E3D /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				B827D6561D18FAA900E03E3D /* Geomanist-Regular.otf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		B82B61D71D7FF2B20012DC1D /* Realm Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B82B61D81D7FF2EF0012DC1D /* CurrentSpendingsItem.swift */,
+			);
+			name = "Realm Objects";
+			sourceTree = "<group>";
+		};
+		B82B61DC1D7FF7E70012DC1D /* Objective-C Files */ = {
+			isa = PBXGroup;
+			children = (
+				B82B61DE1D7FF8470012DC1D /* How Much Am I Spending-Bridging-Header.h */,
+			);
+			name = "Objective-C Files";
 			sourceTree = "<group>";
 		};
 		B84F4E151CCCB1CF00A4CDC1 = {
@@ -142,8 +147,8 @@
 				B84F4E371CCCB1CF00A4CDC1 /* How Much Am I SpendingTests */,
 				B84F4E421CCCB1CF00A4CDC1 /* How Much Am I SpendingUITests */,
 				B84F4E1F1CCCB1CF00A4CDC1 /* Products */,
-				C4DB994D6AFAB2F1022CFB94 /* Pods */,
-				BC26CCDDFB47659D47B21368 /* Frameworks */,
+				FB1DBDBD3500D5E34F5972B3 /* Pods */,
+				9EFE793380949AAA3127D223 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,16 +165,15 @@
 		B84F4E201CCCB1CF00A4CDC1 /* How Much Am I Spending */ = {
 			isa = PBXGroup;
 			children = (
+				B82B61E71D7FFFAB0012DC1D /* Main.storyboard */,
+				B82B61DC1D7FF7E70012DC1D /* Objective-C Files */,
+				B8C21C961CE04CFA00FC16E5 /* View Controllers */,
+				B82B61D71D7FF2B20012DC1D /* Realm Objects */,
 				B8E504FC1D4D9A5E00D39060 /* StyleKits */,
 				B8DDED9F1D4D644700FCFAAA /* Views */,
 				B827D6551D18FA5D00E03E3D /* Fonts */,
-				B8C21C961CE04CFA00FC16E5 /* View Controllers */,
 				B8C21C951CE04CEB00FC16E5 /* Models */,
-				B8C21C941CE04CBC00FC16E5 /* Custom Classes */,
-				B81ADCA21CD7C14100741B0A /* DiscoveredBarCodeView.swift */,
-				B81ADCA41CD7CCF600741B0A /* ScannedItemDetails.swift */,
-				B84F4E271CCCB1CF00A4CDC1 /* Main.storyboard */,
-				B84F4E561CCCB63100A4CDC1 /* ItemTableViewCell.swift */,
+				B8C21C941CE04CBC00FC16E5 /* Classes */,
 				B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */,
 				B84F4E511CCCB1DA00A4CDC1 /* SF */,
 			);
@@ -204,22 +208,17 @@
 			name = SF;
 			sourceTree = "<group>";
 		};
-		B8C21C941CE04CBC00FC16E5 /* Custom Classes */ = {
+		B8C21C941CE04CBC00FC16E5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B84F4E541CCCB2F000A4CDC1 /* Item.swift */,
-				B8C21C921CE04A5200FC16E5 /* TaxObj.swift */,
-				B875ED571CDC269F00B2A51F /* StateTax.swift */,
 			);
-			name = "Custom Classes";
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		B8C21C951CE04CEB00FC16E5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B82577461CDD6CA40091A3EB /* SpendingListModel.swift */,
-				B81ADCA61CD7D2BF00741B0A /* ScannedItemModel.swift */,
-				B80002681D19914D0095354D /* ItemModel.swift */,
+				B82B61DA1D7FF4CE0012DC1D /* CurrentSpendingsModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -227,17 +226,8 @@
 		B8C21C961CE04CFA00FC16E5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B886533B1CE51A9F0010B31C /* TaxInfoViewController.swift */,
-				B81ADCA01CD7BC0A00741B0A /* BarcodeScannerViewController.swift */,
-				B8C21C901CDEDF6E00FC16E5 /* StatePickerViewController.swift */,
-				B84F4E5A1CCDC99100A4CDC1 /* CurrentSpendingsViewController.swift */,
-				B85D423A1CCE8BDD0079CFA8 /* NewItemEntryViewController.swift */,
-				B80355ED1CCEDE710098FD45 /* EditItemViewController.swift */,
-				B81273F81CD1292F00BF2211 /* SettingsViewController.swift */,
-				B827D6531D18F73500E03E3D /* ShoppingListViewController.swift */,
-				B80002641D1902430095354D /* ShoppingListCell.swift */,
-				B80002661D19090F0095354D /* NewShoppingListItem.swift */,
-				B8E70D731D1A0705005F6E96 /* EditShoppingItemViewController.swift */,
+				B82B61E11D7FF9F30012DC1D /* CurrentSpendingsViewController.swift */,
+				B82B61E91D8005C90012DC1D /* AddSpendingsItemViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -260,19 +250,15 @@
 			name = StyleKits;
 			sourceTree = "<group>";
 		};
-		BC26CCDDFB47659D47B21368 /* Frameworks */ = {
+		FB1DBDBD3500D5E34F5972B3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4E1D02FA0F47D8FA1717175F /* Pods_How_Much_Am_I_Spending.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C4DB994D6AFAB2F1022CFB94 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C99B3B76F59FA5C958AFD079 /* Pods-How Much Am I Spending.debug.xcconfig */,
-				3E8859837C8275144F32415A /* Pods-How Much Am I Spending.release.xcconfig */,
+				BB399DA25E95D985E42EA24D /* Pods-How Much Am I Spending.debug.xcconfig */,
+				73B179A6DAC16E51E3EB19F5 /* Pods-How Much Am I Spending.release.xcconfig */,
+				3D3FAC9383D8B7417493739E /* Pods-How Much Am I SpendingTests.debug.xcconfig */,
+				EFCA2452308E55B6B4EB33F5 /* Pods-How Much Am I SpendingTests.release.xcconfig */,
+				0F73B23DC7133D5463B2A2C5 /* Pods-How Much Am I SpendingUITests.debug.xcconfig */,
+				B951D5FBDD34EF8D18D49F12 /* Pods-How Much Am I SpendingUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -284,12 +270,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B84F4E481CCCB1CF00A4CDC1 /* Build configuration list for PBXNativeTarget "How Much Am I Spending" */;
 			buildPhases = (
-				0E966DFB5B5976BCBC4A630E /* Check Pods Manifest.lock */,
+				067C7776289B9E108682770E /* 📦 Check Pods Manifest.lock */,
 				B84F4E1A1CCCB1CF00A4CDC1 /* Sources */,
 				B84F4E1B1CCCB1CF00A4CDC1 /* Frameworks */,
 				B84F4E1C1CCCB1CF00A4CDC1 /* Resources */,
-				77397A3B3EAE36BE12F5B93B /* Embed Pods Frameworks */,
-				B31F57F59CF53BBF317424BF /* Copy Pods Resources */,
+				F052B1670C40C8BC4549D68E /* 📦 Embed Pods Frameworks */,
+				E4EF6499F80553F06B618F32 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -304,9 +290,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B84F4E4B1CCCB1CF00A4CDC1 /* Build configuration list for PBXNativeTarget "How Much Am I SpendingTests" */;
 			buildPhases = (
+				14FB35105339E6FFACBB309C /* 📦 Check Pods Manifest.lock */,
 				B84F4E301CCCB1CF00A4CDC1 /* Sources */,
 				B84F4E311CCCB1CF00A4CDC1 /* Frameworks */,
 				B84F4E321CCCB1CF00A4CDC1 /* Resources */,
+				1DC512ED18CA69EC40826A6F /* 📦 Embed Pods Frameworks */,
+				F2AFFEDC48A76AF8EB95B5A4 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -322,9 +311,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B84F4E4E1CCCB1CF00A4CDC1 /* Build configuration list for PBXNativeTarget "How Much Am I SpendingUITests" */;
 			buildPhases = (
+				02E731D94235BC67983D0871 /* 📦 Check Pods Manifest.lock */,
 				B84F4E3B1CCCB1CF00A4CDC1 /* Sources */,
 				B84F4E3C1CCCB1CF00A4CDC1 /* Frameworks */,
 				B84F4E3D1CCCB1CF00A4CDC1 /* Resources */,
+				C961AC9D647E94C0EE48BCF8 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -342,7 +333,7 @@
 		B84F4E161CCCB1CF00A4CDC1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Shayne Torres";
 				TargetAttributes = {
@@ -390,7 +381,7 @@
 				B84F4E2E1CCCB1CF00A4CDC1 /* LaunchScreen.storyboard in Resources */,
 				B84F4E2B1CCCB1CF00A4CDC1 /* Assets.xcassets in Resources */,
 				B827D6571D18FAA900E03E3D /* Geomanist-Regular.otf in Resources */,
-				B84F4E291CCCB1CF00A4CDC1 /* Main.storyboard in Resources */,
+				B82B61E81D7FFFAB0012DC1D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,14 +402,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E966DFB5B5976BCBC4A630E /* Check Pods Manifest.lock */ = {
+		02E731D94235BC67983D0871 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,14 +417,89 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		77397A3B3EAE36BE12F5B93B /* Embed Pods Frameworks */ = {
+		067C7776289B9E108682770E /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		14FB35105339E6FFACBB309C /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1DC512ED18CA69EC40826A6F /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-How Much Am I SpendingTests/Pods-How Much Am I SpendingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C961AC9D647E94C0EE48BCF8 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-How Much Am I SpendingUITests/Pods-How Much Am I SpendingUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4EF6499F80553F06B618F32 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-How Much Am I Spending/Pods-How Much Am I Spending-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F052B1670C40C8BC4549D68E /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,19 +507,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-How Much Am I Spending/Pods-How Much Am I Spending-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B31F57F59CF53BBF317424BF /* Copy Pods Resources */ = {
+		F2AFFEDC48A76AF8EB95B5A4 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-How Much Am I Spending/Pods-How Much Am I Spending-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-How Much Am I SpendingTests/Pods-How Much Am I SpendingTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -464,30 +530,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8E505021D4DA1D200D39060 /* CurrentSpendingsTabBarItem.swift in Sources */,
-				B8E70D741D1A0705005F6E96 /* EditShoppingItemViewController.swift in Sources */,
-				B84F4E571CCCB63100A4CDC1 /* ItemTableViewCell.swift in Sources */,
-				B827D6541D18F73500E03E3D /* ShoppingListViewController.swift in Sources */,
-				B80355EE1CCEDE710098FD45 /* EditItemViewController.swift in Sources */,
-				B81273F91CD1292F00BF2211 /* SettingsViewController.swift in Sources */,
-				B8C21C931CE04A5200FC16E5 /* TaxObj.swift in Sources */,
 				B8E505001D4DA0B900D39060 /* ShoppingListTabBarItem.swift in Sources */,
+				B82B61EA1D8005C90012DC1D /* AddSpendingsItemViewController.swift in Sources */,
+				B82B61E21D7FF9F30012DC1D /* CurrentSpendingsViewController.swift in Sources */,
+				B82B61DB1D7FF4CE0012DC1D /* CurrentSpendingsModel.swift in Sources */,
 				B84F4E221CCCB1CF00A4CDC1 /* AppDelegate.swift in Sources */,
-				B8C21C911CDEDF6E00FC16E5 /* StatePickerViewController.swift in Sources */,
 				B8E505041D4DDEAD00D39060 /* SettingsTabBarItem.swift in Sources */,
-				B82577471CDD6CA40091A3EB /* SpendingListModel.swift in Sources */,
-				B81ADCA51CD7CCF600741B0A /* ScannedItemDetails.swift in Sources */,
-				B80002651D1902430095354D /* ShoppingListCell.swift in Sources */,
-				B80002691D19914D0095354D /* ItemModel.swift in Sources */,
-				B80002671D19090F0095354D /* NewShoppingListItem.swift in Sources */,
-				B84F4E5B1CCDC99100A4CDC1 /* CurrentSpendingsViewController.swift in Sources */,
-				B81ADCA31CD7C14100741B0A /* DiscoveredBarCodeView.swift in Sources */,
-				B84F4E551CCCB2F000A4CDC1 /* Item.swift in Sources */,
-				B81ADCA71CD7D2BF00741B0A /* ScannedItemModel.swift in Sources */,
-				B81ADCA11CD7BC0A00741B0A /* BarcodeScannerViewController.swift in Sources */,
-				B85D423B1CCE8BDD0079CFA8 /* NewItemEntryViewController.swift in Sources */,
+				B82B61D91D7FF2EF0012DC1D /* CurrentSpendingsItem.swift in Sources */,
 				B8E504FB1D4D9A5A00D39060 /* HMAISKit.swift in Sources */,
-				B886533C1CE51A9F0010B31C /* TaxInfoViewController.swift in Sources */,
-				B875ED581CDC269F00B2A51F /* StateTax.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,14 +573,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B84F4E271CCCB1CF00A4CDC1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B84F4E281CCCB1CF00A4CDC1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B84F4E2C1CCCB1CF00A4CDC1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -632,9 +674,10 @@
 		};
 		B84F4E491CCCB1CF00A4CDC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C99B3B76F59FA5C958AFD079 /* Pods-How Much Am I Spending.debug.xcconfig */;
+			baseConfigurationReference = BB399DA25E95D985E42EA24D /* Pods-How Much Am I Spending.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "How Much Am I Spending/Info.plist";
@@ -642,14 +685,17 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Shayne-Torres.How-Much-Am-I-Spending";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "How Much Am I Spending/How Much Am I Spending-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		B84F4E4A1CCCB1CF00A4CDC1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E8859837C8275144F32415A /* Pods-How Much Am I Spending.release.xcconfig */;
+			baseConfigurationReference = 73B179A6DAC16E51E3EB19F5 /* Pods-How Much Am I Spending.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "How Much Am I Spending/Info.plist";
@@ -657,11 +703,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Shayne-Torres.How-Much-Am-I-Spending";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "How Much Am I Spending/How Much Am I Spending-Bridging-Header.h";
 			};
 			name = Release;
 		};
 		B84F4E4C1CCCB1CF00A4CDC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D3FAC9383D8B7417493739E /* Pods-How Much Am I SpendingTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "How Much Am I SpendingTests/Info.plist";
@@ -674,6 +722,7 @@
 		};
 		B84F4E4D1CCCB1CF00A4CDC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFCA2452308E55B6B4EB33F5 /* Pods-How Much Am I SpendingTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "How Much Am I SpendingTests/Info.plist";
@@ -686,6 +735,7 @@
 		};
 		B84F4E4F1CCCB1CF00A4CDC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F73B23DC7133D5463B2A2C5 /* Pods-How Much Am I SpendingUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "How Much Am I SpendingUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -698,6 +748,7 @@
 		};
 		B84F4E501CCCB1CF00A4CDC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B951D5FBDD34EF8D18D49F12 /* Pods-How Much Am I SpendingUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "How Much Am I SpendingUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

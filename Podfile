@@ -5,7 +5,11 @@ use_frameworks!
 
 target 'How Much Am I Spending' do
     pod 'Alamofire', '~> 3.0'
+    pod 'RealmSwift'
+    pod 'Eureka', '~> 1.7'
+    pod 'SideMenu'
 end
+
 
 target 'How Much Am I SpendingTests' do
 

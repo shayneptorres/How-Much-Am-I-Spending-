@@ -9,7 +9,42 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Eureka.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-How Much Am I Spending.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-How Much Am I SpendingTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-How Much Am I SpendingUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Realm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RealmSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SideMenu-SideMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SideMenu.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3FE53E19EA0A3AC81906291919B062E6</key>
+		<key>08ABF46474179F4201576F1B1DA811E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2211CE03ED8CEE9E58E01911E374EF1E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4332352E97A37C729DC7D9B3B8A4BB15</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6F2054DABB4134030CC05DF15A164613</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7F066ACD6BF7B498CB696DE35BEEA2AC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A754A66770B652D22265F03D10686DAA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C02AB2D57ECBCA9A06B4094C9C7EB699</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C643B801EEBDC1C6FDC107CF51940196</key>
 		<dict>
 			<key>primary</key>
 			<true/>

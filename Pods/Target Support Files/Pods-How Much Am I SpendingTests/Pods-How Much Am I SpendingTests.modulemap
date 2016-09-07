@@ -1,0 +1,6 @@
+framework module Pods_How_Much_Am_I_SpendingTests {
+  umbrella header "Pods-How Much Am I SpendingTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
