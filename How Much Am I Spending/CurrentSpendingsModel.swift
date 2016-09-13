@@ -17,7 +17,14 @@ class CurrentSpendingsModel {
     func addCSItem(csitem: CurrentSpendingsItem){
         let realm = try! Realm()
         try! realm.write {
-            realm.add(csitem)
+            csitem.autoIncrementPK()
+            realm.add(csitem, update: true)
         }
+    }
+    
+    // Read CSItems from database
+    func readCSItems()->Results<CurrentSpendingsItem>{
+        let realm = try! Realm()
+        return realm.objects(CurrentSpendingsItem.self) 
     }
 }

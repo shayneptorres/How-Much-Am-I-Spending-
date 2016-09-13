@@ -3,7 +3,18 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Geomanist-Regular.otf">
+            <string>Geomanist-Regular</string>
+            <string>Geomanist-Regular</string>
+            <string>Geomanist-Regular</string>
+            <string>Geomanist-Regular</string>
+            <string>Geomanist-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Menu-->
         <scene sceneID="4Q5-Hh-a0s">
@@ -108,12 +119,12 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-944" y="383"/>
+            <point key="canvasLocation" x="-975" y="365"/>
         </scene>
-        <!--Add Spendings Item View Controller-->
+        <!--Manage Spendings Item View Controller-->
         <scene sceneID="SEX-6h-Nn0">
             <objects>
-                <viewController id="pPE-pz-vUC" customClass="AddSpendingsItemViewController" customModule="How_Much_Am_I_Spending" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pPE-pz-vUC" customClass="ManageSpendingsItemViewController" customModule="How_Much_Am_I_Spending" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Rl-r7-9YV"/>
                         <viewControllerLayoutGuide type="bottom" id="Y3t-dN-LE8"/>
@@ -121,10 +132,197 @@
                     <view key="view" contentMode="scaleToFill" id="RP4-DW-7Ja">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ju5-qr-TRz" customClass="JiroTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="20" y="114" width="560" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="uCh-Br-TZ5"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Geomanist-Regular" family="Geomanist" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.99607843139999996" green="0.80392156859999997" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.42745098040000001" green="0.85882352939999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qzU-Gd-5On" customClass="JiroCurrencyTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="20" y="167" width="560" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="vuG-5P-1dB"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Geomanist-Regular" family="Geomanist" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.99607843139999996" green="0.80392156859999997" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.42745098040000001" green="0.85882352939999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item Brand" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ojz-xz-wfr" customClass="JiroTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="20" y="220" width="560" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="H8K-fh-Dr8"/>
+                                    <constraint firstAttribute="height" constant="45" id="SjP-Nu-uUM"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Geomanist-Regular" family="Geomanist" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.99607843139999996" green="0.80392156859999997" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.42745098040000001" green="0.85882352939999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6u-Zd-tN8" customClass="MaterialView" customModule="How_Much_Am_I_Spending" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="560" height="86"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Managing&gt; Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCe-cF-Dvp">
+                                        <rect key="frame" x="204" y="33" width="153" height="20"/>
+                                        <fontDescription key="fontDescription" name="Geomanist-Regular" family="Geomanist" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.42745098039215684" green="0.85882352941176465" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="aCe-cF-Dvp" firstAttribute="centerX" secondItem="S6u-Zd-tN8" secondAttribute="centerX" id="5cA-5A-iWf"/>
+                                    <constraint firstItem="aCe-cF-Dvp" firstAttribute="centerY" secondItem="S6u-Zd-tN8" secondAttribute="centerY" id="H5B-h3-hFS"/>
+                                    <constraint firstAttribute="height" constant="86" id="wCV-cv-cGl"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vM5-Pw-BoM" customClass="MaterialView" customModule="How_Much_Am_I_Spending" customModuleProvider="target">
+                                <rect key="frame" x="50" y="273" width="500" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS8-OI-gNp" customClass="DecreaseQuantityButton" customModule="How_Much_Am_I_Spending" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="2" width="55" height="55"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="55" id="Rh1-yA-9Jj"/>
+                                            <constraint firstAttribute="height" constant="55" id="q8j-Xh-4Qv"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="quantityWasChanged:" destination="pPE-pz-vUC" eventType="touchUpInside" id="OGn-yO-Kuh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lag-YQ-57g" customClass="IncreaseQuantityButton" customModule="How_Much_Am_I_Spending" customModuleProvider="target">
+                                        <rect key="frame" x="437" y="2" width="55" height="55"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="55" id="3KW-c1-Wqk"/>
+                                            <constraint firstAttribute="height" constant="55" id="am9-Lv-ioo"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="quantityWasChanged:" destination="pPE-pz-vUC" eventType="touchUpInside" id="gsP-4l-a9v"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Quantity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ev5-fj-HXW">
+                                        <rect key="frame" x="71" y="8" width="358" height="44"/>
+                                        <fontDescription key="fontDescription" name="Geomanist-Regular" family="Geomanist" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.84665936085972859" green="0.84665936085972859" blue="0.84665936085972859" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ev5-fj-HXW" firstAttribute="leading" secondItem="pS8-OI-gNp" secondAttribute="trailing" constant="8" id="5dg-eO-heB"/>
+                                    <constraint firstAttribute="bottom" secondItem="lag-YQ-57g" secondAttribute="bottom" constant="3" id="7si-c3-KUK"/>
+                                    <constraint firstItem="lag-YQ-57g" firstAttribute="leading" secondItem="ev5-fj-HXW" secondAttribute="trailing" constant="8" id="BTd-hS-YWd"/>
+                                    <constraint firstAttribute="height" constant="60" id="GcZ-tW-c7N"/>
+                                    <constraint firstAttribute="bottom" secondItem="pS8-OI-gNp" secondAttribute="bottom" constant="3" id="Qj1-Ev-Y9W"/>
+                                    <constraint firstAttribute="width" constant="386" id="R9I-og-lG1"/>
+                                    <constraint firstItem="lag-YQ-57g" firstAttribute="top" secondItem="vM5-Pw-BoM" secondAttribute="top" constant="2" id="XqB-aL-vmb"/>
+                                    <constraint firstItem="pS8-OI-gNp" firstAttribute="top" secondItem="vM5-Pw-BoM" secondAttribute="top" constant="2" id="fWU-Ja-7oF"/>
+                                    <constraint firstItem="ev5-fj-HXW" firstAttribute="top" secondItem="vM5-Pw-BoM" secondAttribute="top" constant="8" id="joc-Px-YSc"/>
+                                    <constraint firstItem="pS8-OI-gNp" firstAttribute="leading" secondItem="vM5-Pw-BoM" secondAttribute="leading" constant="8" id="l6o-rw-mX6"/>
+                                    <constraint firstAttribute="trailing" secondItem="lag-YQ-57g" secondAttribute="trailing" constant="8" id="ole-UC-VcQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="ev5-fj-HXW" secondAttribute="bottom" constant="8" id="xIn-qk-lEE"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="R9I-og-lG1"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2Q-Hu-wbl" customClass="SaveItemButton" customModule="How_Much_Am_I_Spending" customModuleProvider="target">
+                                <rect key="frame" x="20" y="520" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="pmK-Hv-SoQ"/>
+                                    <constraint firstAttribute="height" constant="60" id="tig-as-LMh"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="saveItemButtonWasTapped:" destination="pPE-pz-vUC" eventType="touchUpInside" id="a5G-dm-qKe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RK-GL-TF9" customClass="CancelItemButton" customModule="How_Much_Am_I_Spending" customModuleProvider="target">
+                                <rect key="frame" x="520" y="520" width="60" height="60"/>
+                                <connections>
+                                    <action selector="cancelItemButtonWasTapped:" destination="pPE-pz-vUC" eventType="touchUpInside" id="Uzl-sM-fJm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97464413650075421" green="0.97464413650075421" blue="0.97464413650075421" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0RK-GL-TF9" firstAttribute="leading" secondItem="G2Q-Hu-wbl" secondAttribute="trailing" priority="250" constant="500" id="0HU-GW-wzG"/>
+                            <constraint firstItem="S6u-Zd-tN8" firstAttribute="leading" secondItem="RP4-DW-7Ja" secondAttribute="leadingMargin" id="5v7-Yg-oMy"/>
+                            <constraint firstItem="qzU-Gd-5On" firstAttribute="top" secondItem="Ju5-qr-TRz" secondAttribute="bottom" constant="8" id="Etb-oU-3Dw"/>
+                            <constraint firstItem="G2Q-Hu-wbl" firstAttribute="baseline" secondItem="0RK-GL-TF9" secondAttribute="baseline" id="GgY-ch-aql"/>
+                            <constraint firstItem="qzU-Gd-5On" firstAttribute="trailing" secondItem="RP4-DW-7Ja" secondAttribute="trailingMargin" id="Ggp-vX-AMC"/>
+                            <constraint firstItem="ojz-xz-wfr" firstAttribute="top" secondItem="qzU-Gd-5On" secondAttribute="bottom" constant="8" id="K08-vu-wXd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0RK-GL-TF9" secondAttribute="trailing" id="LUL-WF-uu5"/>
+                            <constraint firstItem="G2Q-Hu-wbl" firstAttribute="width" secondItem="0RK-GL-TF9" secondAttribute="width" id="TLI-Ft-1Gm"/>
+                            <constraint firstItem="qzU-Gd-5On" firstAttribute="leading" secondItem="RP4-DW-7Ja" secondAttribute="leadingMargin" id="VzL-P3-rEh"/>
+                            <constraint firstItem="ojz-xz-wfr" firstAttribute="trailing" secondItem="RP4-DW-7Ja" secondAttribute="trailingMargin" id="Wd3-S6-ttC"/>
+                            <constraint firstItem="Ju5-qr-TRz" firstAttribute="trailing" secondItem="RP4-DW-7Ja" secondAttribute="trailingMargin" id="YDL-ff-Fwr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vM5-Pw-BoM" secondAttribute="trailing" constant="30" id="ZnN-FI-tGq"/>
+                            <constraint firstItem="S6u-Zd-tN8" firstAttribute="top" secondItem="3Rl-r7-9YV" secondAttribute="bottom" id="cQR-H8-DS2"/>
+                            <constraint firstItem="vM5-Pw-BoM" firstAttribute="top" secondItem="ojz-xz-wfr" secondAttribute="bottom" constant="8" id="dQe-kM-MRs"/>
+                            <constraint firstItem="S6u-Zd-tN8" firstAttribute="trailing" secondItem="RP4-DW-7Ja" secondAttribute="trailingMargin" id="gJu-0k-QdX"/>
+                            <constraint firstItem="ojz-xz-wfr" firstAttribute="leading" secondItem="RP4-DW-7Ja" secondAttribute="leadingMargin" id="mcJ-vQ-cl8"/>
+                            <constraint firstItem="G2Q-Hu-wbl" firstAttribute="height" secondItem="0RK-GL-TF9" secondAttribute="height" id="o4p-Aw-dvT"/>
+                            <constraint firstItem="vM5-Pw-BoM" firstAttribute="leading" secondItem="RP4-DW-7Ja" secondAttribute="leadingMargin" constant="30" id="tpY-Nh-PdS"/>
+                            <constraint firstItem="Y3t-dN-LE8" firstAttribute="top" secondItem="0RK-GL-TF9" secondAttribute="bottom" constant="20" id="tqs-lv-j0N"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="G2Q-Hu-wbl" secondAttribute="leading" id="uHR-dz-86x"/>
+                            <constraint firstItem="Y3t-dN-LE8" firstAttribute="top" secondItem="G2Q-Hu-wbl" secondAttribute="bottom" constant="20" id="wjL-SZ-adP"/>
+                            <constraint firstItem="Ju5-qr-TRz" firstAttribute="top" secondItem="S6u-Zd-tN8" secondAttribute="bottom" constant="8" id="x42-hE-hHC"/>
+                            <constraint firstItem="G2Q-Hu-wbl" firstAttribute="width" secondItem="0RK-GL-TF9" secondAttribute="height" multiplier="1:1" id="ymJ-95-gFf"/>
+                            <constraint firstItem="Ju5-qr-TRz" firstAttribute="leading" secondItem="RP4-DW-7Ja" secondAttribute="leadingMargin" id="z5i-cY-ExK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelItemButton" destination="0RK-GL-TF9" id="Z1U-fU-PS4"/>
+                        <outlet property="decreaseQuantityButton" destination="pS8-OI-gNp" id="z9b-Fw-dWr"/>
+                        <outlet property="increaseQuantityButton" destination="lag-YQ-57g" id="2xh-mz-K54"/>
+                        <outlet property="itemBrandTextField" destination="ojz-xz-wfr" id="3Uk-e5-yPd"/>
+                        <outlet property="itemNameTextField" destination="Ju5-qr-TRz" id="eBr-T7-SL0"/>
+                        <outlet property="itemPriceTextField" destination="qzU-Gd-5On" id="bvh-ol-XIi"/>
+                        <outlet property="itemQuantityLabel" destination="ev5-fj-HXW" id="O0T-SG-qYT"/>
+                        <outlet property="saveItemButton" destination="G2Q-Hu-wbl" id="Dg4-x1-rED"/>
+                        <segue destination="ize-1X-WLF" kind="unwind" identifier="backHome" unwindAction="backToHome:" id="zDr-hI-L6P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8k-Hf-mfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ize-1X-WLF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-944" y="1153"/>
         </scene>
