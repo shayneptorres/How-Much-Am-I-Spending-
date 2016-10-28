@@ -12,6 +12,15 @@
 		B834D0A11D85235E00B41845 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B834D0A01D85235E00B41845 /* Constants.swift */; };
 		B84899D61DC337F800E31CE1 /* NSMyDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84899D51DC337F800E31CE1 /* NSMyDefaults.swift */; };
 		B84899D81DC33C1400E31CE1 /* SwiftyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84899D71DC33C1400E31CE1 /* SwiftyTimer.swift */; };
+		B84899DC1DC33E2900E31CE1 /* ShoppingListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84899DB1DC33E2900E31CE1 /* ShoppingListItem.swift */; };
+		B84899DE1DC33F5100E31CE1 /* CurrentSpendingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84899DD1DC33F5100E31CE1 /* CurrentSpendingsItem.swift */; };
+		B84899E01DC33FE000E31CE1 /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84899DF1DC33FE000E31CE1 /* ShoppingList.swift */; };
+		B84899E21DC3401B00E31CE1 /* CustomShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84899E11DC3401B00E31CE1 /* CustomShoppingList.swift */; };
+		B84899E41DC340C400E31CE1 /* MealPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84899E31DC340C400E31CE1 /* MealPlan.swift */; };
+		B84899E61DC3410000E31CE1 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84899E51DC3410000E31CE1 /* Meal.swift */; };
+		B84899E81DC3415300E31CE1 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84899E71DC3415300E31CE1 /* Day.swift */; };
+		B84899EC1DC3428400E31CE1 /* ShoppingListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84899EB1DC3428400E31CE1 /* ShoppingListItemModel.swift */; };
+		B84899EE1DC34AF100E31CE1 /* ShoppingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84899ED1DC34AF100E31CE1 /* ShoppingListModel.swift */; };
 		B84F4E221CCCB1CF00A4CDC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */; };
 		B84F4E2B1CCCB1CF00A4CDC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */; };
 		B84F4E2E1CCCB1CF00A4CDC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E2C1CCCB1CF00A4CDC1 /* LaunchScreen.storyboard */; };
@@ -48,6 +57,15 @@
 		B834D0A01D85235E00B41845 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B84899D51DC337F800E31CE1 /* NSMyDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMyDefaults.swift; sourceTree = "<group>"; };
 		B84899D71DC33C1400E31CE1 /* SwiftyTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyTimer.swift; sourceTree = "<group>"; };
+		B84899DB1DC33E2900E31CE1 /* ShoppingListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListItem.swift; sourceTree = "<group>"; };
+		B84899DD1DC33F5100E31CE1 /* CurrentSpendingsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentSpendingsItem.swift; sourceTree = "<group>"; };
+		B84899DF1DC33FE000E31CE1 /* ShoppingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
+		B84899E11DC3401B00E31CE1 /* CustomShoppingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShoppingList.swift; sourceTree = "<group>"; };
+		B84899E31DC340C400E31CE1 /* MealPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPlan.swift; sourceTree = "<group>"; };
+		B84899E51DC3410000E31CE1 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		B84899E71DC3415300E31CE1 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		B84899EB1DC3428400E31CE1 /* ShoppingListItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListItemModel.swift; sourceTree = "<group>"; };
+		B84899ED1DC34AF100E31CE1 /* ShoppingListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListModel.swift; sourceTree = "<group>"; };
 		B84F4E1E1CCCB1CF00A4CDC1 /* How Much Am I Spending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "How Much Am I Spending.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +137,8 @@
 			children = (
 				B84899D51DC337F800E31CE1 /* NSMyDefaults.swift */,
 				B84899D71DC33C1400E31CE1 /* SwiftyTimer.swift */,
+				B84899EB1DC3428400E31CE1 /* ShoppingListItemModel.swift */,
+				B84899ED1DC34AF100E31CE1 /* ShoppingListModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -137,12 +157,48 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		B84899D91DC33DEC00E31CE1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B84899DA1DC33E0200E31CE1 /* Realm Objects */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		B84899DA1DC33E0200E31CE1 /* Realm Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B84899EA1DC341C400E31CE1 /* ShoppingListItems */,
+				B84899E91DC341AE00E31CE1 /* ShoppingLists */,
+				B84899E51DC3410000E31CE1 /* Meal.swift */,
+				B84899E71DC3415300E31CE1 /* Day.swift */,
+			);
+			name = "Realm Objects";
+			sourceTree = "<group>";
+		};
+		B84899E91DC341AE00E31CE1 /* ShoppingLists */ = {
+			isa = PBXGroup;
+			children = (
+				B84899DF1DC33FE000E31CE1 /* ShoppingList.swift */,
+				B84899E31DC340C400E31CE1 /* MealPlan.swift */,
+				B84899E11DC3401B00E31CE1 /* CustomShoppingList.swift */,
+			);
+			name = ShoppingLists;
+			sourceTree = "<group>";
+		};
+		B84899EA1DC341C400E31CE1 /* ShoppingListItems */ = {
+			isa = PBXGroup;
+			children = (
+				B84899DB1DC33E2900E31CE1 /* ShoppingListItem.swift */,
+				B84899DD1DC33F5100E31CE1 /* CurrentSpendingsItem.swift */,
+			);
+			name = ShoppingListItems;
+			sourceTree = "<group>";
+		};
 		B84F4E151CCCB1CF00A4CDC1 = {
 			isa = PBXGroup;
 			children = (
 				B84F4E201CCCB1CF00A4CDC1 /* How Much Am I Spending */,
-				B84F4E371CCCB1CF00A4CDC1 /* How Much Am I SpendingTests */,
-				B84F4E421CCCB1CF00A4CDC1 /* How Much Am I SpendingUITests */,
 				B84F4E1F1CCCB1CF00A4CDC1 /* Products */,
 				FB1DBDBD3500D5E34F5972B3 /* Pods */,
 				9EFE793380949AAA3127D223 /* Frameworks */,
@@ -163,9 +219,10 @@
 			isa = PBXGroup;
 			children = (
 				B82B61E71D7FFFAB0012DC1D /* Main.storyboard */,
+				B84899D91DC33DEC00E31CE1 /* Classes */,
+				B84899D21DC337AE00E31CE1 /* Models */,
 				B84899D41DC337BA00E31CE1 /* ViewControllers */,
 				B84899D31DC337B500E31CE1 /* Views */,
-				B84899D21DC337AE00E31CE1 /* Models */,
 				B84F4E511CCCB1DA00A4CDC1 /* SF */,
 			);
 			path = "How Much Am I Spending";
@@ -178,7 +235,7 @@
 				B84F4E3A1CCCB1CF00A4CDC1 /* Info.plist */,
 			);
 			path = "How Much Am I SpendingTests";
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		B84F4E421CCCB1CF00A4CDC1 /* How Much Am I SpendingUITests */ = {
 			isa = PBXGroup;
@@ -187,11 +244,13 @@
 				B84F4E451CCCB1CF00A4CDC1 /* Info.plist */,
 			);
 			path = "How Much Am I SpendingUITests";
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		B84F4E511CCCB1DA00A4CDC1 /* SF */ = {
 			isa = PBXGroup;
 			children = (
+				B84F4E421CCCB1CF00A4CDC1 /* How Much Am I SpendingUITests */,
+				B84F4E371CCCB1CF00A4CDC1 /* How Much Am I SpendingTests */,
 				B82B61DC1D7FF7E70012DC1D /* Objective-C Files */,
 				B827D6551D18FA5D00E03E3D /* Fonts */,
 				B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */,
@@ -278,7 +337,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Shayne Torres";
 				TargetAttributes = {
 					B84F4E1D1CCCB1CF00A4CDC1 = {
@@ -401,9 +460,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B84899E61DC3410000E31CE1 /* Meal.swift in Sources */,
 				B84F4E221CCCB1CF00A4CDC1 /* AppDelegate.swift in Sources */,
+				B84899EC1DC3428400E31CE1 /* ShoppingListItemModel.swift in Sources */,
 				B834D0A11D85235E00B41845 /* Constants.swift in Sources */,
+				B84899EE1DC34AF100E31CE1 /* ShoppingListModel.swift in Sources */,
+				B84899E21DC3401B00E31CE1 /* CustomShoppingList.swift in Sources */,
+				B84899E81DC3415300E31CE1 /* Day.swift in Sources */,
+				B84899E01DC33FE000E31CE1 /* ShoppingList.swift in Sources */,
+				B84899DE1DC33F5100E31CE1 /* CurrentSpendingsItem.swift in Sources */,
 				B84899D61DC337F800E31CE1 /* NSMyDefaults.swift in Sources */,
+				B84899E41DC340C400E31CE1 /* MealPlan.swift in Sources */,
+				B84899DC1DC33E2900E31CE1 /* ShoppingListItem.swift in Sources */,
 				B84899D81DC33C1400E31CE1 /* SwiftyTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,8 +532,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -511,8 +581,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -534,6 +606,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -543,6 +616,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB399DA25E95D985E42EA24D /* Pods-How Much Am I Spending.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -562,6 +636,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 73B179A6DAC16E51E3EB19F5 /* Pods-How Much Am I Spending.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
