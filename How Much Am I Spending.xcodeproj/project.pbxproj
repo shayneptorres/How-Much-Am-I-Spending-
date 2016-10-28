@@ -9,30 +9,13 @@
 /* Begin PBXBuildFile section */
 		2499B2DF846C2807D9029F65 /* Pods_How_Much_Am_I_SpendingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C9316C1EDA3E986A6B96E5 /* Pods_How_Much_Am_I_SpendingUITests.framework */; };
 		B827D6571D18FAA900E03E3D /* Geomanist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B827D6561D18FAA900E03E3D /* Geomanist-Regular.otf */; };
-		B82B61D91D7FF2EF0012DC1D /* CurrentSpendingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B61D81D7FF2EF0012DC1D /* CurrentSpendingsItem.swift */; };
-		B82B61DB1D7FF4CE0012DC1D /* CurrentSpendingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B61DA1D7FF4CE0012DC1D /* CurrentSpendingsModel.swift */; };
-		B82B61E21D7FF9F30012DC1D /* CurrentSpendingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B61E11D7FF9F30012DC1D /* CurrentSpendingsViewController.swift */; };
 		B82B61E81D7FFFAB0012DC1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B82B61E71D7FFFAB0012DC1D /* Main.storyboard */; };
-		B82B61EA1D8005C90012DC1D /* ManageSpendingsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B61E91D8005C90012DC1D /* ManageSpendingsItemViewController.swift */; };
-		B834D09F1D85230C00B41845 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B834D09E1D85230C00B41845 /* MaterialView.swift */; };
 		B834D0A11D85235E00B41845 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B834D0A01D85235E00B41845 /* Constants.swift */; };
-		B834D0A31D85262800B41845 /* PriceTextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B834D0A21D85262800B41845 /* PriceTextFieldModel.swift */; };
-		B834D0A91D85443F00B41845 /* ManageItemsStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B834D0A81D85443F00B41845 /* ManageItemsStyleKit.swift */; };
-		B834D0AB1D85446400B41845 /* IncreaseQuantityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B834D0AA1D85446400B41845 /* IncreaseQuantityButton.swift */; };
-		B834D0AD1D8546F100B41845 /* DecreaseQuantityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B834D0AC1D8546F100B41845 /* DecreaseQuantityButton.swift */; };
 		B84F4E221CCCB1CF00A4CDC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */; };
 		B84F4E2B1CCCB1CF00A4CDC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */; };
 		B84F4E2E1CCCB1CF00A4CDC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E2C1CCCB1CF00A4CDC1 /* LaunchScreen.storyboard */; };
 		B84F4E391CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E381CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingTests.swift */; };
 		B84F4E441CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E431CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingUITests.swift */; };
-		B885F8C71D814C9B00CAB186 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B885F8C61D814C9B00CAB186 /* RealmModel.swift */; };
-		B8A1D4661D87FF5F009CBA1A /* DodoDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1D4651D87FF5F009CBA1A /* DodoDistrib.swift */; };
-		B8E504FB1D4D9A5A00D39060 /* HMAISKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E504FA1D4D9A5A00D39060 /* HMAISKit.swift */; };
-		B8E505001D4DA0B900D39060 /* ShoppingListTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E504FF1D4DA0B900D39060 /* ShoppingListTabBarItem.swift */; };
-		B8E505021D4DA1D200D39060 /* CurrentSpendingsTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E505011D4DA1D200D39060 /* CurrentSpendingsTabBarItem.swift */; };
-		B8E505041D4DDEAD00D39060 /* SettingsTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E505031D4DDEAD00D39060 /* SettingsTabBarItem.swift */; };
-		B8F659231D87F01700182C9F /* SaveItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F659221D87F01700182C9F /* SaveItemButton.swift */; };
-		B8F659251D87F03200182C9F /* CancelItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F659241D87F03200182C9F /* CancelItemButton.swift */; };
 		BAAC8F2D2D609E751E3DF658 /* Pods_How_Much_Am_I_Spending.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC35CC39DAFA7F83AB81FD9 /* Pods_How_Much_Am_I_Spending.framework */; };
 		FCFF9B46B37A460A7708E8C3 /* Pods_How_Much_Am_I_SpendingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17DB0E06D5E78345936DB489 /* Pods_How_Much_Am_I_SpendingTests.framework */; };
 /* End PBXBuildFile section */
@@ -62,18 +45,9 @@
 		3D3FAC9383D8B7417493739E /* Pods-How Much Am I SpendingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I SpendingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I SpendingTests/Pods-How Much Am I SpendingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		73B179A6DAC16E51E3EB19F5 /* Pods-How Much Am I Spending.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I Spending.release.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I Spending/Pods-How Much Am I Spending.release.xcconfig"; sourceTree = "<group>"; };
 		B827D6561D18FAA900E03E3D /* Geomanist-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geomanist-Regular.otf"; sourceTree = "<group>"; };
-		B82B61D81D7FF2EF0012DC1D /* CurrentSpendingsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentSpendingsItem.swift; sourceTree = "<group>"; };
-		B82B61DA1D7FF4CE0012DC1D /* CurrentSpendingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentSpendingsModel.swift; sourceTree = "<group>"; };
 		B82B61DE1D7FF8470012DC1D /* How Much Am I Spending-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "How Much Am I Spending-Bridging-Header.h"; sourceTree = "<group>"; };
-		B82B61E11D7FF9F30012DC1D /* CurrentSpendingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentSpendingsViewController.swift; sourceTree = "<group>"; };
 		B82B61E71D7FFFAB0012DC1D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		B82B61E91D8005C90012DC1D /* ManageSpendingsItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageSpendingsItemViewController.swift; sourceTree = "<group>"; };
-		B834D09E1D85230C00B41845 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		B834D0A01D85235E00B41845 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		B834D0A21D85262800B41845 /* PriceTextFieldModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceTextFieldModel.swift; sourceTree = "<group>"; };
-		B834D0A81D85443F00B41845 /* ManageItemsStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageItemsStyleKit.swift; sourceTree = "<group>"; };
-		B834D0AA1D85446400B41845 /* IncreaseQuantityButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncreaseQuantityButton.swift; sourceTree = "<group>"; };
-		B834D0AC1D8546F100B41845 /* DecreaseQuantityButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecreaseQuantityButton.swift; sourceTree = "<group>"; };
 		B84F4E1E1CCCB1CF00A4CDC1 /* How Much Am I Spending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "How Much Am I Spending.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,14 +59,6 @@
 		B84F4E3F1CCCB1CF00A4CDC1 /* How Much Am I SpendingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "How Much Am I SpendingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84F4E431CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = How_Much_Am_I_SpendingUITests.swift; sourceTree = "<group>"; };
 		B84F4E451CCCB1CF00A4CDC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B885F8C61D814C9B00CAB186 /* RealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
-		B8A1D4651D87FF5F009CBA1A /* DodoDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DodoDistrib.swift; sourceTree = "<group>"; };
-		B8E504FA1D4D9A5A00D39060 /* HMAISKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMAISKit.swift; sourceTree = "<group>"; };
-		B8E504FF1D4DA0B900D39060 /* ShoppingListTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListTabBarItem.swift; sourceTree = "<group>"; };
-		B8E505011D4DA1D200D39060 /* CurrentSpendingsTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentSpendingsTabBarItem.swift; sourceTree = "<group>"; };
-		B8E505031D4DDEAD00D39060 /* SettingsTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTabBarItem.swift; sourceTree = "<group>"; };
-		B8F659221D87F01700182C9F /* SaveItemButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveItemButton.swift; sourceTree = "<group>"; };
-		B8F659241D87F03200182C9F /* CancelItemButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelItemButton.swift; sourceTree = "<group>"; };
 		B951D5FBDD34EF8D18D49F12 /* Pods-How Much Am I SpendingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I SpendingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I SpendingUITests/Pods-How Much Am I SpendingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BB399DA25E95D985E42EA24D /* Pods-How Much Am I Spending.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I Spending.debug.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I Spending/Pods-How Much Am I Spending.debug.xcconfig"; sourceTree = "<group>"; };
 		EFCA2452308E55B6B4EB33F5 /* Pods-How Much Am I SpendingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I SpendingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I SpendingTests/Pods-How Much Am I SpendingTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,32 +110,12 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
-		B82B61D71D7FF2B20012DC1D /* Realm Objects */ = {
-			isa = PBXGroup;
-			children = (
-				B82B61D81D7FF2EF0012DC1D /* CurrentSpendingsItem.swift */,
-			);
-			name = "Realm Objects";
-			sourceTree = "<group>";
-		};
 		B82B61DC1D7FF7E70012DC1D /* Objective-C Files */ = {
 			isa = PBXGroup;
 			children = (
 				B82B61DE1D7FF8470012DC1D /* How Much Am I Spending-Bridging-Header.h */,
 			);
 			name = "Objective-C Files";
-			sourceTree = "<group>";
-		};
-		B834D09D1D8522F100B41845 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				B834D09E1D85230C00B41845 /* MaterialView.swift */,
-				B834D0AA1D85446400B41845 /* IncreaseQuantityButton.swift */,
-				B834D0AC1D8546F100B41845 /* DecreaseQuantityButton.swift */,
-				B8F659221D87F01700182C9F /* SaveItemButton.swift */,
-				B8F659241D87F03200182C9F /* CancelItemButton.swift */,
-			);
-			name = Views;
 			sourceTree = "<group>";
 		};
 		B84F4E151CCCB1CF00A4CDC1 = {
@@ -197,17 +143,8 @@
 		B84F4E201CCCB1CF00A4CDC1 /* How Much Am I Spending */ = {
 			isa = PBXGroup;
 			children = (
-				B834D09D1D8522F100B41845 /* Views */,
 				B82B61E71D7FFFAB0012DC1D /* Main.storyboard */,
-				B834D0A81D85443F00B41845 /* ManageItemsStyleKit.swift */,
 				B82B61DC1D7FF7E70012DC1D /* Objective-C Files */,
-				B8C21C961CE04CFA00FC16E5 /* View Controllers */,
-				B82B61D71D7FF2B20012DC1D /* Realm Objects */,
-				B8C21C951CE04CEB00FC16E5 /* Models */,
-				B8C21C941CE04CBC00FC16E5 /* Classes */,
-				B885F8C31D81307200CAB186 /* Enums */,
-				B8E504FC1D4D9A5E00D39060 /* StyleKits */,
-				B8DDED9F1D4D644700FCFAAA /* Views */,
 				B827D6551D18FA5D00E03E3D /* Fonts */,
 				B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */,
 				B84F4E511CCCB1DA00A4CDC1 /* SF */,
@@ -236,72 +173,12 @@
 		B84F4E511CCCB1DA00A4CDC1 /* SF */ = {
 			isa = PBXGroup;
 			children = (
-				B8F659261D87F93C00182C9F /* Frameworks */,
 				B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */,
 				B84F4E2C1CCCB1CF00A4CDC1 /* LaunchScreen.storyboard */,
 				B84F4E2F1CCCB1CF00A4CDC1 /* Info.plist */,
 				B834D0A01D85235E00B41845 /* Constants.swift */,
 			);
 			name = SF;
-			sourceTree = "<group>";
-		};
-		B885F8C31D81307200CAB186 /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Enums;
-			sourceTree = "<group>";
-		};
-		B8C21C941CE04CBC00FC16E5 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
-		B8C21C951CE04CEB00FC16E5 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				B82B61DA1D7FF4CE0012DC1D /* CurrentSpendingsModel.swift */,
-				B885F8C61D814C9B00CAB186 /* RealmModel.swift */,
-				B834D0A21D85262800B41845 /* PriceTextFieldModel.swift */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		B8C21C961CE04CFA00FC16E5 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				B82B61E11D7FF9F30012DC1D /* CurrentSpendingsViewController.swift */,
-				B82B61E91D8005C90012DC1D /* ManageSpendingsItemViewController.swift */,
-			);
-			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		B8DDED9F1D4D644700FCFAAA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				B8E504FF1D4DA0B900D39060 /* ShoppingListTabBarItem.swift */,
-				B8E505011D4DA1D200D39060 /* CurrentSpendingsTabBarItem.swift */,
-				B8E505031D4DDEAD00D39060 /* SettingsTabBarItem.swift */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		B8E504FC1D4D9A5E00D39060 /* StyleKits */ = {
-			isa = PBXGroup;
-			children = (
-				B8E504FA1D4D9A5A00D39060 /* HMAISKit.swift */,
-			);
-			name = StyleKits;
-			sourceTree = "<group>";
-		};
-		B8F659261D87F93C00182C9F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B8A1D4651D87FF5F009CBA1A /* DodoDistrib.swift */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FB1DBDBD3500D5E34F5972B3 /* Pods */ = {
@@ -394,15 +271,18 @@
 					B84F4E1D1CCCB1CF00A4CDC1 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = ZC55HLSXNP;
+						LastSwiftMigration = 0800;
 					};
 					B84F4E331CCCB1CF00A4CDC1 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 22K6B48Y8T;
+						LastSwiftMigration = 0800;
 						TestTargetID = B84F4E1D1CCCB1CF00A4CDC1;
 					};
 					B84F4E3E1CCCB1CF00A4CDC1 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 22K6B48Y8T;
+						LastSwiftMigration = 0800;
 						TestTargetID = B84F4E1D1CCCB1CF00A4CDC1;
 					};
 				};
@@ -583,25 +463,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8E505021D4DA1D200D39060 /* CurrentSpendingsTabBarItem.swift in Sources */,
-				B8A1D4661D87FF5F009CBA1A /* DodoDistrib.swift in Sources */,
-				B8F659231D87F01700182C9F /* SaveItemButton.swift in Sources */,
-				B8E505001D4DA0B900D39060 /* ShoppingListTabBarItem.swift in Sources */,
-				B82B61EA1D8005C90012DC1D /* ManageSpendingsItemViewController.swift in Sources */,
-				B885F8C71D814C9B00CAB186 /* RealmModel.swift in Sources */,
-				B834D09F1D85230C00B41845 /* MaterialView.swift in Sources */,
-				B82B61E21D7FF9F30012DC1D /* CurrentSpendingsViewController.swift in Sources */,
-				B82B61DB1D7FF4CE0012DC1D /* CurrentSpendingsModel.swift in Sources */,
-				B8F659251D87F03200182C9F /* CancelItemButton.swift in Sources */,
 				B84F4E221CCCB1CF00A4CDC1 /* AppDelegate.swift in Sources */,
-				B834D0AB1D85446400B41845 /* IncreaseQuantityButton.swift in Sources */,
-				B834D0A91D85443F00B41845 /* ManageItemsStyleKit.swift in Sources */,
-				B8E505041D4DDEAD00D39060 /* SettingsTabBarItem.swift in Sources */,
-				B82B61D91D7FF2EF0012DC1D /* CurrentSpendingsItem.swift in Sources */,
-				B8E504FB1D4D9A5A00D39060 /* HMAISKit.swift in Sources */,
 				B834D0A11D85235E00B41845 /* Constants.swift in Sources */,
-				B834D0AD1D8546F100B41845 /* DecreaseQuantityButton.swift in Sources */,
-				B834D0A31D85262800B41845 /* PriceTextFieldModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,6 +614,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "How Much Am I Spending/How Much Am I Spending-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -768,6 +632,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "How Much Am I Spending/How Much Am I Spending-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -780,6 +645,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Shayne-Torres.How-Much-Am-I-SpendingTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/How Much Am I Spending.app/How Much Am I Spending";
 			};
 			name = Debug;
@@ -793,6 +659,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Shayne-Torres.How-Much-Am-I-SpendingTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/How Much Am I Spending.app/How Much Am I Spending";
 			};
 			name = Release;
@@ -805,6 +672,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Shayne-Torres.How-Much-Am-I-SpendingUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "How Much Am I Spending";
 				USES_XCTRUNNER = YES;
 			};
@@ -818,6 +686,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Shayne-Torres.How-Much-Am-I-SpendingUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "How Much Am I Spending";
 				USES_XCTRUNNER = YES;
 			};

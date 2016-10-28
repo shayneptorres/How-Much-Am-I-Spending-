@@ -39,7 +39,7 @@ public class LinkingObjectsBase: NSObject, NSFastEnumeration {
 
     internal var rlmResults: RLMResults<RLMObject> {
         if cachedRLMResults == nil {
-            if let object = self.object, property = self.property {
+            if let object = self.object, let property = self.property {
                 cachedRLMResults = RLMDynamicGet(object.object, property)! as? RLMResults
                 self.object = nil
                 self.property = nil
@@ -203,7 +203,7 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
        collection's objects.
      */
     public override func value(forKeyPath keyPath: String) -> AnyObject? {
-        return rlmResults.value(forKeyPath: keyPath)
+        return rlmResults.value(forKeyPath: keyPath) as AnyObject?
     }
 
     /**
@@ -263,7 +263,7 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
 
      - returns: `Results` with elements sorted by the given sort descriptors.
      */
-    public func sorted<S: Sequence where S.Iterator.Element == SortDescriptor>(with sortDescriptors: S) -> Results<T> {
+    public func sorted<S: Sequence>(with sortDescriptors: S) -> Results<T> where S.Iterator.Element == SortDescriptor {
         return Results<T>(rlmResults.sortedResults(using: sortDescriptors.map { $0.rlmSortDescriptorValue }))
     }
 
@@ -384,9 +384,9 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
      - parameter block: The block to be called with the evaluated linking objects and change information.
      - returns: A token which must be held for as long as you want updates to be delivered.
      */
-    public func addNotificationBlock(block: ((RealmCollectionChange<LinkingObjects>) -> Void)) -> NotificationToken {
+    public func addNotificationBlock(block: @escaping ((RealmCollectionChange<LinkingObjects>) -> Void)) -> NotificationToken {
         return rlmResults.addNotificationBlock { results, change, error in
-            block(RealmCollectionChange.fromObjc(value: self, change: change, error: error))
+            block(RealmCollectionChange.fromObjc(value: self, change: change, error: error as NSError?))
         }
     }
 }
@@ -419,11 +419,11 @@ extension LinkingObjects : RealmCollection {
     }
 
     /// :nodoc:
-    public func _addNotificationBlock(block: (RealmCollectionChange<AnyRealmCollection<T>>) -> Void) ->
+    public func _addNotificationBlock(block: @escaping (RealmCollectionChange<AnyRealmCollection<T>>) -> Void) ->
         NotificationToken {
             let anyCollection = AnyRealmCollection(self)
             return rlmResults.addNotificationBlock { _, change, error in
-                block(RealmCollectionChange.fromObjc(value: anyCollection, change: change, error: error))
+                block(RealmCollectionChange.fromObjc(value: anyCollection, change: change, error: error as NSError?))
             }
     }
 }
@@ -450,7 +450,7 @@ extension LinkingObjects {
     public func sorted(_ property: String, ascending: Bool = true) -> Results<T> { fatalError() }
 
     @available(*, unavailable, renamed:"sorted(with:)")
-    public func sorted<S: Sequence where S.Iterator.Element == SortDescriptor>(_ sortDescriptors: S) -> Results<T> {
+    public func sorted<S: Sequence>(_ sortDescriptors: S) -> Results<T> where S.Iterator.Element == SortDescriptor {
         fatalError()
     }
 
@@ -471,15 +471,15 @@ extension LinkingObjects {
 
 /// :nodoc:
 /// Internal class. Do not use directly. Used for reflection and initialization
-public class LinkingObjectsBase: NSObject, NSFastEnumeration {
+open class LinkingObjectsBase: NSObject, NSFastEnumeration {
     internal let objectClassName: String
     internal let propertyName: String
 
-    private var cachedRLMResults: RLMResults?
-    private var object: RLMWeakObjectHandle?
-    private var property: RLMProperty?
+    fileprivate var cachedRLMResults: RLMResults?
+    fileprivate var object: RLMWeakObjectHandle?
+    fileprivate var property: RLMProperty?
 
-    internal func attachTo(object object: RLMObjectBase, property: RLMProperty) {
+    internal func attachTo(object: RLMObjectBase, property: RLMProperty) {
         self.object = RLMWeakObjectHandle(object: object)
         self.property = property
         self.cachedRLMResults = nil
@@ -492,7 +492,7 @@ public class LinkingObjectsBase: NSObject, NSFastEnumeration {
                 self.object = nil
                 self.property = nil
             } else {
-                cachedRLMResults = RLMResults.emptyDetachedResults()
+                cachedRLMResults = RLMResults.emptyDetached()
             }
         }
         return cachedRLMResults!
@@ -504,10 +504,10 @@ public class LinkingObjectsBase: NSObject, NSFastEnumeration {
     }
 
     // MARK: Fast Enumeration
-    public func countByEnumeratingWithState(state: UnsafeMutablePointer<NSFastEnumerationState>,
-                                            objects buffer: AutoreleasingUnsafeMutablePointer<AnyObject?>,
+    open func countByEnumerating(with state: UnsafeMutablePointer<NSFastEnumerationState>,
+                                            objects buffer: AutoreleasingUnsafeMutablePointer<AutoreleasingUnsafeMutablePointer<AnyObject?>>,
                                                     count len: Int) -> Int {
-        return Int(rlmResults.countByEnumeratingWithState(state,
+        return Int(rlmResults.countByEnumerating(with: state,
             objects: buffer,
             count: UInt(len)))
     }
@@ -535,14 +535,14 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
     // MARK: Properties
 
     /// The Realm which manages this linking objects collection, or `nil` if the collection is unmanaged.
-    public var realm: Realm? { return rlmResults.attached ? Realm(rlmResults.realm) : nil }
+    public var realm: Realm? { return rlmResults.isAttached ? Realm(rlmResults.realm) : nil }
 
     /// Indicates if the linking objects collection is no longer valid.
     ///
     /// The linking objects collection becomes invalid if `invalidate` is called on the containing `realm`.
     ///
     /// An invalidated linking objects can be accessed, but will always be empty.
-    public var invalidated: Bool { return rlmResults.invalidated }
+    public var invalidated: Bool { return rlmResults.isInvalidated }
 
     /// The number of objects in the linking objects.
     public var count: Int { return Int(rlmResults.count) }
@@ -574,8 +574,8 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
 
      - parameter object: The object whose index is being queried.
      */
-    public func indexOf(object: T) -> Int? {
-        return notFoundToNil(rlmResults.indexOfObject(unsafeBitCast(object, RLMObject.self)))
+    public func indexOf(_ object: T) -> Int? {
+        return notFoundToNil(rlmResults.indexOfObject(unsafeBitCast(object, to: RLMObject.self)))
     }
 
     /**
@@ -583,7 +583,7 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
 
      - parameter predicate: The predicate with which to filter the objects.
      */
-    public func indexOf(predicate: NSPredicate) -> Int? {
+    public func indexOf(_ predicate: NSPredicate) -> Int? {
         return notFoundToNil(rlmResults.indexOfObjectWithPredicate(predicate))
     }
 
@@ -592,7 +592,7 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
 
      - parameter predicateFormat: A predicate format string, optionally followed by a variable number of arguments.
      */
-    public func indexOf(predicateFormat: String, _ args: AnyObject...) -> Int? {
+    public func indexOf(_ predicateFormat: String, _ args: AnyObject...) -> Int? {
         return notFoundToNil(rlmResults.indexOfObjectWithPredicate(NSPredicate(format: predicateFormat,
             argumentArray: args)))
     }
@@ -609,15 +609,15 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
     public subscript(index: Int) -> T {
         get {
             throwForNegativeIndex(index)
-            return unsafeBitCast(rlmResults[UInt(index)], T.self)
+            return unsafeBitCast(rlmResults[UInt(index)], to: T.self)
         }
     }
 
     /// Returns the first object in the linking objects collection, or `nil` if the collection is empty.
-    public var first: T? { return unsafeBitCast(rlmResults.firstObject(), Optional<T>.self) }
+    public var first: T? { return unsafeBitCast(rlmResults.firstObject(), to: Optional<T>.self) }
 
     /// Returns the last object in the linking objects collection, or `nil` if collection is empty.
-    public var last: T? { return unsafeBitCast(rlmResults.lastObject(), Optional<T>.self) }
+    public var last: T? { return unsafeBitCast(rlmResults.lastObject(), to: Optional<T>.self) }
 
     // MARK: KVC
 
@@ -627,8 +627,8 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
 
      - parameter key: The name of the property whose values are desired.
      */
-    public override func valueForKey(key: String) -> AnyObject? {
-        return rlmResults.valueForKey(key)
+    public override func value(forKey key: String) -> Any? {
+        return rlmResults.value(forKey: key)
     }
 
     /**
@@ -637,8 +637,8 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
 
      - parameter keyPath: The key path to the property whose values are desired.
      */
-    public override func valueForKeyPath(keyPath: String) -> AnyObject? {
-        return rlmResults.valueForKeyPath(keyPath)
+    public override func value(forKeyPath keyPath: String) -> Any? {
+        return rlmResults.value(forKeyPath: keyPath)
     }
 
     /**
@@ -650,7 +650,7 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
      - parameter value: The value to set the property to.
      - parameter key:   The name of the property whose value should be set on each object.
      */
-    public override func setValue(value: AnyObject?, forKey key: String) {
+    public override func setValue(_ value: Any?, forKey key: String) {
         return rlmResults.setValue(value, forKey: key)
     }
 
@@ -661,7 +661,7 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
 
      - parameter predicateFormat: A predicate format string, optionally followed by a variable number of arguments.
      */
-    public func filter(predicateFormat: String, _ args: AnyObject...) -> Results<T> {
+    public func filter(_ predicateFormat: String, _ args: AnyObject...) -> Results<T> {
         return Results<T>(rlmResults.objectsWithPredicate(NSPredicate(format: predicateFormat, argumentArray: args)))
     }
 
@@ -670,7 +670,7 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
 
      - parameter predicate: The predicate with which to filter the objects.
      */
-    public func filter(predicate: NSPredicate) -> Results<T> {
+    public func filter(_ predicate: NSPredicate) -> Results<T> {
         return Results<T>(rlmResults.objectsWithPredicate(predicate))
     }
 
@@ -688,7 +688,7 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
      - parameter property:  The name of the property to sort by.
      - parameter ascending: The direction to sort in.
      */
-    public func sorted(property: String, ascending: Bool = true) -> Results<T> {
+    public func sorted(_ property: String, ascending: Bool = true) -> Results<T> {
         return sorted([SortDescriptor(property: property, ascending: ascending)])
     }
 
@@ -702,7 +702,7 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
 
      - parameter sortDescriptors: A sequence of `SortDescriptor`s to sort by.
      */
-    public func sorted<S: SequenceType where S.Generator.Element == SortDescriptor>(sortDescriptors: S) -> Results<T> {
+    public func sorted<S: Sequence where S.Iterator.Element == SortDescriptor>(_ sortDescriptors: S) -> Results<T> {
         return Results<T>(rlmResults.sortedResultsUsingDescriptors(sortDescriptors.map { $0.rlmSortDescriptorValue }))
     }
 
@@ -718,8 +718,8 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
 
      - returns: The minimum value of the property, or `nil` if the collection is empty.
      */
-    public func min<U: MinMaxType>(property: String) -> U? {
-        return rlmResults.minOfProperty(property) as! U?
+    public func min<U: MinMaxType>(_ property: String) -> U? {
+        return rlmResults.min(ofProperty: property) as! U?
     }
 
     /**
@@ -732,8 +732,8 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
 
      - returns: The maximum value of the property, or `nil` if the collection is empty.
      */
-    public func max<U: MinMaxType>(property: String) -> U? {
-        return rlmResults.maxOfProperty(property) as! U?
+    public func max<U: MinMaxType>(_ property: String) -> U? {
+        return rlmResults.max(ofProperty: property) as! U?
     }
 
     /**
@@ -746,8 +746,8 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
 
      - returns: The sum of the given property.
      */
-    public func sum<U: AddableType>(property: String) -> U {
-        return rlmResults.sumOfProperty(property) as AnyObject as! U
+    public func sum<U: AddableType>(_ property: String) -> U {
+        return rlmResults.sum(ofProperty: property) as AnyObject as! U
     }
 
     /**
@@ -759,8 +759,8 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
 
      - returns: The average value of the given property, or `nil` if the collection is empty.
      */
-    public func average<U: AddableType>(property: String) -> U? {
-        return rlmResults.averageOfProperty(property) as! U?
+    public func average<U: AddableType>(_ property: String) -> U? {
+        return rlmResults.average(ofProperty: property) as! U?
     }
 
     // MARK: Notifications
@@ -825,7 +825,7 @@ public final class LinkingObjects<T: Object>: LinkingObjectsBase {
      - returns: A token which must be retained for as long as you want updates to be delivered.
      */
     @warn_unused_result(message="You must hold on to the NotificationToken returned from addNotificationBlock")
-    public func addNotificationBlock(block: (RealmCollectionChange<LinkingObjects> -> Void)) -> NotificationToken {
+    public func addNotificationBlock(_ block: ((RealmCollectionChange<LinkingObjects>) -> Void)) -> NotificationToken {
         return rlmResults.addNotificationBlock { results, change, error in
             block(RealmCollectionChange.fromObjc(self, change: change, error: error))
         }
@@ -836,7 +836,7 @@ extension LinkingObjects: RealmCollectionType {
     // MARK: Sequence Support
 
     /// Returns an `RLMGenerator` that yields successive elements in the results.
-    public func generate() -> RLMGenerator<T> {
+    public func makeIterator() -> RLMGenerator<T> {
         return RLMGenerator(collection: rlmResults)
     }
 
@@ -852,7 +852,7 @@ extension LinkingObjects: RealmCollectionType {
     public var endIndex: Int { return count }
 
     /// :nodoc:
-    public func _addNotificationBlock(block: (RealmCollectionChange<AnyRealmCollection<T>>) -> Void) ->
+    public func _addNotificationBlock(_ block: (RealmCollectionChange<AnyRealmCollection<T>>) -> Void) ->
         NotificationToken {
             let anyCollection = AnyRealmCollection(self)
             return rlmResults.addNotificationBlock { _, change, error in

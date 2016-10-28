@@ -5,9 +5,6 @@
       location = "group:Main.storyboard">
    </FileRef>
    <FileRef
-      location = "group:HMAISKit.swift">
-   </FileRef>
-   <FileRef
       location = "group:How Much Am I Spending.xcodeproj">
    </FileRef>
    <FileRef

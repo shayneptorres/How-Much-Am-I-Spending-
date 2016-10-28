@@ -21,7 +21,7 @@ import Realm
 
 // MARK: Internal Helpers
 
-internal func notFoundToNil(index: UInt) -> Int? {
+internal func notFoundToNil(_ index: UInt) -> Int? {
     if index == UInt(NSNotFound) {
         return nil
     }
@@ -49,19 +49,19 @@ internal func gsub(pattern: String, template: String, string: String, error: NSE
 
 #else
 
-internal func throwRealmException(message: String, userInfo: [String:AnyObject] = [:]) {
+internal func throwRealmException(_ message: String, userInfo: [String:AnyObject] = [:]) {
     NSException(name: RLMExceptionName, reason: message, userInfo: userInfo).raise()
 }
 
-internal func throwForNegativeIndex(int: Int, parameterName: String = "index") {
+internal func throwForNegativeIndex(_ int: Int, parameterName: String = "index") {
     if int < 0 {
         throwRealmException("Cannot pass a negative value for '\(parameterName)'.")
     }
 }
 
-internal func gsub(pattern: String, template: String, string: String, error: NSErrorPointer = nil) -> String? {
+internal func gsub(_ pattern: String, template: String, string: String, error: NSErrorPointer? = nil) -> String? {
     let regex = try? NSRegularExpression(pattern: pattern, options: [])
-    return regex?.stringByReplacingMatchesInString(string, options: [],
+    return regex?.stringByReplacingMatches(in: string, options: [],
                                                    range: NSRange(location: 0, length: string.utf16.count),
                                                    withTemplate: template)
 }
