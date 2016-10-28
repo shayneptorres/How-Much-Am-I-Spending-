@@ -4,22 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-How Much Am I Spending.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-How Much Am I SpendingTests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-How Much Am I SpendingUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -34,75 +19,20 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SideMenu-SideMenu.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SideMenu.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SwiftyTimer.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TextFieldEffects.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>21B1DB3F9C96366DD393146B1376618E</key>
+		<key>3E143ACBB5B256CDFC7BF77A6CB68B04</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>286DB01843A2FBB3D3671B368DB2B278</key>
+		<key>AB1FA7613F55547BDA7F87F916C3A068</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6603DAA733A8A636F78F9C6A9EE7DF76</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A1A10F5E9F7DAD5FDFEBA04BAD1B849D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A754A66770B652D22265F03D10686DAA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B881AC5524F391CCA12B8AA74AC9314A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C643B801EEBDC1C6FDC107CF51940196</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E8B31F25E9B9CD2A7CB5C9D0C06314A3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F012E7B6E31622B2EF1C6CCEDE80C177</key>
+		<key>D727C30F551F7571947109B7150D3E27</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Main.storyboard">
-   </FileRef>
-   <FileRef
       location = "group:How Much Am I Spending.xcodeproj">
    </FileRef>
    <FileRef

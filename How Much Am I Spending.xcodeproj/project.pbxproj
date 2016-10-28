@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2499B2DF846C2807D9029F65 /* Pods_How_Much_Am_I_SpendingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C9316C1EDA3E986A6B96E5 /* Pods_How_Much_Am_I_SpendingUITests.framework */; };
 		B827D6571D18FAA900E03E3D /* Geomanist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B827D6561D18FAA900E03E3D /* Geomanist-Regular.otf */; };
 		B82B61E81D7FFFAB0012DC1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B82B61E71D7FFFAB0012DC1D /* Main.storyboard */; };
 		B834D0A11D85235E00B41845 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B834D0A01D85235E00B41845 /* Constants.swift */; };
+		B84899D61DC337F800E31CE1 /* NSMyDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84899D51DC337F800E31CE1 /* NSMyDefaults.swift */; };
+		B84899D81DC33C1400E31CE1 /* SwiftyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84899D71DC33C1400E31CE1 /* SwiftyTimer.swift */; };
 		B84F4E221CCCB1CF00A4CDC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */; };
 		B84F4E2B1CCCB1CF00A4CDC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */; };
 		B84F4E2E1CCCB1CF00A4CDC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E2C1CCCB1CF00A4CDC1 /* LaunchScreen.storyboard */; };
 		B84F4E391CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E381CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingTests.swift */; };
 		B84F4E441CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E431CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingUITests.swift */; };
 		BAAC8F2D2D609E751E3DF658 /* Pods_How_Much_Am_I_Spending.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC35CC39DAFA7F83AB81FD9 /* Pods_How_Much_Am_I_Spending.framework */; };
-		FCFF9B46B37A460A7708E8C3 /* Pods_How_Much_Am_I_SpendingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17DB0E06D5E78345936DB489 /* Pods_How_Much_Am_I_SpendingTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,15 +39,15 @@
 
 /* Begin PBXFileReference section */
 		0BC35CC39DAFA7F83AB81FD9 /* Pods_How_Much_Am_I_Spending.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_How_Much_Am_I_Spending.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F73B23DC7133D5463B2A2C5 /* Pods-How Much Am I SpendingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I SpendingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I SpendingUITests/Pods-How Much Am I SpendingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		17DB0E06D5E78345936DB489 /* Pods_How_Much_Am_I_SpendingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_How_Much_Am_I_SpendingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C9316C1EDA3E986A6B96E5 /* Pods_How_Much_Am_I_SpendingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_How_Much_Am_I_SpendingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D3FAC9383D8B7417493739E /* Pods-How Much Am I SpendingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I SpendingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I SpendingTests/Pods-How Much Am I SpendingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		73B179A6DAC16E51E3EB19F5 /* Pods-How Much Am I Spending.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I Spending.release.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I Spending/Pods-How Much Am I Spending.release.xcconfig"; sourceTree = "<group>"; };
 		B827D6561D18FAA900E03E3D /* Geomanist-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geomanist-Regular.otf"; sourceTree = "<group>"; };
 		B82B61DE1D7FF8470012DC1D /* How Much Am I Spending-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "How Much Am I Spending-Bridging-Header.h"; sourceTree = "<group>"; };
 		B82B61E71D7FFFAB0012DC1D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B834D0A01D85235E00B41845 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B84899D51DC337F800E31CE1 /* NSMyDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMyDefaults.swift; sourceTree = "<group>"; };
+		B84899D71DC33C1400E31CE1 /* SwiftyTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyTimer.swift; sourceTree = "<group>"; };
 		B84F4E1E1CCCB1CF00A4CDC1 /* How Much Am I Spending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "How Much Am I Spending.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,9 +59,7 @@
 		B84F4E3F1CCCB1CF00A4CDC1 /* How Much Am I SpendingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "How Much Am I SpendingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84F4E431CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = How_Much_Am_I_SpendingUITests.swift; sourceTree = "<group>"; };
 		B84F4E451CCCB1CF00A4CDC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B951D5FBDD34EF8D18D49F12 /* Pods-How Much Am I SpendingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I SpendingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I SpendingUITests/Pods-How Much Am I SpendingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BB399DA25E95D985E42EA24D /* Pods-How Much Am I Spending.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I Spending.debug.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I Spending/Pods-How Much Am I Spending.debug.xcconfig"; sourceTree = "<group>"; };
-		EFCA2452308E55B6B4EB33F5 /* Pods-How Much Am I SpendingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I SpendingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I SpendingTests/Pods-How Much Am I SpendingTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +75,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCFF9B46B37A460A7708E8C3 /* Pods_How_Much_Am_I_SpendingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +82,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2499B2DF846C2807D9029F65 /* Pods_How_Much_Am_I_SpendingUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +114,29 @@
 			name = "Objective-C Files";
 			sourceTree = "<group>";
 		};
+		B84899D21DC337AE00E31CE1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B84899D51DC337F800E31CE1 /* NSMyDefaults.swift */,
+				B84899D71DC33C1400E31CE1 /* SwiftyTimer.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B84899D31DC337B500E31CE1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B84899D41DC337BA00E31CE1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		B84F4E151CCCB1CF00A4CDC1 = {
 			isa = PBXGroup;
 			children = (
@@ -144,9 +163,9 @@
 			isa = PBXGroup;
 			children = (
 				B82B61E71D7FFFAB0012DC1D /* Main.storyboard */,
-				B82B61DC1D7FF7E70012DC1D /* Objective-C Files */,
-				B827D6551D18FA5D00E03E3D /* Fonts */,
-				B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */,
+				B84899D41DC337BA00E31CE1 /* ViewControllers */,
+				B84899D31DC337B500E31CE1 /* Views */,
+				B84899D21DC337AE00E31CE1 /* Models */,
 				B84F4E511CCCB1DA00A4CDC1 /* SF */,
 			);
 			path = "How Much Am I Spending";
@@ -173,6 +192,9 @@
 		B84F4E511CCCB1DA00A4CDC1 /* SF */ = {
 			isa = PBXGroup;
 			children = (
+				B82B61DC1D7FF7E70012DC1D /* Objective-C Files */,
+				B827D6551D18FA5D00E03E3D /* Fonts */,
+				B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */,
 				B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */,
 				B84F4E2C1CCCB1CF00A4CDC1 /* LaunchScreen.storyboard */,
 				B84F4E2F1CCCB1CF00A4CDC1 /* Info.plist */,
@@ -186,10 +208,6 @@
 			children = (
 				BB399DA25E95D985E42EA24D /* Pods-How Much Am I Spending.debug.xcconfig */,
 				73B179A6DAC16E51E3EB19F5 /* Pods-How Much Am I Spending.release.xcconfig */,
-				3D3FAC9383D8B7417493739E /* Pods-How Much Am I SpendingTests.debug.xcconfig */,
-				EFCA2452308E55B6B4EB33F5 /* Pods-How Much Am I SpendingTests.release.xcconfig */,
-				0F73B23DC7133D5463B2A2C5 /* Pods-How Much Am I SpendingUITests.debug.xcconfig */,
-				B951D5FBDD34EF8D18D49F12 /* Pods-How Much Am I SpendingUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -221,12 +239,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B84F4E4B1CCCB1CF00A4CDC1 /* Build configuration list for PBXNativeTarget "How Much Am I SpendingTests" */;
 			buildPhases = (
-				14FB35105339E6FFACBB309C /* 📦 Check Pods Manifest.lock */,
 				B84F4E301CCCB1CF00A4CDC1 /* Sources */,
 				B84F4E311CCCB1CF00A4CDC1 /* Frameworks */,
 				B84F4E321CCCB1CF00A4CDC1 /* Resources */,
-				1DC512ED18CA69EC40826A6F /* 📦 Embed Pods Frameworks */,
-				F2AFFEDC48A76AF8EB95B5A4 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,11 +257,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B84F4E4E1CCCB1CF00A4CDC1 /* Build configuration list for PBXNativeTarget "How Much Am I SpendingUITests" */;
 			buildPhases = (
-				02E731D94235BC67983D0871 /* 📦 Check Pods Manifest.lock */,
 				B84F4E3B1CCCB1CF00A4CDC1 /* Sources */,
 				B84F4E3C1CCCB1CF00A4CDC1 /* Frameworks */,
 				B84F4E3D1CCCB1CF00A4CDC1 /* Resources */,
-				C961AC9D647E94C0EE48BCF8 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -336,21 +349,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		02E731D94235BC67983D0871 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		067C7776289B9E108682770E /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -364,51 +362,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		14FB35105339E6FFACBB309C /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		1DC512ED18CA69EC40826A6F /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-How Much Am I SpendingTests/Pods-How Much Am I SpendingTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C961AC9D647E94C0EE48BCF8 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-How Much Am I SpendingUITests/Pods-How Much Am I SpendingUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E4EF6499F80553F06B618F32 /* 📦 Copy Pods Resources */ = {
@@ -441,21 +394,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-How Much Am I Spending/Pods-How Much Am I Spending-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F2AFFEDC48A76AF8EB95B5A4 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-How Much Am I SpendingTests/Pods-How Much Am I SpendingTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -465,6 +403,8 @@
 			files = (
 				B84F4E221CCCB1CF00A4CDC1 /* AppDelegate.swift in Sources */,
 				B834D0A11D85235E00B41845 /* Constants.swift in Sources */,
+				B84899D61DC337F800E31CE1 /* NSMyDefaults.swift in Sources */,
+				B84899D81DC33C1400E31CE1 /* SwiftyTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,7 +578,6 @@
 		};
 		B84F4E4C1CCCB1CF00A4CDC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D3FAC9383D8B7417493739E /* Pods-How Much Am I SpendingTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "How Much Am I SpendingTests/Info.plist";
@@ -652,7 +591,6 @@
 		};
 		B84F4E4D1CCCB1CF00A4CDC1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFCA2452308E55B6B4EB33F5 /* Pods-How Much Am I SpendingTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "How Much Am I SpendingTests/Info.plist";
@@ -666,7 +604,6 @@
 		};
 		B84F4E4F1CCCB1CF00A4CDC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F73B23DC7133D5463B2A2C5 /* Pods-How Much Am I SpendingUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "How Much Am I SpendingUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -680,7 +617,6 @@
 		};
 		B84F4E501CCCB1CF00A4CDC1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B951D5FBDD34EF8D18D49F12 /* Pods-How Much Am I SpendingUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "How Much Am I SpendingUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

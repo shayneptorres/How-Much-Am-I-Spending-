@@ -1,6 +1,0 @@
-framework module Pods_How_Much_Am_I_SpendingUITests {
-  umbrella header "Pods-How Much Am I SpendingUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
