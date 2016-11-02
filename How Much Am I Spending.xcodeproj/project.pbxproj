@@ -21,11 +21,13 @@
 		B84899E81DC3415300E31CE1 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84899E71DC3415300E31CE1 /* Day.swift */; };
 		B84899EC1DC3428400E31CE1 /* ShoppingListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84899EB1DC3428400E31CE1 /* ShoppingListItemModel.swift */; };
 		B84899EE1DC34AF100E31CE1 /* ShoppingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84899ED1DC34AF100E31CE1 /* ShoppingListModel.swift */; };
+		B84899F01DC40CFD00E31CE1 /* MealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84899EF1DC40CFD00E31CE1 /* MealModel.swift */; };
 		B84F4E221CCCB1CF00A4CDC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */; };
 		B84F4E2B1CCCB1CF00A4CDC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */; };
 		B84F4E2E1CCCB1CF00A4CDC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E2C1CCCB1CF00A4CDC1 /* LaunchScreen.storyboard */; };
 		B84F4E391CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E381CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingTests.swift */; };
 		B84F4E441CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E431CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingUITests.swift */; };
+		B8C739001DC47570000A0328 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C738FF1DC47570000A0328 /* DayModel.swift */; };
 		BAAC8F2D2D609E751E3DF658 /* Pods_How_Much_Am_I_Spending.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC35CC39DAFA7F83AB81FD9 /* Pods_How_Much_Am_I_Spending.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,7 @@
 		B84899E71DC3415300E31CE1 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		B84899EB1DC3428400E31CE1 /* ShoppingListItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListItemModel.swift; sourceTree = "<group>"; };
 		B84899ED1DC34AF100E31CE1 /* ShoppingListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListModel.swift; sourceTree = "<group>"; };
+		B84899EF1DC40CFD00E31CE1 /* MealModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealModel.swift; sourceTree = "<group>"; };
 		B84F4E1E1CCCB1CF00A4CDC1 /* How Much Am I Spending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "How Much Am I Spending.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84F4E211CCCB1CF00A4CDC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B84F4E2A1CCCB1CF00A4CDC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 		B84F4E3F1CCCB1CF00A4CDC1 /* How Much Am I SpendingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "How Much Am I SpendingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84F4E431CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = How_Much_Am_I_SpendingUITests.swift; sourceTree = "<group>"; };
 		B84F4E451CCCB1CF00A4CDC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8C738FF1DC47570000A0328 /* DayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
 		BB399DA25E95D985E42EA24D /* Pods-How Much Am I Spending.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I Spending.debug.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I Spending/Pods-How Much Am I Spending.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +143,8 @@
 				B84899D71DC33C1400E31CE1 /* SwiftyTimer.swift */,
 				B84899EB1DC3428400E31CE1 /* ShoppingListItemModel.swift */,
 				B84899ED1DC34AF100E31CE1 /* ShoppingListModel.swift */,
+				B84899EF1DC40CFD00E31CE1 /* MealModel.swift */,
+				B8C738FF1DC47570000A0328 /* DayModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -460,11 +466,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B84899F01DC40CFD00E31CE1 /* MealModel.swift in Sources */,
 				B84899E61DC3410000E31CE1 /* Meal.swift in Sources */,
 				B84F4E221CCCB1CF00A4CDC1 /* AppDelegate.swift in Sources */,
 				B84899EC1DC3428400E31CE1 /* ShoppingListItemModel.swift in Sources */,
 				B834D0A11D85235E00B41845 /* Constants.swift in Sources */,
 				B84899EE1DC34AF100E31CE1 /* ShoppingListModel.swift in Sources */,
+				B8C739001DC47570000A0328 /* DayModel.swift in Sources */,
 				B84899E21DC3401B00E31CE1 /* CustomShoppingList.swift in Sources */,
 				B84899E81DC3415300E31CE1 /* Day.swift in Sources */,
 				B84899E01DC33FE000E31CE1 /* ShoppingList.swift in Sources */,

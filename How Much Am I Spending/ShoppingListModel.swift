@@ -52,4 +52,42 @@ class ShoppingListModel {
     }
     
     // MARK: - ShoppingList Mutator Methods
+    func editCustomShoppinList(list: CustomShoppingList){
+        let realm = try! Realm()
+        
+        let listToBeEdited = realm.objects(CustomShoppingList.self).filter("id = \(list.id)").first!
+        try! realm.write {
+            listToBeEdited.id = list.id
+            listToBeEdited.name = list.name
+            listToBeEdited.items = list.items
+
+        }
+    }
+    
+    func editMealPlan(mp: MealPlan){
+        let realm = try! Realm()
+        
+        let mealPlanToBeEdited = realm.objects(MealPlan.self).filter("id = \(mp.id)").first!
+        try! realm.write {
+            mealPlanToBeEdited.id = mp.id
+            mealPlanToBeEdited.name = mp.name
+            mealPlanToBeEdited.days = mp.days
+        }
+    }
+    
+    func deleteCustomShoppingList(list: CustomShoppingList){
+        let realm  = try! Realm()
+        
+        try! realm.write {
+            realm.delete(list)
+        }
+    }
+    
+    func deleteMealPlan(list: MealPlan){
+        let realm  = try! Realm()
+        
+        try! realm.write {
+            realm.delete(list)
+        }
+    }
 }

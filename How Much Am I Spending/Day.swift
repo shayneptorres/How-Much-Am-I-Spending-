@@ -12,6 +12,7 @@ import RealmSwift
 class Day : Object {
     dynamic var id = Int()
     dynamic var date = NSDate()
+    dynamic var note = String()
     var meals = List<Meal>()
     dynamic var mealPlan: MealPlan?
     

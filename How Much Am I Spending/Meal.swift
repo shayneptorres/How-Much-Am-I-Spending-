@@ -12,6 +12,7 @@ import RealmSwift
 class Meal : Object{
     dynamic var id = Int()
     dynamic var name = String()
+    dynamic var note = String()
     var shoppingList = List<ShoppingList>()
     var day:Day?
     
