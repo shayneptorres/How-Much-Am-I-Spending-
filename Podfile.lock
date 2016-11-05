@@ -1,4 +1,5 @@
 PODS:
+  - Eureka (2.0.0-beta.1)
   - Realm (2.0.3):
     - Realm/Headers (= 2.0.3)
   - Realm/Headers (2.0.3)
@@ -6,6 +7,7 @@ PODS:
     - Realm (= 2.0.3)
 
 DEPENDENCIES:
+  - Eureka (~> 2.0.0-beta.1)
   - Realm (from `https://github.com/realm/realm-cocoa.git`, branch `master`)
   - RealmSwift (from `https://github.com/realm/realm-cocoa.git`, branch `master`)
 
@@ -30,9 +32,10 @@ CHECKOUT OPTIONS:
     :submodules: true
 
 SPEC CHECKSUMS:
+  Eureka: d014adf16406745e1a78d5790ea37ed130a0a8e5
   Realm: 5f008bfe3c8c47142eddfc30b8c1584cde22db24
   RealmSwift: 79a9bc83e7ef4fbde17e0f303c5fadb99264a6be
 
-PODFILE CHECKSUM: 27fdfa02f96ba0c1fb60bc2d04d01386e957b92d
+PODFILE CHECKSUM: 8eeb40cce1071736bccb9b290f5328736533428b
 
 COCOAPODS: 1.0.0

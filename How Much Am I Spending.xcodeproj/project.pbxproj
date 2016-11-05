@@ -28,6 +28,7 @@
 		B84F4E2E1CCCB1CF00A4CDC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84F4E2C1CCCB1CF00A4CDC1 /* LaunchScreen.storyboard */; };
 		B84F4E391CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E381CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingTests.swift */; };
 		B84F4E441CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F4E431CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingUITests.swift */; };
+		B87E86B41DCDBC78004081A0 /* AddShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87E86B31DCDBC78004081A0 /* AddShoppingListViewController.swift */; };
 		B8C739001DC47570000A0328 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C738FF1DC47570000A0328 /* DayModel.swift */; };
 		B8D83A931DC9B40A00FDAC82 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D83A921DC9B40A00FDAC82 /* WelcomeViewController.swift */; };
 		B8D83A951DC9B65E00FDAC82 /* WelcomeVCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D83A941DC9B65E00FDAC82 /* WelcomeVCTextField.swift */; };
@@ -90,6 +91,7 @@
 		B84F4E3F1CCCB1CF00A4CDC1 /* How Much Am I SpendingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "How Much Am I SpendingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84F4E431CCCB1CF00A4CDC1 /* How_Much_Am_I_SpendingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = How_Much_Am_I_SpendingUITests.swift; sourceTree = "<group>"; };
 		B84F4E451CCCB1CF00A4CDC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B87E86B31DCDBC78004081A0 /* AddShoppingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddShoppingListViewController.swift; sourceTree = "<group>"; };
 		B8C738FF1DC47570000A0328 /* DayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
 		B8D83A921DC9B40A00FDAC82 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		B8D83A941DC9B65E00FDAC82 /* WelcomeVCTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVCTextField.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				B8D83A921DC9B40A00FDAC82 /* WelcomeViewController.swift */,
 				B8D83AA31DC9D0D900FDAC82 /* HomeViewController.swift */,
+				B87E86B31DCDBC78004081A0 /* AddShoppingListViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				B84899E21DC3401B00E31CE1 /* CustomShoppingList.swift in Sources */,
 				B8D83A991DC9B80900FDAC82 /* orangeLongButton.swift in Sources */,
 				B84899E81DC3415300E31CE1 /* Day.swift in Sources */,
+				B87E86B41DCDBC78004081A0 /* AddShoppingListViewController.swift in Sources */,
 				B84899E01DC33FE000E31CE1 /* ShoppingList.swift in Sources */,
 				B8D83A951DC9B65E00FDAC82 /* WelcomeVCTextField.swift in Sources */,
 				B8D83A9E1DC9CAEC00FDAC82 /* OrangeMenuButton.swift in Sources */,
