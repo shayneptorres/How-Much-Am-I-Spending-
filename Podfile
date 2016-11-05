@@ -6,6 +6,7 @@ target 'How Much Am I Spending' do
   use_frameworks!
   pod 'Realm', git: 'https://github.com/realm/realm-cocoa.git', branch: 'master’,:submodules => true
   pod 'RealmSwift', git: 'https://github.com/realm/realm-cocoa.git', branch: 'master’,:submodules => true
+  pod 'Eureka', '~> 2.0.0-beta.1'
 end
 
 post_install do |installer|
