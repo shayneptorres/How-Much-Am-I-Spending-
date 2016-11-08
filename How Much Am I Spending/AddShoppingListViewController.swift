@@ -10,27 +10,79 @@ import UIKit
 import Eureka
 
 class AddShoppingListViewController: FormViewController {
+    
+    // MARK: - Models
+    let slMod = ShoppingListModel()
+    
+    // MARK: - Variables
+    var listName = String()
+    var listType = String()
+    var notes = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         showAddShoppingListForm()
-        // Do any additional setup after loading the view.
     }
     
     func showAddShoppingListForm(){
-        form = Section("Section1")
+        form = Section("List Name")
             <<< TextRow(){ row in
-                row.title = "Text Row"
-                row.placeholder = "Enter text here"
+                row.placeholder = "Super Cool List Name"
+                row.tag = "listName"
             }
-            <<< PhoneRow(){
-                $0.title = "Phone Row"
-                $0.placeholder = "And numbers here"
+            +++ Section("List Type")
+            <<< SegmentedRow<String>(){
+                $0.options = ["Shopping List","Meal Plan","Spendings List"]
+                $0.tag = "listType"
             }
-            +++ Section("Section2")
-            <<< DateRow(){
-                $0.title = "Date Row"
-                $0.value = NSDate(timeIntervalSinceReferenceDate: 0) as Date
-        }
+            +++ Section("Notes")
+            <<< TextAreaRow(){ row in
+                row.placeholder = "Add some interesting notes about your list"
+                row.tag = "notes"
+            }
+            +++ Section("")
+            <<< ButtonRow(){ row in
+                row.title = "Add List"
+                }.onCellSelection { [weak self] (cell, row) in
+                    let valuesDictionary = self?.form.values()
+                    self?.listName = valuesDictionary?["listName"] as! String
+                    self?.listType = valuesDictionary?["listType"] as! String
+                    self?.notes = valuesDictionary?["notes"] as! String
+                    self?.createList()
+                    
+            }
     }
+    
+    // MARK: - List Creation Method
+    func createList(){
+        switch listType {
+        case "Shopping List":
+            let newShoppingList = CustomShoppingList()
+            newShoppingList.name = self.listName
+            newShoppingList.notes = self.notes
+            print(newShoppingList.notes)
+            slMod.addCustomShoppingList(list: newShoppingList)
+            print("Created a new shoppingList")
+            break
+        case "Meal Plan":
+            let newMealPlan = MealPlan()
+            newMealPlan.name = self.listName
+            newMealPlan.notes = self.notes
+            slMod.addMealPlan(mp: newMealPlan)
+            print("Created a new MealPlnan")
+            break
+        case "Spendings List":
+            let newCurrentspendingsList = CurrentSpendingsList()
+            newCurrentspendingsList.name = self.listName
+            newCurrentspendingsList.notes = self.notes
+            slMod.addCurrentSpendingsList(sl: newCurrentspendingsList)
+            print(newCurrentspendingsList)
+            break
+        default:
+            break
+        }
+        performSegue(withIdentifier: "unwindBackToHomeVC", sender: self)
+    }
+    
 }
+

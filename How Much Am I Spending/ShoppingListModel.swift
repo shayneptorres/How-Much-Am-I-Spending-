@@ -17,8 +17,9 @@ class ShoppingListModel {
         let realm = try! Realm()
         
         let newList = CustomShoppingList()
-        newList.id = list.id
+        newList.autoIncrementPK()
         newList.name = list.name
+        newList.notes = list.notes
         newList.items = list.items
         try! realm.write {
             realm.add(newList)
@@ -29,10 +30,25 @@ class ShoppingListModel {
         let realm  = try! Realm()
         
         let newMP = MealPlan()
-        newMP.id = mp.id
+        newMP.autoIncrementPK()
+        newMP.name = mp.name
+        newMP.notes = mp.notes
         newMP.days = mp.days
         try! realm.write {
             realm.add(newMP)
+        }
+    }
+    
+    func addCurrentSpendingsList(sl: CurrentSpendingsList){
+        let realm = try! Realm()
+        
+        let newSpendingsList = CurrentSpendingsList()
+        newSpendingsList.name = sl.name
+        newSpendingsList.notes = sl.notes
+        newSpendingsList.autoIncrementPK()
+        newSpendingsList.items = sl.items
+        try! realm.write {
+            realm.add(sl)
         }
     }
     
@@ -51,6 +67,13 @@ class ShoppingListModel {
         return list!
     }
     
+    func getCurrentSpendingsListWithID(id: Int)->CurrentSpendingsList{
+        let realm = try! Realm()
+        
+        let list = realm.objects(CurrentSpendingsList.self).filter("id = \(id)").first
+        return list!
+    }
+    
     // MARK: - ShoppingList Mutator Methods
     func editCustomShoppinList(list: CustomShoppingList){
         let realm = try! Realm()
@@ -58,6 +81,7 @@ class ShoppingListModel {
         let listToBeEdited = realm.objects(CustomShoppingList.self).filter("id = \(list.id)").first!
         try! realm.write {
             listToBeEdited.id = list.id
+            listToBeEdited.notes = list.notes
             listToBeEdited.name = list.name
             listToBeEdited.items = list.items
 
@@ -70,8 +94,22 @@ class ShoppingListModel {
         let mealPlanToBeEdited = realm.objects(MealPlan.self).filter("id = \(mp.id)").first!
         try! realm.write {
             mealPlanToBeEdited.id = mp.id
+            mealPlanToBeEdited.notes = mp.notes
             mealPlanToBeEdited.name = mp.name
             mealPlanToBeEdited.days = mp.days
+        }
+    }
+    
+    func editCurrentSpendingsList(csl: CurrentSpendingsList){
+        let realm = try! Realm()
+        
+        let currentSpendingsListToBeEdited = realm.objects(CurrentSpendingsList.self).filter("id = \(csl.id)").first!
+        try! realm.write {
+            currentSpendingsListToBeEdited.id = csl.id
+            currentSpendingsListToBeEdited.notes = csl.notes
+            currentSpendingsListToBeEdited.name = csl.name
+            currentSpendingsListToBeEdited.items = csl.items
+            
         }
     }
     
@@ -90,4 +128,13 @@ class ShoppingListModel {
             realm.delete(list)
         }
     }
+    
+    func deleteCurrentSpendingsList(list: CurrentSpendingsList){
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.delete(list)
+        }
+    }
+    
 }

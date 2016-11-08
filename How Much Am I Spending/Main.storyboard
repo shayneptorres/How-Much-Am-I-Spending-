@@ -116,6 +116,43 @@
                                     <constraint firstItem="PE7-gH-smw" firstAttribute="leading" secondItem="Ohw-j8-hpr" secondAttribute="leading" constant="8" id="x7Z-eI-USv"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SGY-M4-O19">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listCell" rowHeight="81" id="uGW-bA-7XF" customClass="CustomShoppingListTableViewCell" customModule="How_Much_Am_I_Spending" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="81"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uGW-bA-7XF" id="gpQ-j6-rK8">
+                                            <frame key="frameInset" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aF5-Z4-HRY">
+                                                    <color key="backgroundColor" red="0.8549107142857143" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="UpD-9C-RJN"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYd-vd-TkA">
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aF5-Z4-HRY" firstAttribute="top" secondItem="gpQ-j6-rK8" secondAttribute="top" id="78q-C3-eVj"/>
+                                                <constraint firstItem="aF5-Z4-HRY" firstAttribute="leading" secondItem="gpQ-j6-rK8" secondAttribute="leading" id="8xi-wv-s06"/>
+                                                <constraint firstItem="hYd-vd-TkA" firstAttribute="leading" secondItem="aF5-Z4-HRY" secondAttribute="trailing" constant="8" id="9cm-1m-hb3"/>
+                                                <constraint firstItem="hYd-vd-TkA" firstAttribute="top" secondItem="gpQ-j6-rK8" secondAttribute="topMargin" id="k7j-YP-i6O"/>
+                                                <constraint firstAttribute="bottom" secondItem="aF5-Z4-HRY" secondAttribute="bottom" id="ygS-wt-9Xr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="colorTabView" destination="aF5-Z4-HRY" id="ar8-ik-DHz"/>
+                                            <outlet property="listNameLabel" destination="hYd-vd-TkA" id="0Pg-JQ-NUu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YjZ-uw-rCz" customClass="OrangeAddButton" customModule="How_Much_Am_I_Spending" customModuleProvider="target">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="FXe-gv-QsC"/>
@@ -127,6 +164,9 @@
                                     <constraint firstAttribute="height" constant="60" id="BAe-hE-UpI"/>
                                     <constraint firstAttribute="width" constant="60" id="aXF-4N-pp6"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="addListButtonWasPressed:" destination="E1G-q5-c2z" eventType="touchUpInside" id="8oC-6D-jC9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3I-Lr-bc7" customClass="OrangeListsButton" customModule="How_Much_Am_I_Spending" customModuleProvider="target">
                                 <constraints>
@@ -165,17 +205,21 @@
                             <constraint firstItem="V3I-Lr-bc7" firstAttribute="trailing" secondItem="k9m-oD-Sq2" secondAttribute="trailingMargin" id="6k4-NP-ZRz"/>
                             <constraint firstItem="Rsd-h5-GaD" firstAttribute="trailing" secondItem="k9m-oD-Sq2" secondAttribute="trailingMargin" id="Nyf-ot-Asi"/>
                             <constraint firstItem="O5x-eS-Thi" firstAttribute="top" secondItem="YjZ-uw-rCz" secondAttribute="bottom" constant="20" id="Oq8-Or-OYZ"/>
+                            <constraint firstItem="SGY-M4-O19" firstAttribute="leading" secondItem="k9m-oD-Sq2" secondAttribute="leading" id="Qdu-ZO-PM7"/>
                             <constraint firstItem="Rsd-h5-GaD" firstAttribute="leading" secondItem="rSC-kN-4cM" secondAttribute="trailing" constant="5" id="Ucd-vx-Cx2"/>
                             <constraint firstItem="Ohw-j8-hpr" firstAttribute="top" secondItem="k9m-oD-Sq2" secondAttribute="top" id="Xg5-53-ZEb"/>
                             <constraint firstItem="X8b-tx-Fap" firstAttribute="centerY" secondItem="Rsd-h5-GaD" secondAttribute="centerY" id="Y0H-sc-svb"/>
+                            <constraint firstItem="O5x-eS-Thi" firstAttribute="top" secondItem="SGY-M4-O19" secondAttribute="bottom" id="ZSi-bi-kGH"/>
                             <constraint firstItem="8GK-wG-h5y" firstAttribute="centerY" secondItem="Rsd-h5-GaD" secondAttribute="centerY" id="bB3-0z-aZS"/>
                             <constraint firstItem="O5x-eS-Thi" firstAttribute="top" secondItem="Rsd-h5-GaD" secondAttribute="bottom" constant="20" id="byz-cf-B7X"/>
                             <constraint firstItem="Rsd-h5-GaD" firstAttribute="leading" secondItem="8GK-wG-h5y" secondAttribute="trailing" constant="8" id="c9Z-lk-PDN"/>
                             <constraint firstItem="zT3-vc-ggu" firstAttribute="trailing" secondItem="k9m-oD-Sq2" secondAttribute="trailingMargin" id="cMG-c0-vQf"/>
                             <constraint firstItem="Rsd-h5-GaD" firstAttribute="leading" secondItem="X8b-tx-Fap" secondAttribute="trailing" constant="8" id="eMT-Ed-lVe"/>
+                            <constraint firstAttribute="trailing" secondItem="SGY-M4-O19" secondAttribute="trailing" id="gyz-cx-jHK"/>
                             <constraint firstAttribute="trailing" secondItem="Ohw-j8-hpr" secondAttribute="trailing" id="hmq-lV-4jQ"/>
                             <constraint firstItem="Ohw-j8-hpr" firstAttribute="leading" secondItem="k9m-oD-Sq2" secondAttribute="leading" id="i3t-Ho-SzR"/>
                             <constraint firstItem="O5x-eS-Thi" firstAttribute="top" secondItem="zT3-vc-ggu" secondAttribute="bottom" constant="20" id="iIX-tc-Gjb"/>
+                            <constraint firstItem="SGY-M4-O19" firstAttribute="top" secondItem="Ohw-j8-hpr" secondAttribute="bottom" id="kT7-Jh-vfk"/>
                             <constraint firstItem="YjZ-uw-rCz" firstAttribute="trailing" secondItem="k9m-oD-Sq2" secondAttribute="trailingMargin" id="lU2-xk-5yH"/>
                             <constraint firstItem="rSC-kN-4cM" firstAttribute="centerY" secondItem="Rsd-h5-GaD" secondAttribute="centerY" id="mzH-M1-YT7"/>
                         </constraints>
@@ -187,23 +231,25 @@
                         <outlet property="orangeAddListButton" destination="zT3-vc-ggu" id="cOR-ye-UEh"/>
                         <outlet property="orangeListsButton" destination="V3I-Lr-bc7" id="yHK-GF-9eA"/>
                         <outlet property="orangeMenuButton" destination="Rsd-h5-GaD" id="nXE-zU-Y4o"/>
+                        <outlet property="shoppingListTableView" destination="SGY-M4-O19" id="ahr-es-qdf"/>
                         <outlet property="showListsLabel" destination="rSC-kN-4cM" id="F3Z-Xg-YDf"/>
+                        <segue destination="O54-84-ohG" kind="show" identifier="addList" id="TEl-Sw-uON"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IsQ-Oa-RV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1263.2" y="-203.74812593703149"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Segue Navigation View Controller-->
         <scene sceneID="YY2-LI-YkD">
             <objects>
-                <navigationController id="O54-84-ohG" sceneMemberID="viewController">
+                <navigationController id="O54-84-ohG" customClass="SegueNavigationViewController" customModule="How_Much_Am_I_Spending" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zcD-OM-acm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="yX1-Ui-GAB" kind="relationship" relationship="rootViewController" id="D2p-IO-TRm"/>
+                        <segue destination="yX1-Ui-GAB" kind="show" identifier="showAddShoppingListVC" id="W8h-2t-V9K"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2LH-2t-DBD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -224,8 +270,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Vvw-n1-BeI"/>
+                    <connections>
+                        <segue destination="6jy-Ch-K4e" kind="unwind" identifier="unwindBackToHomeVC" unwindAction="unwindBackToHomeVCWithSender:" id="Ona-G8-ed3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8r-oQ-tZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6jy-Ch-K4e" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="329" y="-207"/>
         </scene>

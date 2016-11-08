@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RealmSwift
+import Realm
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,8 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        var config = Realm.Configuration()
+        config.fileURL = config.fileURL!.deletingLastPathComponent()
+            .appendingPathComponent("HMAIS-0-0.realm")
         
-        // Override point for customization after application launch.
+        // Set this as the configuration used for the default Realm
+        Realm.Configuration.defaultConfiguration = config
         return true
     }
 

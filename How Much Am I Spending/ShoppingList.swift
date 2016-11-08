@@ -12,6 +12,8 @@ import RealmSwift
 class ShoppingList : Object {
     dynamic var id = Int()
     dynamic var name = String()
+    dynamic var notes = String()
+    dynamic var completion = Double()
     
     override static func primaryKey() -> String? {
         return "id"

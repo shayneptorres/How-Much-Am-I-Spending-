@@ -11,4 +11,11 @@ import RealmSwift
 
 class CustomShoppingList : ShoppingList {
     var items = List<ShoppingListItem>()
+    
+    override func autoIncrementPK(){
+        let realm = try! Realm()
+        var myvalue = realm.objects(CustomShoppingList.self).map{$0.id}.max() ?? 0
+        myvalue = myvalue + 1
+        id = myvalue
+    }
 }
