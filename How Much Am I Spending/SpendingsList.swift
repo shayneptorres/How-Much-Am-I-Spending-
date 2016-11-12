@@ -9,6 +9,6 @@
 import Foundation
 import RealmSwift
 
-class CurrentSpendingsList : ShoppingList{
-    var items = List<CurrentSpendingsItem>()
+class SpendingsList : ShoppingList{
+    var items = List<SpendingsItem>()
 }

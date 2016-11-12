@@ -43,8 +43,8 @@ class ListDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
         
-        if list is CurrentSpendingsList {
-            let csl = list as! CurrentSpendingsList
+        if list is SpendingsList {
+            let csl = list as! SpendingsList
             for i in csl.items {
                 items.append(i)
             }

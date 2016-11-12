@@ -31,7 +31,7 @@ class CustomShoppingListTableViewCell: UITableViewCell {
             colorTabView.layer.backgroundColor = UIColor.orange.cgColor
         }
         
-        if list is CurrentSpendingsList {
+        if list is SpendingsList {
             colorTabView.layer.backgroundColor = UIColor.blue.cgColor
         }
     }

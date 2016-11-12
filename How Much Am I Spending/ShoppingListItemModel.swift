@@ -34,10 +34,10 @@ class ShoppingListItemModel {
     /**
      Given a CurrentSpendingsItem, adds it to the Realm Database
      */
-    func addCurrentSpendingsItem(cSItem: CurrentSpendingsItem){
+    func addCurrentSpendingsItem(cSItem: SpendingsItem){
         let realm = try! Realm()
         
-        let csi = CurrentSpendingsItem()
+        let csi = SpendingsItem()
         csi.id = cSItem.id
         csi.name = cSItem.name
         csi.brand = cSItem.brand
@@ -60,10 +60,10 @@ class ShoppingListItemModel {
         return item!
     }
     
-    func getCurrentSpendingsItemWithID(id: Int)->CurrentSpendingsItem{
+    func getCurrentSpendingsItemWithID(id: Int)->SpendingsItem{
         let realm = try! Realm()
         
-        let item = realm.objects(CurrentSpendingsItem.self).filter("id = \(id)").first
+        let item = realm.objects(SpendingsItem.self).filter("id = \(id)").first
         return item!
     }
     
@@ -82,10 +82,10 @@ class ShoppingListItemModel {
         }
     }
     
-    func editCurrentSpendingsItem(item: CurrentSpendingsItem){
+    func editCurrentSpendingsItem(item: SpendingsItem){
         let realm = try! Realm()
         
-        let itemToBeEdited = realm.objects(CurrentSpendingsItem.self).filter("id = \(item.id)").first!
+        let itemToBeEdited = realm.objects(SpendingsItem.self).filter("id = \(item.id)").first!
         try! realm.write {
             itemToBeEdited.id = item.id
             itemToBeEdited.name = item.name
@@ -105,7 +105,7 @@ class ShoppingListItemModel {
         }
     }
     
-    func deleteCurrentSpendingsItem(item: CurrentSpendingsItem){
+    func deleteCurrentSpendingsItem(item: SpendingsItem){
         let realm  = try! Realm()
         
         try! realm.write {

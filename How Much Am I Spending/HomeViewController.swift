@@ -102,7 +102,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func getAllStoredCurrentSpendingsLists(){
-        let storedLists = realm.objects(CurrentSpendingsList.self)
+        let storedLists = realm.objects(SpendingsList.self)
         for i in storedLists {
             lists.append(i)
         }
@@ -176,8 +176,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 cell.list = filteredLists[indexPath.row] as! MealPlan
             }
             
-            if filteredLists[indexPath.row] is CurrentSpendingsList {
-                cell.list = filteredLists[indexPath.row] as! CurrentSpendingsList
+            if filteredLists[indexPath.row] is SpendingsList {
+                cell.list = filteredLists[indexPath.row] as! SpendingsList
             }
             return cell
         } else {
@@ -190,8 +190,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 cell.list = lists[indexPath.row] as! MealPlan
             }
             
-            if lists[indexPath.row] is CurrentSpendingsList {
-                cell.list = lists[indexPath.row] as! CurrentSpendingsList
+            if lists[indexPath.row] is SpendingsList {
+                cell.list = lists[indexPath.row] as! SpendingsList
             }
             return cell
         }
@@ -211,8 +211,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     slMod.deleteMealPlan(list: filteredLists[indexPath.row] as! MealPlan)
                 }
                 
-                if filteredLists[indexPath.row] is CurrentSpendingsList {
-                    slMod.deleteCurrentSpendingsList(list: filteredLists[indexPath.row] as! CurrentSpendingsList)
+                if filteredLists[indexPath.row] is SpendingsList {
+                    slMod.deleteCurrentSpendingsList(list: filteredLists[indexPath.row] as! SpendingsList)
                 }
             } else {
                 lists.remove(at: indexPath.row)
@@ -225,8 +225,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     slMod.deleteMealPlan(list: lists[indexPath.row] as! MealPlan)
                 }
                 
-                if lists[indexPath.row] is CurrentSpendingsList {
-                    slMod.deleteCurrentSpendingsList(list: lists[indexPath.row] as! CurrentSpendingsList)
+                if lists[indexPath.row] is SpendingsList {
+                    slMod.deleteCurrentSpendingsList(list: lists[indexPath.row] as! SpendingsList)
                 }
             }
             

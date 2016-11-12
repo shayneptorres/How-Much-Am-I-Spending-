@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class CurrentSpendingsItem : ShoppingListItem {
+class SpendingsItem : ShoppingListItem {
     dynamic var price = Double()
     dynamic var isTaxed = Bool()
 }
