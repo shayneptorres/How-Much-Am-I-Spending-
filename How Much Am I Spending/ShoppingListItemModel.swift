@@ -32,9 +32,9 @@ class ShoppingListItemModel {
     }
     
     /**
-     Given a CurrentSpendingsItem, adds it to the Realm Database
+     Given a SpendingsItem, adds it to the Realm Database
      */
-    func addCurrentSpendingsItem(cSItem: SpendingsItem){
+    func addSpendingsItem(cSItem: SpendingsItem){
         let realm = try! Realm()
         
         let csi = SpendingsItem()
@@ -60,7 +60,7 @@ class ShoppingListItemModel {
         return item!
     }
     
-    func getCurrentSpendingsItemWithID(id: Int)->SpendingsItem{
+    func getSpendingsItemWithID(id: Int)->SpendingsItem{
         let realm = try! Realm()
         
         let item = realm.objects(SpendingsItem.self).filter("id = \(id)").first
@@ -82,7 +82,7 @@ class ShoppingListItemModel {
         }
     }
     
-    func editCurrentSpendingsItem(item: SpendingsItem){
+    func editSpendingsItem(item: SpendingsItem){
         let realm = try! Realm()
         
         let itemToBeEdited = realm.objects(SpendingsItem.self).filter("id = \(item.id)").first!
@@ -105,7 +105,7 @@ class ShoppingListItemModel {
         }
     }
     
-    func deleteCurrentSpendingsItem(item: SpendingsItem){
+    func deleteSpendingsItem(item: SpendingsItem){
         let realm  = try! Realm()
         
         try! realm.write {

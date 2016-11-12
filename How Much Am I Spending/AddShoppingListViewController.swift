@@ -72,11 +72,11 @@ class AddShoppingListViewController: FormViewController {
             print("Created a new MealPlnan")
             break
         case "Spendings List":
-            let newCurrentspendingsList = SpendingsList()
-            newCurrentspendingsList.name = self.listName
-            newCurrentspendingsList.notes = self.notes
-            slMod.addCurrentSpendingsList(sl: newCurrentspendingsList)
-            print(newCurrentspendingsList)
+            let newSpendingsList = SpendingsList()
+            newSpendingsList.name = self.listName
+            newSpendingsList.notes = self.notes
+            slMod.addSpendingsList(sl: newSpendingsList)
+            print(newSpendingsList)
             break
         default:
             break

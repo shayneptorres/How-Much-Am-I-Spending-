@@ -1,5 +1,5 @@
 //
-//  CurrentSpendingsItem.swift
+//  SpendingsItem.swift
 //  How Much Am I Spending
 //
 //  Created by Shayne Torres on 10/28/16.

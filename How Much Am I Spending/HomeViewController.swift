@@ -82,7 +82,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func getAllStoredListTypes(){
         getAllStoredCustomShoppingLists()
         getAllStoredMealPlans()
-        getAllStoredCurrentSpendingsLists()
+        getAllStoredSpendingsLists()
     }
     
     func getAllStoredCustomShoppingLists(){
@@ -101,7 +101,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         print(lists)
     }
     
-    func getAllStoredCurrentSpendingsLists(){
+    func getAllStoredSpendingsLists(){
         let storedLists = realm.objects(SpendingsList.self)
         for i in storedLists {
             lists.append(i)
@@ -212,7 +212,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
                 
                 if filteredLists[indexPath.row] is SpendingsList {
-                    slMod.deleteCurrentSpendingsList(list: filteredLists[indexPath.row] as! SpendingsList)
+                    slMod.deleteSpendingsList(list: filteredLists[indexPath.row] as! SpendingsList)
                 }
             } else {
                 lists.remove(at: indexPath.row)
@@ -226,7 +226,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
                 
                 if lists[indexPath.row] is SpendingsList {
-                    slMod.deleteCurrentSpendingsList(list: lists[indexPath.row] as! SpendingsList)
+                    slMod.deleteSpendingsList(list: lists[indexPath.row] as! SpendingsList)
                 }
             }
             

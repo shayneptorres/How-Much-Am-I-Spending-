@@ -39,7 +39,7 @@ class ShoppingListModel {
         }
     }
     
-    func addCurrentSpendingsList(sl: SpendingsList){
+    func addSpendingsList(sl: SpendingsList){
         let realm = try! Realm()
         
         let newSpendingsList = SpendingsList()
@@ -67,7 +67,7 @@ class ShoppingListModel {
         return list!
     }
     
-    func getCurrentSpendingsListWithID(id: Int)->SpendingsList{
+    func getSpendingsListWithID(id: Int)->SpendingsList{
         let realm = try! Realm()
         
         let list = realm.objects(SpendingsList.self).filter("id = \(id)").first
@@ -100,15 +100,15 @@ class ShoppingListModel {
         }
     }
     
-    func editCurrentSpendingsList(csl: SpendingsList){
+    func editSpendingsList(csl: SpendingsList){
         let realm = try! Realm()
         
-        let currentSpendingsListToBeEdited = realm.objects(SpendingsList.self).filter("id = \(csl.id)").first!
+        let spendingsListToBeEdited = realm.objects(SpendingsList.self).filter("id = \(csl.id)").first!
         try! realm.write {
-            currentSpendingsListToBeEdited.id = csl.id
-            currentSpendingsListToBeEdited.notes = csl.notes
-            currentSpendingsListToBeEdited.name = csl.name
-            currentSpendingsListToBeEdited.items = csl.items
+            spendingsListToBeEdited.id = csl.id
+            spendingsListToBeEdited.notes = csl.notes
+            spendingsListToBeEdited.name = csl.name
+            spendingsListToBeEdited.items = csl.items
             
         }
     }
@@ -129,7 +129,7 @@ class ShoppingListModel {
         }
     }
     
-    func deleteCurrentSpendingsList(list: SpendingsList){
+    func deleteSpendingsList(list: SpendingsList){
         let realm = try! Realm()
         
         try! realm.write {
