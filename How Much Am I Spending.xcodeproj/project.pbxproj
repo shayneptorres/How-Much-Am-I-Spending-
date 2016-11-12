@@ -41,6 +41,11 @@
 		B8D83AA41DC9D0D900FDAC82 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D83AA31DC9D0D900FDAC82 /* HomeViewController.swift */; };
 		B8F546261DD04FED007997FC /* CustomShoppingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F546251DD04FED007997FC /* CustomShoppingListTableViewCell.swift */; };
 		B8F5462A1DD16686007997FC /* CurrentSpendingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F546291DD16686007997FC /* CurrentSpendingsList.swift */; };
+		B8F5462C1DD1B462007997FC /* OrangeFilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5462B1DD1B462007997FC /* OrangeFilterButton.swift */; };
+		B8F546301DD1B5EF007997FC /* ListDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5462F1DD1B5EF007997FC /* ListDetailsViewController.swift */; };
+		B8F546321DD31291007997FC /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F546311DD31291007997FC /* ProgressIndicator.swift */; };
+		B8F546361DD40A1A007997FC /* ShoppingListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F546351DD40A1A007997FC /* ShoppingListItemCell.swift */; };
+		B8F546381DD40B3C007997FC /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F546371DD40B3C007997FC /* AddItemViewController.swift */; };
 		BAAC8F2D2D609E751E3DF658 /* Pods_How_Much_Am_I_Spending.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC35CC39DAFA7F83AB81FD9 /* Pods_How_Much_Am_I_Spending.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +112,11 @@
 		B8D83AA31DC9D0D900FDAC82 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B8F546251DD04FED007997FC /* CustomShoppingListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShoppingListTableViewCell.swift; sourceTree = "<group>"; };
 		B8F546291DD16686007997FC /* CurrentSpendingsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentSpendingsList.swift; sourceTree = "<group>"; };
+		B8F5462B1DD1B462007997FC /* OrangeFilterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrangeFilterButton.swift; sourceTree = "<group>"; };
+		B8F5462F1DD1B5EF007997FC /* ListDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailsViewController.swift; sourceTree = "<group>"; };
+		B8F546311DD31291007997FC /* ProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
+		B8F546351DD40A1A007997FC /* ShoppingListItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListItemCell.swift; sourceTree = "<group>"; };
+		B8F546371DD40B3C007997FC /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		BB399DA25E95D985E42EA24D /* Pods-How Much Am I Spending.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-How Much Am I Spending.debug.xcconfig"; path = "Pods/Target Support Files/Pods-How Much Am I Spending/Pods-How Much Am I Spending.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +191,7 @@
 			children = (
 				B8D83A9C1DC9CAD000FDAC82 /* Buttons */,
 				B8D83A941DC9B65E00FDAC82 /* WelcomeVCTextField.swift */,
+				B8F546311DD31291007997FC /* ProgressIndicator.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -192,6 +203,8 @@
 				B8D83AA31DC9D0D900FDAC82 /* HomeViewController.swift */,
 				B87E86B31DCDBC78004081A0 /* AddShoppingListViewController.swift */,
 				B87E86B61DCDC023004081A0 /* SegueNavigationViewController.swift */,
+				B8F5462F1DD1B5EF007997FC /* ListDetailsViewController.swift */,
+				B8F546371DD40B3C007997FC /* AddItemViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -311,6 +324,7 @@
 				B8D83A9F1DC9D01E00FDAC82 /* OrangeAddButton.swift */,
 				B8D83AA11DC9D04500FDAC82 /* OrangeListsButton.swift */,
 				B844C13F1DCDB179006A46C7 /* OrangeAddListButton.swift */,
+				B8F5462B1DD1B462007997FC /* OrangeFilterButton.swift */,
 			);
 			name = Buttons;
 			sourceTree = "<group>";
@@ -319,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				B8F546251DD04FED007997FC /* CustomShoppingListTableViewCell.swift */,
+				B8F546351DD40A1A007997FC /* ShoppingListItemCell.swift */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -529,16 +544,20 @@
 				B84F4E221CCCB1CF00A4CDC1 /* AppDelegate.swift in Sources */,
 				B84899EC1DC3428400E31CE1 /* ShoppingListItemModel.swift in Sources */,
 				B8D83AA41DC9D0D900FDAC82 /* HomeViewController.swift in Sources */,
+				B8F546361DD40A1A007997FC /* ShoppingListItemCell.swift in Sources */,
 				B8F546261DD04FED007997FC /* CustomShoppingListTableViewCell.swift in Sources */,
+				B8F546301DD1B5EF007997FC /* ListDetailsViewController.swift in Sources */,
 				B8D83A9B1DC9CA0900FDAC82 /* HMAISStyleKit.swift in Sources */,
 				B834D0A11D85235E00B41845 /* Constants.swift in Sources */,
 				B84899EE1DC34AF100E31CE1 /* ShoppingListModel.swift in Sources */,
 				B8C739001DC47570000A0328 /* DayModel.swift in Sources */,
 				B84899E21DC3401B00E31CE1 /* CustomShoppingList.swift in Sources */,
+				B8F546321DD31291007997FC /* ProgressIndicator.swift in Sources */,
 				B8D83A991DC9B80900FDAC82 /* orangeLongButton.swift in Sources */,
 				B8F5462A1DD16686007997FC /* CurrentSpendingsList.swift in Sources */,
 				B84899E81DC3415300E31CE1 /* Day.swift in Sources */,
 				B87E86B41DCDBC78004081A0 /* AddShoppingListViewController.swift in Sources */,
+				B8F5462C1DD1B462007997FC /* OrangeFilterButton.swift in Sources */,
 				B84899E01DC33FE000E31CE1 /* ShoppingList.swift in Sources */,
 				B8D83A951DC9B65E00FDAC82 /* WelcomeVCTextField.swift in Sources */,
 				B8D83A9E1DC9CAEC00FDAC82 /* OrangeMenuButton.swift in Sources */,
@@ -549,6 +568,7 @@
 				B84899DC1DC33E2900E31CE1 /* ShoppingListItem.swift in Sources */,
 				B84899D81DC33C1400E31CE1 /* SwiftyTimer.swift in Sources */,
 				B8D83AA21DC9D04500FDAC82 /* OrangeListsButton.swift in Sources */,
+				B8F546381DD40B3C007997FC /* AddItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

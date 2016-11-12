@@ -9,36 +9,39 @@
 import UIKit
 import RealmSwift
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     // MARK: - Models
     var nms = NSMyDefaults()
     let realm = try! Realm()
+    let slMod = ShoppingListModel()
     
     // MARK: - Outlets
     @IBOutlet weak var orangeAddButton: OrangeAddButton!
-    @IBOutlet weak var orangeListsButton: OrangeListsButton!
+    @IBOutlet weak var orangeListsButton: OrangeFilterButton!
     @IBOutlet weak var orangeMenuButton: OrangeMenuButton!
     @IBOutlet weak var orangeAddListButton: OrangeAddListButton!
     @IBOutlet weak var addListLabel: UILabel!
     @IBOutlet weak var addItemLabel: UILabel!
     @IBOutlet weak var showListsLabel: UILabel!
-    @IBOutlet weak var shoppingListTableView: UITableView! {
-        didSet{
-            
-        }
-    }
+    @IBOutlet weak var shoppingListTableView: UITableView!
+    @IBOutlet weak var listSearchBar: UISearchBar!
 
     
 
     // MARK: - Variables
     var didAnimate = Bool()
     var lists = [ShoppingList]()
+    var filteredLists = [ShoppingList]()
     var verticalTranslation = CGFloat()
+    var filterString = String()
+    var isFiltering = Bool()
+    var chosenList = ShoppingList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hideLabels()
+        listSearchBar.delegate = self
         shoppingListTableView.delegate = self
         shoppingListTableView.dataSource = self
         getAllStoredListTypes()
@@ -65,6 +68,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             didAnimate = true
             showHiddenButtons()
         }
+    }
+    
+    @IBAction func addItemButtonWasPressed(_ sender: OrangeAddButton) {
+        performSegue(withIdentifier: "addItem", sender: self)
     }
     
     @IBAction func addListButtonWasPressed(_ sender: OrangeAddListButton) {
@@ -102,32 +109,129 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         print(lists)
     }
     
+    func getAllListsWithFilteredName(){
+        filteredLists.removeAll()
+        for i in lists {
+            if i.name.lowercased().contains(filterString.lowercased()) {
+                filteredLists.append(i)
+            }
+        }
+    }
     
+    // MARK: - Search Bar Delegate Methods
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        isFiltering = true
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if isFiltering {
+            filterString = searchText
+            getAllListsWithFilteredName()
+        }
+        if searchText == "" {
+            filteredLists = lists
+        }
+        shoppingListTableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        listSearchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        listSearchBar.resignFirstResponder()
+    }
     
     // MARK: - TableView Methods
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return lists.count
+        if isFiltering {
+            return filteredLists.count
+        } else {
+            return lists.count
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if isFiltering {
+            chosenList = filteredLists[indexPath.row]
+        } else {
+            chosenList = lists[indexPath.row]
+        }
+        performSegue(withIdentifier: "showListDetailsVC", sender: self)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "listCell") as! CustomShoppingListTableViewCell
-        if lists[indexPath.row] is CustomShoppingList {
-            cell.list = lists[indexPath.row] as! CustomShoppingList
+        if isFiltering {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "listCell") as! CustomShoppingListTableViewCell
+            if filteredLists[indexPath.row] is CustomShoppingList {
+                cell.list = filteredLists[indexPath.row] as! CustomShoppingList
+            }
+            
+            if filteredLists[indexPath.row] is MealPlan {
+                cell.list = filteredLists[indexPath.row] as! MealPlan
+            }
+            
+            if filteredLists[indexPath.row] is CurrentSpendingsList {
+                cell.list = filteredLists[indexPath.row] as! CurrentSpendingsList
+            }
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "listCell") as! CustomShoppingListTableViewCell
+            if lists[indexPath.row] is CustomShoppingList {
+                cell.list = lists[indexPath.row] as! CustomShoppingList
+            }
+            
+            if lists[indexPath.row] is MealPlan {
+                cell.list = lists[indexPath.row] as! MealPlan
+            }
+            
+            if lists[indexPath.row] is CurrentSpendingsList {
+                cell.list = lists[indexPath.row] as! CurrentSpendingsList
+            }
+            return cell
         }
         
-        if lists[indexPath.row] is MealPlan {
-            cell.list = lists[indexPath.row] as! MealPlan
-        }
-        
-        if lists[indexPath.row] is CurrentSpendingsList {
-            cell.list = lists[indexPath.row] as! CurrentSpendingsList
-        }
-        return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if isFiltering {
+                filteredLists.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                if filteredLists[indexPath.row] is CustomShoppingList {
+                    slMod.deleteCustomShoppingList(list: filteredLists[indexPath.row] as! CustomShoppingList)
+                }
+                
+                if filteredLists[indexPath.row] is MealPlan {
+                    slMod.deleteMealPlan(list: filteredLists[indexPath.row] as! MealPlan)
+                }
+                
+                if filteredLists[indexPath.row] is CurrentSpendingsList {
+                    slMod.deleteCurrentSpendingsList(list: filteredLists[indexPath.row] as! CurrentSpendingsList)
+                }
+            } else {
+                lists.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                if lists[indexPath.row] is CustomShoppingList {
+                    slMod.deleteCustomShoppingList(list: lists[indexPath.row] as! CustomShoppingList)
+                }
+                
+                if lists[indexPath.row] is MealPlan {
+                    slMod.deleteMealPlan(list: lists[indexPath.row] as! MealPlan)
+                }
+                
+                if lists[indexPath.row] is CurrentSpendingsList {
+                    slMod.deleteCurrentSpendingsList(list: lists[indexPath.row] as! CurrentSpendingsList)
+                }
+            }
+            
+        }
+    }
     
     // MARK: - View Setters
     func hideLabels(){
@@ -239,12 +343,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         })
     }
     
+    func rotateMenuButton(){
+    }
+    
     // MARK: - Segue Preparation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier! {
         case "addList":
             let snvc = segue.destination as! SegueNavigationViewController
             snvc.segueIdentifier = "showAddShoppingListVC"
+            break
+        case "showListDetailsVC":
+            let ldvc = segue.destination as! ListDetailsViewController
+            ldvc.list = chosenList
             break
         default:
             break

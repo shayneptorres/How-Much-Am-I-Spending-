@@ -10,6 +10,7 @@ import UIKit
 
 class SegueNavigationViewController: UINavigationController {
     var segueIdentifier = String()
+    var list = ShoppingList()
 
     override func viewDidLoad() {
         super.viewDidLoad()
